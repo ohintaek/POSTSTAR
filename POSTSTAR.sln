@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostStar.Gui", "PostStar.Gui\PostStar.Gui.csproj", "{9804CAE7-8531-4BF8-87D6-79828F3E708F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostStar.Common", "PostStar.Common\PostStar.Common.csproj", "{6D9EFA0F-AC4C-43B8-9990-5F34616B5721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9804CAE7-8531-4BF8-87D6-79828F3E708F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9804CAE7-8531-4BF8-87D6-79828F3E708F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9804CAE7-8531-4BF8-87D6-79828F3E708F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9EFA0F-AC4C-43B8-9990-5F34616B5721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9EFA0F-AC4C-43B8-9990-5F34616B5721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9EFA0F-AC4C-43B8-9990-5F34616B5721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9EFA0F-AC4C-43B8-9990-5F34616B5721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
