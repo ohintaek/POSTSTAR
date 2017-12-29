@@ -15,9 +15,22 @@ namespace PostStar.Gui.Main
     /// </summary>
     public partial class RMainFrm : Form
     {
+        /// <summary>
+        /// CONSTRUCTOR
+        /// </summary>
         public RMainFrm()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// 화면을 최초구성한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RMainFrm_Load(object sender, EventArgs e)
+        {
+            
         }
 
         /// <summary>
@@ -27,7 +40,7 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void btnAbout_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("SHOW ABOUT DIALOG");
         }
 
         /// <summary>
@@ -37,7 +50,7 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void btnSetting_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("SHOW SETTING DIALOG");
         }
 
         /// <summary>
@@ -47,7 +60,7 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void btnMsgHistoryBox_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("SHOW MESSAGE HISTORY DIALOG");
         }
 
         /// <summary>
@@ -57,6 +70,42 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void btnSendMsg_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("SHOW SEND MESSAGE DIALOG");
+        }
+
+        /// <summary>
+        /// [X]ICON을 누를때 TRAY ICON으로 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RMainFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            notifyIcon.Visible = true; // tray icon 표시
+            this.Hide();
+
+            e.Cancel = true;
+        }
+
+        /// <summary>
+        /// TRAY ICON 클릭시 메인다이얼로그를 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                MessageBox.Show("LEFT BUTTON");
+            }
+            else if(e.Button == MouseButtons.Right)
+            {
+                notifyIcon.Visible = false;
+                this.Show();
+            }
+            else
+            {
+                // 
+            }
 
         }
     }

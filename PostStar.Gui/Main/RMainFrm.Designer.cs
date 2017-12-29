@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMainFrm));
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnMsgHistoryBox = new System.Windows.Forms.Button();
             this.btnSendMsg = new System.Windows.Forms.Button();
             this.lbxRecentMsgList = new System.Windows.Forms.ListBox();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(-1, -1);
+            this.btnAbout.Location = new System.Drawing.Point(355, 186);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(284, 39);
             this.btnAbout.TabIndex = 0;
@@ -47,7 +51,7 @@
             // 
             // btnSetting
             // 
-            this.btnSetting.Location = new System.Drawing.Point(-1, 38);
+            this.btnSetting.Location = new System.Drawing.Point(355, 225);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(284, 39);
             this.btnSetting.TabIndex = 1;
@@ -57,7 +61,7 @@
             // 
             // btnMsgHistoryBox
             // 
-            this.btnMsgHistoryBox.Location = new System.Drawing.Point(-1, 77);
+            this.btnMsgHistoryBox.Location = new System.Drawing.Point(355, 264);
             this.btnMsgHistoryBox.Name = "btnMsgHistoryBox";
             this.btnMsgHistoryBox.Size = new System.Drawing.Size(284, 39);
             this.btnMsgHistoryBox.TabIndex = 2;
@@ -67,7 +71,7 @@
             // 
             // btnSendMsg
             // 
-            this.btnSendMsg.Location = new System.Drawing.Point(-1, 312);
+            this.btnSendMsg.Location = new System.Drawing.Point(355, 499);
             this.btnSendMsg.Name = "btnSendMsg";
             this.btnSendMsg.Size = new System.Drawing.Size(284, 86);
             this.btnSendMsg.TabIndex = 3;
@@ -79,24 +83,48 @@
             // 
             this.lbxRecentMsgList.FormattingEnabled = true;
             this.lbxRecentMsgList.ItemHeight = 15;
-            this.lbxRecentMsgList.Location = new System.Drawing.Point(-1, 116);
+            this.lbxRecentMsgList.Location = new System.Drawing.Point(355, 303);
             this.lbxRecentMsgList.Name = "lbxRecentMsgList";
             this.lbxRecentMsgList.Size = new System.Drawing.Size(284, 184);
             this.lbxRecentMsgList.TabIndex = 4;
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "notifyIcon";
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(51, 103);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 464);
+            this.tableLayoutPanel1.TabIndex = 5;
             // 
             // RMainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 397);
+            this.ClientSize = new System.Drawing.Size(651, 619);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbxRecentMsgList);
             this.Controls.Add(this.btnSendMsg);
             this.Controls.Add(this.btnMsgHistoryBox);
             this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.btnAbout);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RMainFrm";
             this.Text = "POST STAR";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RMainFrm_FormClosing);
+            this.Load += new System.EventHandler(this.RMainFrm_Load);
             this.ResumeLayout(false);
 
         }
@@ -108,6 +136,8 @@
         private System.Windows.Forms.Button btnMsgHistoryBox;
         private System.Windows.Forms.Button btnSendMsg;
         private System.Windows.Forms.ListBox lbxRecentMsgList;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
