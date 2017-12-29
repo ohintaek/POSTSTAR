@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PostStar.Gui
+namespace PostStar.Gui.Main
 {
-    public partial class Form1 : Form
+    public partial class LMainFrm : Form
     {
-        public Form1()
+        public LMainFrm()
         {
             InitializeComponent();
         }
