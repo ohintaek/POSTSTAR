@@ -71,6 +71,7 @@ namespace PostStar.Gui.Main
         private void btnSendMsg_Click(object sender, EventArgs e)
         {
             MessageBox.Show("SHOW SEND MESSAGE DIALOG");
+            //ISendMessage sendMessage;
         }
 
         /// <summary>

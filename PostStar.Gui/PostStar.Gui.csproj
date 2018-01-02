@@ -91,6 +91,10 @@
       <Project>{6d9efa0f-ac4c-43b8-9990-5f34616b5721}</Project>
       <Name>PostStar.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PostStar.Communicator\PostStar.Communicator.csproj">
+      <Project>{dc5d82cc-2b37-4948-99e0-1564ada6d63a}</Project>
+      <Name>PostStar.Communicator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
