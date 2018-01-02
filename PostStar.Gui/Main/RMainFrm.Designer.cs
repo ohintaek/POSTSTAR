@@ -34,16 +34,18 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnMsgHistoryBox = new System.Windows.Forms.Button();
             this.btnSendMsg = new System.Windows.Forms.Button();
-            this.lbxRecentMsgList = new System.Windows.Forms.ListBox();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.lbxRecentMsgList = new System.Windows.Forms.ListBox();
+            this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(355, 186);
+            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAbout.Location = new System.Drawing.Point(3, 3);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(284, 39);
+            this.btnAbout.Size = new System.Drawing.Size(319, 34);
             this.btnAbout.TabIndex = 0;
             this.btnAbout.Text = "&About";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -51,9 +53,10 @@
             // 
             // btnSetting
             // 
-            this.btnSetting.Location = new System.Drawing.Point(355, 225);
+            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSetting.Location = new System.Drawing.Point(3, 43);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(284, 39);
+            this.btnSetting.Size = new System.Drawing.Size(319, 34);
             this.btnSetting.TabIndex = 1;
             this.btnSetting.Text = "Se&tting";
             this.btnSetting.UseVisualStyleBackColor = true;
@@ -61,9 +64,10 @@
             // 
             // btnMsgHistoryBox
             // 
-            this.btnMsgHistoryBox.Location = new System.Drawing.Point(355, 264);
+            this.btnMsgHistoryBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMsgHistoryBox.Location = new System.Drawing.Point(3, 83);
             this.btnMsgHistoryBox.Name = "btnMsgHistoryBox";
-            this.btnMsgHistoryBox.Size = new System.Drawing.Size(284, 39);
+            this.btnMsgHistoryBox.Size = new System.Drawing.Size(319, 34);
             this.btnMsgHistoryBox.TabIndex = 2;
             this.btnMsgHistoryBox.Text = "Message &History Box";
             this.btnMsgHistoryBox.UseVisualStyleBackColor = true;
@@ -71,22 +75,14 @@
             // 
             // btnSendMsg
             // 
-            this.btnSendMsg.Location = new System.Drawing.Point(355, 499);
+            this.btnSendMsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSendMsg.Location = new System.Drawing.Point(3, 313);
             this.btnSendMsg.Name = "btnSendMsg";
-            this.btnSendMsg.Size = new System.Drawing.Size(284, 86);
+            this.btnSendMsg.Size = new System.Drawing.Size(319, 94);
             this.btnSendMsg.TabIndex = 3;
             this.btnSendMsg.Text = "&Send Message";
             this.btnSendMsg.UseVisualStyleBackColor = true;
             this.btnSendMsg.Click += new System.EventHandler(this.btnSendMsg_Click);
-            // 
-            // lbxRecentMsgList
-            // 
-            this.lbxRecentMsgList.FormattingEnabled = true;
-            this.lbxRecentMsgList.ItemHeight = 15;
-            this.lbxRecentMsgList.Location = new System.Drawing.Point(355, 303);
-            this.lbxRecentMsgList.Name = "lbxRecentMsgList";
-            this.lbxRecentMsgList.Size = new System.Drawing.Size(284, 184);
-            this.lbxRecentMsgList.TabIndex = 4;
             // 
             // notifyIcon
             // 
@@ -94,29 +90,48 @@
             this.notifyIcon.Text = "notifyIcon";
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
-            // tableLayoutPanel1
+            // tlpMain
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(51, 103);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 464);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tlpMain.ColumnCount = 1;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMain.Controls.Add(this.btnAbout, 0, 0);
+            this.tlpMain.Controls.Add(this.btnSendMsg, 0, 4);
+            this.tlpMain.Controls.Add(this.btnSetting, 0, 1);
+            this.tlpMain.Controls.Add(this.btnMsgHistoryBox, 0, 2);
+            this.tlpMain.Controls.Add(this.lbxRecentMsgList, 0, 3);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(10);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 5;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Size = new System.Drawing.Size(325, 410);
+            this.tlpMain.TabIndex = 5;
+            this.tlpMain.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // lbxRecentMsgList
+            // 
+            this.lbxRecentMsgList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxRecentMsgList.FormattingEnabled = true;
+            this.lbxRecentMsgList.ItemHeight = 15;
+            this.lbxRecentMsgList.Location = new System.Drawing.Point(3, 123);
+            this.lbxRecentMsgList.Name = "lbxRecentMsgList";
+            this.lbxRecentMsgList.Size = new System.Drawing.Size(319, 184);
+            this.lbxRecentMsgList.TabIndex = 4;
+            this.lbxRecentMsgList.SelectedIndexChanged += new System.EventHandler(this.lbxRecentMsgList_SelectedIndexChanged);
             // 
             // RMainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 619);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.lbxRecentMsgList);
-            this.Controls.Add(this.btnSendMsg);
-            this.Controls.Add(this.btnMsgHistoryBox);
-            this.Controls.Add(this.btnSetting);
-            this.Controls.Add(this.btnAbout);
+            this.ClientSize = new System.Drawing.Size(325, 410);
+            this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -125,6 +140,7 @@
             this.Text = "POST STAR";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RMainFrm_FormClosing);
             this.Load += new System.EventHandler(this.RMainFrm_Load);
+            this.tlpMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -135,9 +151,9 @@
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnMsgHistoryBox;
         private System.Windows.Forms.Button btnSendMsg;
-        private System.Windows.Forms.ListBox lbxRecentMsgList;
         private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.ListBox lbxRecentMsgList;
     }
 }
 
