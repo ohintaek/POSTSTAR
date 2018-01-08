@@ -110,14 +110,9 @@ namespace PostStar.Gui.Main
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void RMainFrm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-        }
-
-        private void lbxRecentMsgList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+           // PostStar.Common.Util.TrayIconRemover.RefreshTrayArea();
         }
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\PerformanceInfo.cs" />
     <Compile Include="Util\SystemInfo.cs" />
+    <Compile Include="Util\TrayIconRemover.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

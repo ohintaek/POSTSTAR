@@ -113,7 +113,6 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(325, 410);
             this.tlpMain.TabIndex = 5;
-            this.tlpMain.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // lbxRecentMsgList
             // 
@@ -124,7 +123,6 @@
             this.lbxRecentMsgList.Name = "lbxRecentMsgList";
             this.lbxRecentMsgList.Size = new System.Drawing.Size(319, 184);
             this.lbxRecentMsgList.TabIndex = 4;
-            this.lbxRecentMsgList.SelectedIndexChanged += new System.EventHandler(this.lbxRecentMsgList_SelectedIndexChanged);
             // 
             // RMainFrm
             // 
@@ -139,6 +137,7 @@
             this.Name = "RMainFrm";
             this.Text = "POST STAR";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RMainFrm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RMainFrm_FormClosed);
             this.Load += new System.EventHandler(this.RMainFrm_Load);
             this.tlpMain.ResumeLayout(false);
             this.ResumeLayout(false);
