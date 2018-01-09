@@ -1,6 +1,6 @@
 ﻿namespace PostStar.Gui.Main
 {
-    partial class RMainFrm
+    partial class frmMain
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RMainFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnMsgHistoryBox = new System.Windows.Forms.Button();
@@ -86,6 +86,9 @@
             // 
             // notifyIcon
             // 
+            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon.BalloonTipText = "POST-STAR";
+            this.notifyIcon.BalloonTipTitle = "00 users";
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "notifyIcon";
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
@@ -124,7 +127,7 @@
             this.lbxRecentMsgList.Size = new System.Drawing.Size(319, 184);
             this.lbxRecentMsgList.TabIndex = 4;
             // 
-            // RMainFrm
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,10 +137,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "RMainFrm";
+            this.Name = "frmMain";
             this.Text = "POST STAR";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RMainFrm_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RMainFrm_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.RMainFrm_Load);
             this.tlpMain.ResumeLayout(false);
             this.ResumeLayout(false);

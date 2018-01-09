@@ -1,6 +1,6 @@
 ﻿namespace PostStar.Gui.SendMessage
 {
-    partial class SendMessageFrm
+    partial class frmSendMessage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendMessageFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSendMessage));
             this.cancelBtn = new System.Windows.Forms.Button();
             this.sendBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();

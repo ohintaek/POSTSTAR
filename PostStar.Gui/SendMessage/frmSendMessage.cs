@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PostStar.Gui.SendMessage
 {
-    public partial class SendMessageFrm : Form
+    public partial class frmSendMessage : Form
     {
-        public SendMessageFrm()
+        public frmSendMessage()
         {
             InitializeComponent();
         }

@@ -13,14 +13,23 @@ namespace PostStar.Gui.Main
     /// <summary>
     /// 메인화면(TRAY ICON의 마우스 우클릭시 표시)
     /// </summary>
-    public partial class RMainFrm : Form
+    public partial class frmMain : Form
     {
+        private bool closeAvailableFlag;
+        private ContextMenu ctxmTray;
+
         /// <summary>
         /// CONSTRUCTOR
         /// </summary>
-        public RMainFrm()
+        public frmMain()
         {
             InitializeComponent();
+
+            this.closeAvailableFlag = false;
+
+            this.ctxmTray = new ContextMenu();
+            notifyIcon.ContextMenu = this.ctxmTray;
+
         }
 
         /// <summary>
@@ -30,7 +39,7 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void RMainFrm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         /// <summary>
@@ -79,12 +88,15 @@ namespace PostStar.Gui.Main
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RMainFrm_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            notifyIcon.Visible = true; // tray icon 표시
-            this.Hide();
+            if (this.closeAvailableFlag == false)
+            {
+                notifyIcon.Visible = true; // tray icon 표시
+                this.Hide();
 
-            e.Cancel = true;
+                e.Cancel = true;
+            }
         }
 
         /// <summary>
@@ -94,25 +106,48 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            switch(e.Button)
             {
-                MessageBox.Show("LEFT BUTTON");
+                case MouseButtons.Right :
+                    // TrayIcon의 Context메뉴를 보여준다.
+                    this.showTrayContextMenu();
+                    break;
+                default :
+                    // 메인화면을 보여준다.
+                    notifyIcon.Visible = false;
+                    this.Show();
+                    break;
             }
-            else if(e.Button == MouseButtons.Right)
-            {
-                notifyIcon.Visible = false;
-                this.Show();
-            }
-            else
-            {
-                // 
-            }
-
         }
 
-        private void RMainFrm_FormClosed(object sender, FormClosedEventArgs e)
+        /// <summary>
+        /// TrayIcon의 ContextMenu를 보여준다.
+        /// </summary>
+        private void showTrayContextMenu()
         {
-           // PostStar.Common.Util.TrayIconRemover.RefreshTrayArea();
+            // Initialize contextMenu1
+            this.ctxmTray.MenuItems.Clear();
+
+            // Initialize menuItem1
+            MenuItem miTrayExit = new System.Windows.Forms.MenuItem();
+            miTrayExit.Index = 0;
+            miTrayExit.Text = "E&xit";
+            miTrayExit.Click += new System.EventHandler(this.menuItemExit_Click);
+            this.ctxmTray.MenuItems.Add(miTrayExit);
         }
+
+        /// <summary>
+        /// TrayIcon의 ContextMenu의 Exit가 눌렸을때의 처리를 한다.
+        /// </summary>
+        /// <param name="Sender"></param>
+        /// <param name="e"></param>
+        private void menuItemExit_Click(object Sender, EventArgs e)
+        {
+            this.closeAvailableFlag = true;
+            this.Close();
+        }
+
+
+
     }
 }
