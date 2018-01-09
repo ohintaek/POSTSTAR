@@ -13,7 +13,7 @@ namespace PostStar.Gui.Main
     /// <summary>
     /// 메인화면(TRAY ICON의 마우스 우클릭시 표시)
     /// </summary>
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
         private bool closeAvailableFlag;
         private ContextMenu ctxmTray;
@@ -21,7 +21,7 @@ namespace PostStar.Gui.Main
         /// <summary>
         /// CONSTRUCTOR
         /// </summary>
-        public frmMain()
+        public FrmMain()
         {
             InitializeComponent();
 
@@ -29,7 +29,6 @@ namespace PostStar.Gui.Main
 
             this.ctxmTray = new ContextMenu();
             notifyIcon.ContextMenu = this.ctxmTray;
-
         }
 
         /// <summary>
@@ -37,10 +36,42 @@ namespace PostStar.Gui.Main
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RMainFrm_Load(object sender, EventArgs e)
+        private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
         }
+
+        /// <summary>
+        /// ESC 키가 눌렸다면 화면을 숨기고 TrayIcon을 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Escape: this.Close(); break;
+                default: break;
+            }
+        }
+
+        /// <summary>
+        /// [X]ICON을 누를때 TRAY ICON으로 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.closeAvailableFlag == false)
+            {
+                notifyIcon.Visible = true; // tray icon 표시
+                this.Hide();
+
+                e.Cancel = true;
+            }
+        }
+
+
 
         /// <summary>
         /// About 다이얼로그를 실행한다.
@@ -84,22 +115,6 @@ namespace PostStar.Gui.Main
         }
 
         /// <summary>
-        /// [X]ICON을 누를때 TRAY ICON으로 표시한다.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (this.closeAvailableFlag == false)
-            {
-                notifyIcon.Visible = true; // tray icon 표시
-                this.Hide();
-
-                e.Cancel = true;
-            }
-        }
-
-        /// <summary>
         /// TRAY ICON 클릭시 메인다이얼로그를 표시한다.
         /// </summary>
         /// <param name="sender"></param>
@@ -120,6 +135,7 @@ namespace PostStar.Gui.Main
             }
         }
 
+        #region TRAYICON CONTEXT MENU
         /// <summary>
         /// TrayIcon의 ContextMenu를 보여준다.
         /// </summary>
@@ -128,12 +144,37 @@ namespace PostStar.Gui.Main
             // Initialize contextMenu1
             this.ctxmTray.MenuItems.Clear();
 
-            // Initialize menuItem1
-            MenuItem miTrayExit = new System.Windows.Forms.MenuItem();
+            // Initialize Tray Icon
+            // Exit Menu
+            MenuItem miTrayExit = new MenuItem();
             miTrayExit.Index = 0;
             miTrayExit.Text = "E&xit";
             miTrayExit.Click += new System.EventHandler(this.menuItemExit_Click);
             this.ctxmTray.MenuItems.Add(miTrayExit);
+
+            //this.ctxmTray.MenuItems.
+
+            // About Menu
+            MenuItem miTrayRecentMsg1 = new MenuItem();
+            miTrayRecentMsg1.Break = true;
+            miTrayRecentMsg1.Index = 1;
+            miTrayRecentMsg1.Shortcut = Shortcut.Ctrl3;
+            miTrayRecentMsg1.Text = "&3 : [송혜교, 10분전] 회의합시다.";
+            miTrayRecentMsg1.Click += new System.EventHandler(this.menuItemRecentMsg_Click);
+            this.ctxmTray.MenuItems.Add(miTrayRecentMsg1);
+
+            MenuItem miTrayRecentMsg2 = new MenuItem();
+            miTrayRecentMsg2.Index = 2;
+            miTrayRecentMsg2.Text = "&2 : [홍길동, 5분전] 오늘 점심은....";
+            miTrayRecentMsg2.Click += new System.EventHandler(this.menuItemRecentMsg_Click);
+            this.ctxmTray.MenuItems.Add(miTrayRecentMsg2);
+
+            MenuItem miTrayRecentMsg3 = new MenuItem();
+            miTrayRecentMsg3.Index =3;
+            miTrayRecentMsg3.Text = "&1 : [왕공주, 2분전] 파일 보냅니다.";
+            miTrayRecentMsg3.Click += new System.EventHandler(this.menuItemRecentMsg_Click);
+            this.ctxmTray.MenuItems.Add(miTrayRecentMsg3);
+
         }
 
         /// <summary>
@@ -147,7 +188,16 @@ namespace PostStar.Gui.Main
             this.Close();
         }
 
+        /// <summary>
+        /// 수신된 메시지를 보여준다.
+        /// </summary>
+        /// <param name="Sender"></param>
+        /// <param name="e"></param>
+        private void menuItemRecentMsg_Click(object Sender, EventArgs e)
+        {
+            MessageBox.Show("SHOW RECEIVE MESSAGE DIALOG");
+        }
 
-
+        #endregion
     }
 }

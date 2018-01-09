@@ -1,6 +1,6 @@
 ﻿namespace PostStar.Gui.SendMessage
 {
-    partial class frmSendMessage
+    partial class FrmSendMessage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSendMessage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSendMessage));
             this.cancelBtn = new System.Windows.Forms.Button();
             this.sendBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -140,16 +140,16 @@
             this.button3.TabIndex = 1;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // SendMessageFrm
+            // FrmSendMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 403);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "SendMessageFrm";
+            this.Name = "FrmSendMessage";
             this.Text = "메시지 보내기";
-            this.Load += new System.EventHandler(this.SendMessageFrm_Load);
+            this.Load += new System.EventHandler(this.FrmSendMessage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

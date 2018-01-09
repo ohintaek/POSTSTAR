@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace PostStar.Gui.SendMessage
 {
-    public partial class frmSendMessage : Form
+    public partial class FrmSendMessage : Form
     {
-        public frmSendMessage()
+        public FrmSendMessage()
         {
             InitializeComponent();
         }
 
-        private void SendMessageFrm_Load(object sender, EventArgs e)
+        private void FrmSendMessage_Load(object sender, EventArgs e)
         {
 
         }

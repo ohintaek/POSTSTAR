@@ -1,6 +1,6 @@
 ﻿namespace PostStar.Gui.Main
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnMsgHistoryBox = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.btnAbout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAbout.Location = new System.Drawing.Point(3, 3);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(319, 34);
+            this.btnAbout.Size = new System.Drawing.Size(371, 34);
             this.btnAbout.TabIndex = 0;
             this.btnAbout.Text = "&About";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             this.btnSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSetting.Location = new System.Drawing.Point(3, 43);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(319, 34);
+            this.btnSetting.Size = new System.Drawing.Size(371, 34);
             this.btnSetting.TabIndex = 1;
             this.btnSetting.Text = "Se&tting";
             this.btnSetting.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             this.btnMsgHistoryBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnMsgHistoryBox.Location = new System.Drawing.Point(3, 83);
             this.btnMsgHistoryBox.Name = "btnMsgHistoryBox";
-            this.btnMsgHistoryBox.Size = new System.Drawing.Size(319, 34);
+            this.btnMsgHistoryBox.Size = new System.Drawing.Size(371, 34);
             this.btnMsgHistoryBox.TabIndex = 2;
             this.btnMsgHistoryBox.Text = "Message &History Box";
             this.btnMsgHistoryBox.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             this.btnSendMsg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSendMsg.Location = new System.Drawing.Point(3, 313);
             this.btnSendMsg.Name = "btnSendMsg";
-            this.btnSendMsg.Size = new System.Drawing.Size(319, 94);
+            this.btnSendMsg.Size = new System.Drawing.Size(371, 94);
             this.btnSendMsg.TabIndex = 3;
             this.btnSendMsg.Text = "&Send Message";
             this.btnSendMsg.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(325, 410);
+            this.tlpMain.Size = new System.Drawing.Size(377, 410);
             this.tlpMain.TabIndex = 5;
             // 
             // lbxRecentMsgList
@@ -124,23 +124,24 @@
             this.lbxRecentMsgList.ItemHeight = 15;
             this.lbxRecentMsgList.Location = new System.Drawing.Point(3, 123);
             this.lbxRecentMsgList.Name = "lbxRecentMsgList";
-            this.lbxRecentMsgList.Size = new System.Drawing.Size(319, 184);
+            this.lbxRecentMsgList.Size = new System.Drawing.Size(371, 184);
             this.lbxRecentMsgList.TabIndex = 4;
             // 
-            // frmMain
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 410);
+            this.ClientSize = new System.Drawing.Size(377, 410);
             this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmMain";
+            this.Name = "FrmMain";
             this.Text = "POST STAR";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
-            this.Load += new System.EventHandler(this.RMainFrm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
             this.tlpMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
