@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostStar.Gui.SendMessage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -110,8 +111,8 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void btnSendMsg_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("SHOW SEND MESSAGE DIALOG");
-            //ISendMessage sendMessage;
+            FrmSendMessage frmSendMessage = new FrmSendMessage();
+            frmSendMessage.Show();
         }
 
         /// <summary>
@@ -151,31 +152,41 @@ namespace PostStar.Gui.Main
             miTrayExit.Text = "E&xit";
             miTrayExit.Click += new System.EventHandler(this.menuItemExit_Click);
             this.ctxmTray.MenuItems.Add(miTrayExit);
+           
+            // Recent Receive Message Menu
+            this.ctxmTray.MenuItems.Add(new MenuItem("&3 : [송혜교, 10분전] 회의합시다.", new EventHandler(this.menuItemRecentMsg_Click)));
+            this.ctxmTray.MenuItems.Add(new MenuItem("&2 : [홍길동, 5분전] 오늘 점심은....", new EventHandler(this.menuItemRecentMsg_Click)));
+            this.ctxmTray.MenuItems.Add(new MenuItem("&1 : [왕공주, 2분전] 파일 보냅니다.", new EventHandler(this.menuItemRecentMsg_Click)));
 
-            //this.ctxmTray.MenuItems.
-
-            // About Menu
-            MenuItem miTrayRecentMsg1 = new MenuItem();
-            miTrayRecentMsg1.Break = true;
-            miTrayRecentMsg1.Index = 1;
-            miTrayRecentMsg1.Shortcut = Shortcut.Ctrl3;
-            miTrayRecentMsg1.Text = "&3 : [송혜교, 10분전] 회의합시다.";
-            miTrayRecentMsg1.Click += new System.EventHandler(this.menuItemRecentMsg_Click);
-            this.ctxmTray.MenuItems.Add(miTrayRecentMsg1);
-
-            MenuItem miTrayRecentMsg2 = new MenuItem();
-            miTrayRecentMsg2.Index = 2;
-            miTrayRecentMsg2.Text = "&2 : [홍길동, 5분전] 오늘 점심은....";
-            miTrayRecentMsg2.Click += new System.EventHandler(this.menuItemRecentMsg_Click);
-            this.ctxmTray.MenuItems.Add(miTrayRecentMsg2);
-
-            MenuItem miTrayRecentMsg3 = new MenuItem();
-            miTrayRecentMsg3.Index =3;
-            miTrayRecentMsg3.Text = "&1 : [왕공주, 2분전] 파일 보냅니다.";
-            miTrayRecentMsg3.Click += new System.EventHandler(this.menuItemRecentMsg_Click);
-            this.ctxmTray.MenuItems.Add(miTrayRecentMsg3);
+            // 메뉴들의 
+            foreach (MenuItem item in this.ctxmTray.MenuItems)
+            {
+                item.OwnerDraw = true;
+                //item.DrawItem += item_DrawItem;
+                //item.MeasureItem += MeasureMenuItem;
+            }
 
         }
+        
+        //void item_DrawItem(object sender, DrawItemEventArgs e)
+        //{
+        //    if (e.Index < 1/* Recent Message Menu가 시작되는 Index */)
+        //        return;
+            
+        //    e.DrawBackground();
+        //    e.Graphics.FillRectangle(new SolidBrush(Color.Orange), e.Bounds);
+
+        //    e.Graphics.DrawString(((MenuItem)sender).Text, new Font("Lucida Sans", 10), new SolidBrush(Color.White), e.Bounds);
+        //}
+
+        //void MeasureMenuItem(object sender, MeasureItemEventArgs e)
+        //{
+        //    MenuItem m = (MenuItem)sender;
+        //    Font font = new Font(Font.FontFamily, Font.Size, Font.Style);
+        //    SizeF sze = e.Graphics.MeasureString(m.Text, font);
+        //    e.ItemHeight = (int)sze.Height * 2;
+        //    e.ItemWidth = (int)sze.Width * 2;
+        //}
 
         /// <summary>
         /// TrayIcon의 ContextMenu의 Exit가 눌렸을때의 처리를 한다.

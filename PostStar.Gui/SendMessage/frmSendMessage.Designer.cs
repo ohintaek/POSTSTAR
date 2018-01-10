@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSendMessage));
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.sendBtn = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lvTransUserList = new System.Windows.Forms.ListView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cancelBtn
+            // btnCancel
             // 
-            this.cancelBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelBtn.Location = new System.Drawing.Point(103, 3);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(94, 28);
-            this.cancelBtn.TabIndex = 0;
-            this.cancelBtn.Text = "&Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.Location = new System.Drawing.Point(103, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(94, 28);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // sendBtn
+            // btnSend
             // 
-            this.sendBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sendBtn.Location = new System.Drawing.Point(3, 3);
-            this.sendBtn.Name = "sendBtn";
-            this.sendBtn.Size = new System.Drawing.Size(94, 28);
-            this.sendBtn.TabIndex = 1;
-            this.sendBtn.Text = "&Send";
-            this.sendBtn.UseVisualStyleBackColor = true;
-            this.sendBtn.Click += new System.EventHandler(this.button2_Click);
+            this.btnSend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSend.Location = new System.Drawing.Point(3, 3);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(94, 28);
+            this.btnSend.TabIndex = 1;
+            this.btnSend.Text = "&Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // textBox1
             // 
@@ -96,8 +96,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.cancelBtn, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.sendBtn, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCancel, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSend, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(429, 367);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -112,7 +112,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.lvTransUserList, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button3, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddUser, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 282);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -130,15 +130,15 @@
             this.lvTransUserList.TabIndex = 0;
             this.lvTransUserList.UseCompatibleStateImageBehavior = false;
             // 
-            // button3
+            // btnAddUser
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 73);
-            this.button3.TabIndex = 1;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
+            this.btnAddUser.Location = new System.Drawing.Point(3, 3);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(79, 73);
+            this.btnAddUser.TabIndex = 1;
+            this.btnAddUser.UseVisualStyleBackColor = true;
             // 
             // FrmSendMessage
             // 
@@ -160,13 +160,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button sendBtn;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ListView lvTransUserList;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAddUser;
     }
 }
