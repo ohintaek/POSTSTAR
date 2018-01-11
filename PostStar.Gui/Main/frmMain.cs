@@ -26,6 +26,8 @@ namespace PostStar.Gui.Main
         {
             InitializeComponent();
 
+            this.KeyPreview = true;
+
             this.closeAvailableFlag = false;
 
             this.ctxmTray = new ContextMenu();
@@ -39,7 +41,7 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            this.KeyPreview = true;
+            
         }
 
         /// <summary>
@@ -51,8 +53,13 @@ namespace PostStar.Gui.Main
         {
             switch (e.KeyCode)
             {
-                case Keys.Escape: this.Close(); break;
+                case Keys.Escape:
+                    if (e.Shift)
+                        this.closeAvailableFlag = true;
+
+                    this.Close(); break;
                 default: break;
+                    
             }
         }
 

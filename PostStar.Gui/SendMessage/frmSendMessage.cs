@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PostStar.Gui.SendMessage
 {
-    public partial class FrmSendMessage : FrmBaseDialog
+    public partial class FrmSendMessage : PostStar.Gui.Common.FrmBaseDialog
     {
         public FrmSendMessage()
         {

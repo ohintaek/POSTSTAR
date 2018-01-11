@@ -9,13 +9,25 @@ using System.Windows.Forms;
 
 namespace PostStar.Gui.Common
 {
+    /// <summary>
+    /// Base Dialog Form
+    /// </summary>
     public partial class FrmBaseDialog : Form
     {
+        /// <summary>
+        /// Contrsructor
+        /// </summary>
         public FrmBaseDialog()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
+        /// <summary>
+        /// Key Down
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmBaseDialog_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

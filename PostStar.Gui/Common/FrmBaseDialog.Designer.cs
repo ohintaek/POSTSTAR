@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
             this.Name = "FrmBaseDialog";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "FrmBaseDialog";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmBaseDialog_KeyDown);
             this.ResumeLayout(false);
