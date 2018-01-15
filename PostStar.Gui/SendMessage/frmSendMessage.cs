@@ -12,27 +12,20 @@ namespace PostStar.Gui.SendMessage
 {
     public partial class FrmSendMessage : PostStar.Gui.Common.FrmBaseDialog
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public FrmSendMessage()
         {
             InitializeComponent();
         }
 
-        private void FrmSendMessage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
-        /// 메시지 내용을 전송한다.
+        /// 화면을 구성한다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSend_Click(object sender, EventArgs e)
+        private void FrmSendMessage_Load(object sender, EventArgs e)
         {
 
         }
@@ -46,5 +39,17 @@ namespace PostStar.Gui.SendMessage
         {
             this.Close();
         }
+
+        /// <summary>
+        /// 메시지 내용을 전송한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

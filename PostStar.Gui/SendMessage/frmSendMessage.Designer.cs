@@ -44,7 +44,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(500, 300);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 1;
             // 
             // btnAddUser
             // 
@@ -53,7 +53,7 @@
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(81, 75);
-            this.btnAddUser.TabIndex = 5;
+            this.btnAddUser.TabIndex = 2;
             this.btnAddUser.UseVisualStyleBackColor = true;
             // 
             // lvTransUserList
@@ -84,7 +84,7 @@
             this.btnCancel.Location = new System.Drawing.Point(103, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 37);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -94,9 +94,10 @@
             this.btnSend.Location = new System.Drawing.Point(3, 3);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(94, 37);
-            this.btnSend.TabIndex = 1;
+            this.btnSend.TabIndex = 8;
             this.btnSend.Text = "&Send";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // FrmSendMessage
             // 

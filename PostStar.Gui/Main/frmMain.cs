@@ -166,12 +166,12 @@ namespace PostStar.Gui.Main
             this.ctxmTray.MenuItems.Add(new MenuItem("&1 : [왕공주, 2분전] 파일 보냅니다.", new EventHandler(this.menuItemRecentMsg_Click)));
 
             // 메뉴들의 
-            foreach (MenuItem item in this.ctxmTray.MenuItems)
-            {
-                item.OwnerDraw = true;
-                //item.DrawItem += item_DrawItem;
-                //item.MeasureItem += MeasureMenuItem;
-            }
+            //foreach (MenuItem item in this.ctxmTray.MenuItems)
+            //{
+            //    item.OwnerDraw = true;
+            //    //item.DrawItem += item_DrawItem;
+            //    //item.MeasureItem += MeasureMenuItem;
+            //}
 
         }
         
