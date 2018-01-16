@@ -30,48 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.btnAbout = new System.Windows.Forms.Button();
-            this.btnSetting = new System.Windows.Forms.Button();
-            this.btnMsgHistoryBox = new System.Windows.Forms.Button();
             this.btnSendMsg = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.lbxRecentMsgList = new System.Windows.Forms.ListBox();
+            this.msMainMenu = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMainTool = new System.Windows.Forms.ToolStrip();
+            this.tsbRefreshUser = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbMessageBox = new System.Windows.Forms.ToolStripButton();
             this.tlpMain.SuspendLayout();
+            this.msMainMenu.SuspendLayout();
+            this.tsMainTool.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnAbout
-            // 
-            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAbout.Location = new System.Drawing.Point(3, 3);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(371, 34);
-            this.btnAbout.TabIndex = 0;
-            this.btnAbout.Text = "&About";
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSetting.Location = new System.Drawing.Point(3, 43);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(371, 34);
-            this.btnSetting.TabIndex = 1;
-            this.btnSetting.Text = "Se&tting";
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
-            // btnMsgHistoryBox
-            // 
-            this.btnMsgHistoryBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMsgHistoryBox.Location = new System.Drawing.Point(3, 83);
-            this.btnMsgHistoryBox.Name = "btnMsgHistoryBox";
-            this.btnMsgHistoryBox.Size = new System.Drawing.Size(371, 34);
-            this.btnMsgHistoryBox.TabIndex = 2;
-            this.btnMsgHistoryBox.Text = "Message &History Box";
-            this.btnMsgHistoryBox.UseVisualStyleBackColor = true;
-            this.btnMsgHistoryBox.Click += new System.EventHandler(this.btnMsgHistoryBox_Click);
             // 
             // btnSendMsg
             // 
@@ -97,13 +74,10 @@
             // 
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMain.Controls.Add(this.btnAbout, 0, 0);
             this.tlpMain.Controls.Add(this.btnSendMsg, 0, 4);
-            this.tlpMain.Controls.Add(this.btnSetting, 0, 1);
-            this.tlpMain.Controls.Add(this.btnMsgHistoryBox, 0, 2);
             this.tlpMain.Controls.Add(this.lbxRecentMsgList, 0, 3);
-            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tlpMain.Location = new System.Drawing.Point(0, 50);
             this.tlpMain.Margin = new System.Windows.Forms.Padding(10);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 5;
@@ -127,14 +101,108 @@
             this.lbxRecentMsgList.Size = new System.Drawing.Size(371, 184);
             this.lbxRecentMsgList.TabIndex = 4;
             // 
+            // msMainMenu
+            // 
+            this.msMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.optionToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.msMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMainMenu.Name = "msMainMenu";
+            this.msMainMenu.Size = new System.Drawing.Size(377, 28);
+            this.msMainMenu.TabIndex = 6;
+            this.msMainMenu.Text = "msMainMenu";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            // 
+            // optionToolStripMenuItem
+            // 
+            this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingToolStripMenuItem});
+            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.optionToolStripMenuItem.Text = "&Option";
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.settingToolStripMenuItem.Text = "&Setting";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.aboutToolStripMenuItem.Text = "&About";
+            // 
+            // tsMainTool
+            // 
+            this.tsMainTool.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsMainTool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbRefreshUser,
+            this.toolStripSeparator1,
+            this.tsbMessageBox});
+            this.tsMainTool.Location = new System.Drawing.Point(0, 28);
+            this.tsMainTool.Name = "tsMainTool";
+            this.tsMainTool.Size = new System.Drawing.Size(377, 27);
+            this.tsMainTool.TabIndex = 7;
+            this.tsMainTool.Text = "tsMainTool";
+            // 
+            // tsbRefreshUser
+            // 
+            this.tsbRefreshUser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbRefreshUser.Image = ((System.Drawing.Image)(resources.GetObject("tsbRefreshUser.Image")));
+            this.tsbRefreshUser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRefreshUser.Name = "tsbRefreshUser";
+            this.tsbRefreshUser.Size = new System.Drawing.Size(24, 24);
+            this.tsbRefreshUser.Text = "사용자 목록 Refresh";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbMessageBox
+            // 
+            this.tsbMessageBox.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbMessageBox.Image = ((System.Drawing.Image)(resources.GetObject("tsbMessageBox.Image")));
+            this.tsbMessageBox.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbMessageBox.Name = "tsbMessageBox";
+            this.tsbMessageBox.Size = new System.Drawing.Size(24, 24);
+            this.tsbMessageBox.Text = "Message Box";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 410);
+            this.ClientSize = new System.Drawing.Size(377, 460);
+            this.Controls.Add(this.tsMainTool);
             this.Controls.Add(this.tlpMain);
+            this.Controls.Add(this.msMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.msMainMenu;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMain";
@@ -143,19 +211,31 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
             this.tlpMain.ResumeLayout(false);
+            this.msMainMenu.ResumeLayout(false);
+            this.msMainMenu.PerformLayout();
+            this.tsMainTool.ResumeLayout(false);
+            this.tsMainTool.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.Button btnSetting;
-        private System.Windows.Forms.Button btnMsgHistoryBox;
         private System.Windows.Forms.Button btnSendMsg;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.TableLayoutPanel tlpMain;
         private System.Windows.Forms.ListBox lbxRecentMsgList;
+        private System.Windows.Forms.MenuStrip msMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip tsMainTool;
+        private System.Windows.Forms.ToolStripButton tsbRefreshUser;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tsbMessageBox;
     }
 }
 
