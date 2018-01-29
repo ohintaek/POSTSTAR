@@ -30,10 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("홍길동");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("김팀장");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("이팀원");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("고팀원");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("강팀원");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Enable", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("김퇴짜");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Disable", new System.Windows.Forms.TreeNode[] {
+            treeNode7});
             this.btnSendMsg = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.lbxRecentMsgList = new System.Windows.Forms.ListBox();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,17 +57,19 @@
             this.tsbRefreshUser = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbMessageBox = new System.Windows.Forms.ToolStripButton();
-            this.tlpMain.SuspendLayout();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.tvMemberList = new System.Windows.Forms.TreeView();
             this.msMainMenu.SuspendLayout();
             this.tsMainTool.SuspendLayout();
+            this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSendMsg
             // 
             this.btnSendMsg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSendMsg.Location = new System.Drawing.Point(3, 313);
+            this.btnSendMsg.Location = new System.Drawing.Point(3, 349);
             this.btnSendMsg.Name = "btnSendMsg";
-            this.btnSendMsg.Size = new System.Drawing.Size(371, 94);
+            this.btnSendMsg.Size = new System.Drawing.Size(371, 46);
             this.btnSendMsg.TabIndex = 3;
             this.btnSendMsg.Text = "&Send Message";
             this.btnSendMsg.UseVisualStyleBackColor = true;
@@ -69,37 +83,6 @@
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "notifyIcon";
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
-            // 
-            // tlpMain
-            // 
-            this.tlpMain.ColumnCount = 1;
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpMain.Controls.Add(this.btnSendMsg, 0, 4);
-            this.tlpMain.Controls.Add(this.lbxRecentMsgList, 0, 3);
-            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpMain.Location = new System.Drawing.Point(0, 50);
-            this.tlpMain.Margin = new System.Windows.Forms.Padding(10);
-            this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 5;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(377, 410);
-            this.tlpMain.TabIndex = 5;
-            // 
-            // lbxRecentMsgList
-            // 
-            this.lbxRecentMsgList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxRecentMsgList.FormattingEnabled = true;
-            this.lbxRecentMsgList.ItemHeight = 15;
-            this.lbxRecentMsgList.Location = new System.Drawing.Point(3, 123);
-            this.lbxRecentMsgList.Name = "lbxRecentMsgList";
-            this.lbxRecentMsgList.Size = new System.Drawing.Size(371, 184);
-            this.lbxRecentMsgList.TabIndex = 4;
             // 
             // msMainMenu
             // 
@@ -192,13 +175,59 @@
             this.tsbMessageBox.Size = new System.Drawing.Size(24, 24);
             this.tsbMessageBox.Text = "Message Box";
             // 
+            // tlpMain
+            // 
+            this.tlpMain.AutoSize = true;
+            this.tlpMain.ColumnCount = 1;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Controls.Add(this.btnSendMsg, 0, 2);
+            this.tlpMain.Controls.Add(this.tvMemberList, 0, 1);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 55);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpMain.Size = new System.Drawing.Size(377, 398);
+            this.tlpMain.TabIndex = 8;
+            // 
+            // tvMemberList
+            // 
+            this.tvMemberList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvMemberList.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tvMemberList.Location = new System.Drawing.Point(3, 43);
+            this.tvMemberList.Name = "tvMemberList";
+            treeNode1.Name = "노드2";
+            treeNode1.Text = "홍길동";
+            treeNode2.Name = "노드3";
+            treeNode2.Text = "김팀장";
+            treeNode3.Name = "노드4";
+            treeNode3.Text = "이팀원";
+            treeNode4.Name = "노드5";
+            treeNode4.Text = "고팀원";
+            treeNode5.Name = "노드6";
+            treeNode5.Text = "강팀원";
+            treeNode6.Name = "노드0";
+            treeNode6.Text = "Enable";
+            treeNode7.Name = "노드7";
+            treeNode7.Text = "김퇴짜";
+            treeNode8.Name = "노드1";
+            treeNode8.Text = "Disable";
+            this.tvMemberList.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode8});
+            this.tvMemberList.Size = new System.Drawing.Size(371, 300);
+            this.tvMemberList.TabIndex = 5;
+            this.tvMemberList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 460);
-            this.Controls.Add(this.tsMainTool);
+            this.ClientSize = new System.Drawing.Size(377, 453);
             this.Controls.Add(this.tlpMain);
+            this.Controls.Add(this.tsMainTool);
             this.Controls.Add(this.msMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -210,11 +239,11 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMain_KeyDown);
-            this.tlpMain.ResumeLayout(false);
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
             this.tsMainTool.ResumeLayout(false);
             this.tsMainTool.PerformLayout();
+            this.tlpMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,8 +252,6 @@
         #endregion
         private System.Windows.Forms.Button btnSendMsg;
         private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.TableLayoutPanel tlpMain;
-        private System.Windows.Forms.ListBox lbxRecentMsgList;
         private System.Windows.Forms.MenuStrip msMainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -236,6 +263,8 @@
         private System.Windows.Forms.ToolStripButton tsbRefreshUser;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbMessageBox;
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.TreeView tvMemberList;
     }
 }
 
