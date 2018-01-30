@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace PostStar.Communicator
+namespace PostStar.Communicator.TransData.Messages
 {
-    public class Class1
+    class PingMessage : Message
     {
     }
 }

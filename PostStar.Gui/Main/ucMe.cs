@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PostStar.Gui.Main
 {
-    public partial class ucMe : UserControl
+    public partial class UcMe : UserControl
     {
-        public ucMe()
+        public UcMe()
         {
             InitializeComponent();
         }

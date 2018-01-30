@@ -8,8 +8,8 @@ namespace PostStar.Communicator
     /// <summary>
     /// 송신메시지 인터페이스
     /// </summary>
-    interface ISendMessage
+    interface IMessageSender
     {
-        void SendMessage(Object packet);
+        void Send(Object packet);
     }
 }

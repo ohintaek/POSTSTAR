@@ -41,8 +41,17 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            //lvMemberList.Items.Add(new UcMember());
+
             
-        }
+            UcMember memberHong = new UcMember("홍길동");
+            flpMemberList.Controls.Add(memberHong);
+
+            flpMemberList.Controls.Add(new UcMember("전지현"));
+            flpMemberList.Controls.Add(new UcMember("김팀장"));
+            flpMemberList.Controls.Add(new UcMember("김팀원"));
+            flpMemberList.Controls.Add(new UcMember("하니"));
+       }
 
         /// <summary>
         /// ESC 키가 눌렸다면 화면을 숨기고 TrayIcon을 표시한다.
@@ -219,6 +228,11 @@ namespace PostStar.Gui.Main
         #endregion
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void tlpMain_Paint(object sender, PaintEventArgs e)
         {
 
         }

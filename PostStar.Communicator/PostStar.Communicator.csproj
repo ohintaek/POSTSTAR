@@ -50,8 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="ISendMessage.cs" />
+    <Compile Include="IMessageReciever.cs" />
+    <Compile Include="IMessageSender.cs" />
+    <Compile Include="TransData\DataContainer.cs" />
+    <Compile Include="TransData\Messages\ChatMessage.cs" />
+    <Compile Include="TransData\Messages\MemberInfoMessage.cs" />
+    <Compile Include="TransData\Messages\Message.cs" />
+    <Compile Include="TransData\Messages\PingMessage.cs" />
+    <Compile Include="TransData\ReceiveDataContainer.cs" />
+    <Compile Include="TransData\SendDataContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

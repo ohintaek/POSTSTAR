@@ -50,6 +50,5 @@ namespace PostStar.Gui.SendMessage
 
         }
 
-
     }
 }

@@ -48,19 +48,20 @@
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
+            this.btnAddUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddUser.BackgroundImage")));
+            this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAddUser.Location = new System.Drawing.Point(2, 308);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(81, 75);
+            this.btnAddUser.Size = new System.Drawing.Size(75, 75);
             this.btnAddUser.TabIndex = 2;
             this.btnAddUser.UseVisualStyleBackColor = true;
             // 
             // lvTransUserList
             // 
-            this.lvTransUserList.Location = new System.Drawing.Point(86, 309);
+            this.lvTransUserList.Location = new System.Drawing.Point(80, 309);
             this.lvTransUserList.Name = "lvTransUserList";
-            this.lvTransUserList.Size = new System.Drawing.Size(417, 73);
+            this.lvTransUserList.Size = new System.Drawing.Size(423, 74);
             this.lvTransUserList.TabIndex = 7;
             this.lvTransUserList.UseCompatibleStateImageBehavior = false;
             // 
@@ -87,6 +88,7 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSend
             // 
