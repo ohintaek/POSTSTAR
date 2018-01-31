@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PostStar.Gui.SendMessage;
+using PostStar.Gui.Misc;
 
 namespace PostStar.Gui.Main
 {
@@ -34,9 +35,12 @@ namespace PostStar.Gui.Main
         private void UcMember_Load(object sender, EventArgs e)
         {
             tlpMember.Dock = DockStyle.Fill;
-            this.Height = 30/* Control의 높이 */;
+            this.Height = 28/* Control의 높이 */;
 
             this.ContextMenuStrip = this.cmsMember;
+
+            // 콘트롤의 가로크기를 결정한다.
+            this.Width = this.Parent.Width - this.Margin.Left - this.Margin.Right;
         }
 
         /// <summary>
@@ -76,8 +80,7 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void UcMember_MouseHover(object sender, EventArgs e)
         {
-            MessageBox.Show("fff");
-            this.BackColor = Color.LightSkyBlue;
+           // this.BackColor = Color.LightSkyBlue;
         }
 
         /// <summary>
@@ -97,6 +100,18 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void UcMember_Leave(object sender, EventArgs e)
         {
+
+        }
+
+        private void UcMember_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.LightSkyBlue;
+        }
+
+        private void tsmShowMemberInfo_Click(object sender, EventArgs e)
+        {
+            FrmMemberInfo frmMemberInfo = new FrmMemberInfo();
+            frmMemberInfo.Show();
 
         }
     }

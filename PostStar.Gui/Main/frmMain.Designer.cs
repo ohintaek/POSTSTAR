@@ -37,10 +37,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.refreshMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ucMe1 = new PostStar.Gui.Main.UcMe();
             this.flpMemberList = new System.Windows.Forms.FlowLayoutPanel();
             this.msMainMenu.SuspendLayout();
@@ -109,6 +109,12 @@
             this.settingToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.settingToolStripMenuItem.Text = "&Setting";
             // 
+            // refreshMembersToolStripMenuItem
+            // 
+            this.refreshMembersToolStripMenuItem.Name = "refreshMembersToolStripMenuItem";
+            this.refreshMembersToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.refreshMembersToolStripMenuItem.Text = "Refresh Members";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -140,13 +146,6 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(377, 469);
             this.tlpMain.TabIndex = 8;
-            this.tlpMain.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpMain_Paint);
-            // 
-            // refreshMembersToolStripMenuItem
-            // 
-            this.refreshMembersToolStripMenuItem.Name = "refreshMembersToolStripMenuItem";
-            this.refreshMembersToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.refreshMembersToolStripMenuItem.Text = "Refresh Members";
             // 
             // ucMe1
             // 

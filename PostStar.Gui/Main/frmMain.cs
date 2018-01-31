@@ -1,4 +1,5 @@
-﻿using PostStar.Gui.SendMessage;
+﻿using PostStar.Gui.Common;
+using PostStar.Gui.SendMessage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,9 @@ namespace PostStar.Gui.Main
     {
         private bool closeAvailableFlag;
         private ContextMenu ctxmTray;
+
+        EventBroadcastProvider beMouseEnter;
+        EventBroadcastProvider beMouseLeave;
 
         /// <summary>
         /// CONSTRUCTOR
@@ -41,17 +45,24 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //lvMemberList.Items.Add(new UcMember());
+            this.initMemberList();
 
-            
-            UcMember memberHong = new UcMember("홍길동");
-            flpMemberList.Controls.Add(memberHong);
+            // 이벤트 계층적 호출처리기를 등록한다.
+            this.beMouseEnter = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseEnter");
+            this.beMouseLeave = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseLeave");
+        }
 
+        /// <summary>
+        /// 멤버목록을 바인딩한다.
+        /// </summary>
+        private void initMemberList()
+        {    
+            flpMemberList.Controls.Add(new UcMember("홍길동"));
             flpMemberList.Controls.Add(new UcMember("전지현"));
             flpMemberList.Controls.Add(new UcMember("김팀장"));
             flpMemberList.Controls.Add(new UcMember("김팀원"));
             flpMemberList.Controls.Add(new UcMember("하니"));
-       }
+        }
 
         /// <summary>
         /// ESC 키가 눌렸다면 화면을 숨기고 TrayIcon을 표시한다.
@@ -88,8 +99,7 @@ namespace PostStar.Gui.Main
             }
         }
 
-
-
+        
         /// <summary>
         /// About 다이얼로그를 실행한다.
         /// </summary>
@@ -225,16 +235,7 @@ namespace PostStar.Gui.Main
             MessageBox.Show("SHOW RECEIVE MESSAGE DIALOG");
         }
 
-        #endregion
+        #endregion       
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void tlpMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
