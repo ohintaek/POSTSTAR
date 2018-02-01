@@ -9,13 +9,24 @@ using System.Windows.Forms;
 
 namespace PostStar.Gui.Misc
 {
+    /// <summary>
+    /// 멤버 프로필 다이얼로그
+    /// </summary>
     public partial class FrmMemberInfo : Form
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public FrmMemberInfo()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 화면을 닫는다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
