@@ -66,6 +66,7 @@ namespace PostStar.Gui.Main
 
         /// <summary>
         /// ESC 키가 눌렸다면 화면을 숨기고 TrayIcon을 표시한다.
+        /// (Shift + ESC를 누르면 프로그램을 종료한다.)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -78,8 +79,8 @@ namespace PostStar.Gui.Main
                         this.closeAvailableFlag = true;
 
                     this.Close(); break;
-                default: break;
-                    
+
+                default: break;                    
             }
         }
 
@@ -235,7 +236,17 @@ namespace PostStar.Gui.Main
             MessageBox.Show("SHOW RECEIVE MESSAGE DIALOG");
         }
 
-        #endregion       
+        #endregion
 
+        /// <summary>
+        /// 프로그램을 종료한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.closeAvailableFlag = true;
+            this.Close();
+        }
     }
 }

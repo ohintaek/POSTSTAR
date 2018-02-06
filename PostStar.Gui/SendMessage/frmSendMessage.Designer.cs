@@ -40,17 +40,17 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Location = new System.Drawing.Point(8, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(500, 300);
+            this.textBox1.Size = new System.Drawing.Size(491, 300);
             this.textBox1.TabIndex = 1;
             // 
             // btnAddUser
             // 
             this.btnAddUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddUser.BackgroundImage")));
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddUser.Location = new System.Drawing.Point(2, 308);
+            this.btnAddUser.Location = new System.Drawing.Point(8, 308);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(75, 75);
@@ -59,9 +59,9 @@
             // 
             // lvTransUserList
             // 
-            this.lvTransUserList.Location = new System.Drawing.Point(80, 309);
+            this.lvTransUserList.Location = new System.Drawing.Point(86, 309);
             this.lvTransUserList.Name = "lvTransUserList";
-            this.lvTransUserList.Size = new System.Drawing.Size(423, 74);
+            this.lvTransUserList.Size = new System.Drawing.Size(413, 74);
             this.lvTransUserList.TabIndex = 7;
             this.lvTransUserList.UseCompatibleStateImageBehavior = false;
             // 
@@ -72,7 +72,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnCancel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSend, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(305, 389);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(303, 387);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

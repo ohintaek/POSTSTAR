@@ -12,7 +12,7 @@ namespace PostStar.Gui.Misc
     /// <summary>
     /// 멤버 프로필 다이얼로그
     /// </summary>
-    public partial class FrmMemberInfo : Form
+    public partial class FrmMemberInfo : PostStar.Gui.Common.FrmBaseDialog
     {
         /// <summary>
         /// Constructor
