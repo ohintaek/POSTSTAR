@@ -80,9 +80,7 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(62, 18);
             this.lblName.TabIndex = 1;
-            this.lblName.Text = "홍길동";
-            this.lblName.Click += new System.EventHandler(this.lblName_Click);
-            this.lblName.DoubleClick += new System.EventHandler(this.lblName_DoubleClick);
+            this.lblName.Text = "홍길동";           
             // 
             // pictureBox1
             // 
@@ -102,25 +100,25 @@
             this.tsmShowMemberInfo,
             this.toolStripMenuItem3});
             this.cmsMember.Name = "cmsMember";
-            this.cmsMember.Size = new System.Drawing.Size(176, 104);
+            this.cmsMember.Size = new System.Drawing.Size(124, 76);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(175, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
             this.toolStripMenuItem1.Text = "메시지";
             // 
             // tsmShowMemberInfo
             // 
             this.tsmShowMemberInfo.Name = "tsmShowMemberInfo";
-            this.tsmShowMemberInfo.Size = new System.Drawing.Size(175, 24);
+            this.tsmShowMemberInfo.Size = new System.Drawing.Size(123, 24);
             this.tsmShowMemberInfo.Text = "프로필";
             this.tsmShowMemberInfo.Click += new System.EventHandler(this.tsmShowMemberInfo_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(175, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(123, 24);
             this.toolStripMenuItem3.Text = "숨기기";
             // 
             // UcMember
@@ -132,11 +130,9 @@
             this.Name = "UcMember";
             this.Size = new System.Drawing.Size(340, 77);
             this.Load += new System.EventHandler(this.UcMember_Load);
-            this.Leave += new System.EventHandler(this.UcMember_Leave);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UcMember_MouseClick);
+            this.DoubleClick += new System.EventHandler(this.UcMember_DoubleClick);
             this.MouseEnter += new System.EventHandler(this.UcMember_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.UcMember_MouseLeave);
-            this.MouseHover += new System.EventHandler(this.UcMember_MouseHover);
             this.tlpMember.ResumeLayout(false);
             this.tlpMember.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatusIcon)).EndInit();

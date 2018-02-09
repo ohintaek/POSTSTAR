@@ -22,6 +22,7 @@ namespace PostStar.Gui.Main
 
         EventBroadcastProvider beMouseEnter;
         EventBroadcastProvider beMouseLeave;
+        EventBroadcastProvider beDoubleClick;
 
         /// <summary>
         /// CONSTRUCTOR
@@ -50,6 +51,7 @@ namespace PostStar.Gui.Main
             // 이벤트 계층적 호출처리기를 등록한다.
             this.beMouseEnter = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseEnter");
             this.beMouseLeave = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseLeave");
+            this.beDoubleClick = EventBroadcastProvider.CreateProvider(this.flpMemberList, "DoubleClick");
         }
 
         /// <summary>
@@ -75,8 +77,10 @@ namespace PostStar.Gui.Main
             switch (e.KeyCode)
             {
                 case Keys.Escape:
+#if DEBUG
                     if (e.Shift)
                         this.closeAvailableFlag = true;
+#endif
 
                     this.Close(); break;
 

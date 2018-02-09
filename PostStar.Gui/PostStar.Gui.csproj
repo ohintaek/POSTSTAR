@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chat\FrmChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat\FrmChat.Designer.cs">
+      <DependentUpon>FrmChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Common\EventBroadcastProvider.cs" />
     <Compile Include="Common\FrmBaseDialog.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
     <Compile Include="SendMessage\FrmSendMessage.Designer.cs">
       <DependentUpon>FrmSendMessage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chat\FrmChat.resx">
+      <DependentUpon>FrmChat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\FrmBaseDialog.resx">
       <DependentUpon>FrmBaseDialog.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using PostStar.Gui.SendMessage;
 using PostStar.Gui.Misc;
+using PostStar.Gui.Chat;
 
 namespace PostStar.Gui.Main
 {
@@ -44,47 +45,7 @@ namespace PostStar.Gui.Main
         }
 
         /// <summary>
-        ///
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void lblName_Click(object sender, EventArgs e)
-        {
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UcMember_MouseClick(object sender, MouseEventArgs e)
-        {
-            
-        }
-
-        /// <summary>
-        /// 이름을 더블클릭하면 메시지 전송창을 표시한다.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void lblName_DoubleClick(object sender, EventArgs e)
-        {
-            FrmSendMessage frmSendMessage = new FrmSendMessage();
-            frmSendMessage.Show();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UcMember_MouseHover(object sender, EventArgs e)
-        {
-           // this.BackColor = Color.LightSkyBlue;
-        }
-
-        /// <summary>
-        /// 
+        /// 마우스가 컨트롤 밖으로 나가면 배경색을 복구한다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -94,24 +55,35 @@ namespace PostStar.Gui.Main
         }
 
         /// <summary>
-        /// 
+        /// 마우스가 컨트롤 위에 있으면 HighLight 표시한다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UcMember_Leave(object sender, EventArgs e)
-        {
-
-        }
-
         private void UcMember_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.LightSkyBlue;
         }
 
+        /// <summary>
+        /// 멤버 정보창을 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsmShowMemberInfo_Click(object sender, EventArgs e)
         {
             FrmMemberInfo frmMemberInfo = new FrmMemberInfo();
             frmMemberInfo.Show();
+        }
+
+        /// <summary>
+        /// 대화창을 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UcMember_DoubleClick(object sender, EventArgs e)
+        {
+            FrmChat frmChat = new FrmChat();
+            frmChat.Show();
 
         }
     }

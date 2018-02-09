@@ -53,7 +53,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "장동건";
+            this.label1.Text = "홍길동";
             // 
             // comboBox1
             // 
