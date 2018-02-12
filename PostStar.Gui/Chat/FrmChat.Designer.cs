@@ -80,9 +80,10 @@
             this.pictureBox1.BackgroundImage = global::PostStar.Gui.Properties.Resources.ic_portrait_black_48dp;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 54);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -92,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(109, 0);
+            this.label1.Location = new System.Drawing.Point(103, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 54);
             this.label1.TabIndex = 1;
@@ -117,12 +118,13 @@
             // btnFireSend
             // 
             this.btnFireSend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFireSend.Location = new System.Drawing.Point(386, 3);
+            this.btnFireSend.Location = new System.Drawing.Point(385, 3);
             this.btnFireSend.Name = "btnFireSend";
-            this.btnFireSend.Size = new System.Drawing.Size(81, 157);
+            this.btnFireSend.Size = new System.Drawing.Size(82, 157);
             this.btnFireSend.TabIndex = 0;
             this.btnFireSend.Text = "보내기(&S)";
             this.btnFireSend.UseVisualStyleBackColor = true;
+            this.btnFireSend.Click += new System.EventHandler(this.btnFireSend_Click);
             // 
             // tbxChatMessage
             // 
@@ -130,8 +132,9 @@
             this.tbxChatMessage.Location = new System.Drawing.Point(3, 3);
             this.tbxChatMessage.Multiline = true;
             this.tbxChatMessage.Name = "tbxChatMessage";
-            this.tbxChatMessage.Size = new System.Drawing.Size(377, 157);
+            this.tbxChatMessage.Size = new System.Drawing.Size(376, 157);
             this.tbxChatMessage.TabIndex = 1;
+            this.tbxChatMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxChatMessage_KeyDown);
             // 
             // rtbChatHistory
             // 
@@ -146,6 +149,7 @@
             // 
             // FrmChat
             // 
+            this.AcceptButton = this.btnFireSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 631);
@@ -153,6 +157,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmChat";
             this.Text = "홍길동";
+            this.Load += new System.EventHandler(this.FrmChat_Load);
             this.tbpMain.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
