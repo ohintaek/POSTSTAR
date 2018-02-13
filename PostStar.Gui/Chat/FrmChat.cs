@@ -48,7 +48,7 @@ namespace PostStar.Gui.Chat
             // ...
 
             // 2. 전송결과를 Chat History 창에 표시한다.
-            rtbChatHistory.Text = String.Format("{0}\r\n나 : {1}", rtbChatHistory.Text, this.tbxChatMessage.Text);             
+            rtbChatHistory.AppendText(String.Format("\r\n나 : {0}", this.tbxChatMessage.Text));
 
             // 9. 입력된 내용을 삭제한다.
             this.tbxChatMessage.Text = String.Empty;
@@ -70,6 +70,11 @@ namespace PostStar.Gui.Chat
             //    default: break;
             //}
             
+        }
+
+        private void sendChatMessage()
+        {
+
         }
     }
 }

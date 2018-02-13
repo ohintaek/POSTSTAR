@@ -50,8 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMessageReciever.cs" />
+    <Compile Include="IMessageReceiver.cs" />
     <Compile Include="IMessageSender.cs" />
+    <Compile Include="MessageSender.cs" />
     <Compile Include="TransData\DataContainer.cs" />
     <Compile Include="TransData\Messages\ChatMessage.cs" />
     <Compile Include="TransData\Messages\MemberInfoMessage.cs" />
