@@ -10,5 +10,6 @@ namespace PostStar.Communicator
     /// </summary>
     interface IMessageReceiver
     {
+
     }
 }

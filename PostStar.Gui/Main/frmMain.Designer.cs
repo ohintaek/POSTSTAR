@@ -49,10 +49,10 @@
             // 
             // btnSendMsg
             // 
-            this.btnSendMsg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSendMsg.Location = new System.Drawing.Point(3, 373);
+            this.btnSendMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSendMsg.Location = new System.Drawing.Point(3, 450);
             this.btnSendMsg.Name = "btnSendMsg";
-            this.btnSendMsg.Size = new System.Drawing.Size(371, 93);
+            this.btnSendMsg.Size = new System.Drawing.Size(366, 72);
             this.btnSendMsg.TabIndex = 3;
             this.btnSendMsg.Text = "&Send Message";
             this.btnSendMsg.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.helpToolStripMenuItem});
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(377, 28);
+            this.msMainMenu.Size = new System.Drawing.Size(372, 28);
             this.msMainMenu.TabIndex = 6;
             this.msMainMenu.Text = "msMainMenu";
             // 
@@ -143,9 +143,9 @@
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 3;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(377, 469);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 377F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tlpMain.Size = new System.Drawing.Size(372, 525);
             this.tlpMain.TabIndex = 8;
             // 
             // ucMe1
@@ -154,7 +154,7 @@
             this.ucMe1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucMe1.Location = new System.Drawing.Point(3, 3);
             this.ucMe1.Name = "ucMe1";
-            this.ucMe1.Size = new System.Drawing.Size(371, 64);
+            this.ucMe1.Size = new System.Drawing.Size(366, 64);
             this.ucMe1.TabIndex = 6;
             // 
             // flpMemberList
@@ -164,14 +164,14 @@
             this.flpMemberList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMemberList.Location = new System.Drawing.Point(3, 73);
             this.flpMemberList.Name = "flpMemberList";
-            this.flpMemberList.Size = new System.Drawing.Size(371, 294);
+            this.flpMemberList.Size = new System.Drawing.Size(366, 371);
             this.flpMemberList.TabIndex = 8;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 497);
+            this.ClientSize = new System.Drawing.Size(372, 553);
             this.Controls.Add(this.tlpMain);
             this.Controls.Add(this.msMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

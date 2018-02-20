@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DC5D82CC-2B37-4948-99E0-1564ADA6D63A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PostStar.Communicator</RootNamespace>
-    <AssemblyName>PostStar.Communicator</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectGuid>{EF5D8F88-6650-48AA-AF2B-BC04DCB169E6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PostStar.EchoServer</RootNamespace>
+    <AssemblyName>PostStar.EchoServer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,15 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Mina.NET, Version=2.0.11.0, Culture=neutral, PublicKeyToken=bc4dde96e5154fe5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mina.2.0.11\lib\net40\Mina.NET.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,30 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MessageReceiver.cs" />
-    <Compile Include="IMessageReceiver.cs" />
-    <Compile Include="IMessageSender.cs" />
-    <Compile Include="MessageSender.cs" />
-    <Compile Include="ReceiveHandler\BaseReceiveHandler.cs" />
-    <Compile Include="TransData\DataContainer.cs" />
-    <Compile Include="TransData\Messages\ChatMessage.cs" />
-    <Compile Include="TransData\Messages\MemberInfoMessage.cs" />
-    <Compile Include="TransData\Messages\Message.cs" />
-    <Compile Include="TransData\Messages\PingMessage.cs" />
-    <Compile Include="TransData\ReceiveDataContainer.cs" />
-    <Compile Include="TransData\SendDataContainer.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PostStar.Common\PostStar.Common.csproj">
       <Project>{6d9efa0f-ac4c-43b8-9990-5f34616b5721}</Project>
       <Name>PostStar.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PostStar.Communicator\PostStar.Communicator.csproj">
+      <Project>{dc5d82cc-2b37-4948-99e0-1564ada6d63a}</Project>
+      <Name>PostStar.Communicator</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
