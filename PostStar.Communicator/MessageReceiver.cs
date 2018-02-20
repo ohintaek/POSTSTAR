@@ -12,7 +12,10 @@ using System.Text;
 
 namespace PostStar.Communicator
 {
-    class MessageReceiver : IMessageReceiver
+    /// <summary>
+    /// 
+    /// </summary>
+    public class MessageReceiver : IMessageReceiver
     {
         IoAcceptor acceptor;
 
@@ -20,7 +23,7 @@ namespace PostStar.Communicator
         {
             IoAcceptor acceptor = new AsyncSocketAcceptor();
 
-            acceptor.FilterChain.AddLast("logger", new LoggingFilter());
+            //acceptor.FilterChain.AddLast("logger", new LoggingFilter());
             acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
 
             acceptor.Handler = baseReceiveHandler;
@@ -30,7 +33,7 @@ namespace PostStar.Communicator
 
             Console.WriteLine("Listening on " + acceptor.LocalEndPoint);
 
-            Console.ReadLine();
+            
         }
     }
 }

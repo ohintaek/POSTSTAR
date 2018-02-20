@@ -16,10 +16,10 @@ namespace PostStar.Communicator
     /// <summary>
     /// 메시지를 전송한다.
     /// </summary>
-    class MessageSender : IMessageSender
+    public class MessageSender : IMessageSender
     {
         IoConnector connector = new AsyncSocketConnector();
-        IoSession session;
+        IoSession session = null;
 
         /// <summary>
         /// Constructor
@@ -113,7 +113,16 @@ namespace PostStar.Communicator
 
         public void Send(object packet)
         {
-            throw new NotImplementedException();
+            if (session == null)
+                return;
+
+            if (packet == null)
+                return;
+
+
+            session.Write(packet);
+
+
         }
     }
 }

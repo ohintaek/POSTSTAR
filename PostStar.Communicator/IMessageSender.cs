@@ -8,7 +8,7 @@ namespace PostStar.Communicator
     /// <summary>
     /// 송신메시지 인터페이스
     /// </summary>
-    interface IMessageSender
+    public interface IMessageSender
     {
         void Send(Object packet);
     }

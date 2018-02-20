@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostStar.Communicator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,11 +42,13 @@ namespace PostStar.Gui.Chat
         private void btnFireSend_Click(object sender, EventArgs e)
         {
             // 0. 입력내용이 없다면 Return
-            if (this.tbxChatMessage.Text.Trim() == string.Empty)
+            String inputMessage = this.tbxChatMessage.Text.Trim();
+            if (inputMessage == string.Empty)
                 return;
 
             // 1. 입력된 내용을 상대방에게 전송한다.
-            // ...
+            IMessageSender msgSender = new MessageSender("127.0.0.1", 9123);
+            msgSender.Send(inputMessage);
 
             // 2. 전송결과를 Chat History 창에 표시한다.
             rtbChatHistory.AppendText(String.Format("\r\n나 : {0}", this.tbxChatMessage.Text));
@@ -71,10 +74,6 @@ namespace PostStar.Gui.Chat
             //}
             
         }
-
-        private void sendChatMessage()
-        {
-
-        }
+        
     }
 }
