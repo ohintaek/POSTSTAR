@@ -28,6 +28,11 @@ namespace PostStar.Communicator.ReceiveHandler
             session.Close(true);
         }
 
+        public override void SessionOpened(IoSession session)
+        {
+            Console.WriteLine("Accept ....");
+        }
+
         public override void SessionClosed(IoSession session)
         {
             String user = session.GetAttribute<String>("user");

@@ -30,7 +30,7 @@ namespace PostStar.Communicator
         {
             try
             {
-                connector.FilterChain.AddLast("logger", new LoggingFilter());
+               // connector.FilterChain.AddLast("logger", new LoggingFilter());
                 connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
 
                 connector.SessionClosed += (o, e) => Append("Connection closed.");

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommConst.cs" />
     <Compile Include="MessageReceiver.cs" />
     <Compile Include="IMessageReceiver.cs" />
     <Compile Include="IMessageSender.cs" />
