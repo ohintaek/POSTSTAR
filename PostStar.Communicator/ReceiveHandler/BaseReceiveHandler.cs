@@ -8,6 +8,9 @@ using System.Text;
 
 namespace PostStar.Communicator.ReceiveHandler
 {
+    /// <summary>
+    /// Base Recieve Handler
+    /// </summary>
     public class BaseReceiveHandler : IoHandlerAdapter
     {
         IDictionary<IoSession, Boolean> sessions = new ConcurrentDictionary<IoSession, Boolean>();
