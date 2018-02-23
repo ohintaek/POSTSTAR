@@ -8,6 +8,7 @@ using System.Text;
 
 namespace PostStar.Communicator.ReceiveHandler
 {
+
     /// <summary>
     /// Base Recieve Handler
     /// </summary>
