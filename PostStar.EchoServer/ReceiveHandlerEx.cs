@@ -1,30 +1,23 @@
-﻿using Mina.Core.Service;
-using Mina.Core.Session;
+﻿using Mina.Core.Session;
+using PostStar.Communicator.ReceiveHandler;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace PostStar.Communicator.ReceiveHandler
+namespace PostStar.EchoServer
 {
-
-    /// <summary>
-    /// Base Recieve Handler
-    /// </summary>
-    public class BaseReceiveHandler : IoHandlerAdapter
+    public class ReceiveHandlerEx : BaseReceiveHandler
     {
-        protected IDictionary<IoSession, Boolean> sessions = new ConcurrentDictionary<IoSession, Boolean>();
-        protected IDictionary<String, Boolean> users = new ConcurrentDictionary<String, Boolean>();
-
-        public void Broadcast(String message)
-        {
-            foreach (IoSession session in sessions.Keys)
-            {
-                if (session.Connected)
-                    session.Write("BROADCAST OK " + message);
-            }
-        }
+        //public void Broadcast(String message)
+        //{
+        //    foreach (IoSession session in sessions.Keys)
+        //    {
+        //        if (session.Connected)
+        //            session.Write("BROADCAST OK " + message);
+        //    }
+        //}
 
         public override void ExceptionCaught(IoSession session, Exception cause)
         {
