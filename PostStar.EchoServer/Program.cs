@@ -17,6 +17,8 @@ namespace PostStar.EchoServer
                 ReceiveHandlerEx receiveHandlerEx = new ReceiveHandlerEx();
                 IMessageReceiver msgReceiver = new MessageReceiver("127.0.0.1", CommConst.PORT, receiveHandlerEx);
 
+
+
                 Console.WriteLine("Runing EchoServer...");
 
                 Console.ReadLine();

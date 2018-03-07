@@ -21,15 +21,15 @@ namespace PostStar.Communicator
 
         public MessageReceiver(String ipAddress, int portNo, BaseReceiveHandler baseReceiveHandler)
         {
-            IoAcceptor acceptor = new AsyncSocketAcceptor();
+            this.acceptor = new AsyncSocketAcceptor();
 
             //acceptor.FilterChain.AddLast("logger", new LoggingFilter());
-            acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
+            this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
 
-            acceptor.Handler = baseReceiveHandler;
+            this.acceptor.Handler = baseReceiveHandler;
 
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ipAddress), portNo);
-            acceptor.Bind(ep);
+            this.acceptor.Bind(ep);
 
             Console.WriteLine("Listening on " + acceptor.LocalEndPoint);
 

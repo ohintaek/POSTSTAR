@@ -118,6 +118,7 @@
             // btnFireSend
             // 
             this.btnFireSend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFireSend.Enabled = false;
             this.btnFireSend.Location = new System.Drawing.Point(385, 3);
             this.btnFireSend.Name = "btnFireSend";
             this.btnFireSend.Size = new System.Drawing.Size(82, 157);
@@ -129,6 +130,7 @@
             // tbxChatMessage
             // 
             this.tbxChatMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxChatMessage.Enabled = false;
             this.tbxChatMessage.Location = new System.Drawing.Point(3, 3);
             this.tbxChatMessage.Multiline = true;
             this.tbxChatMessage.Name = "tbxChatMessage";

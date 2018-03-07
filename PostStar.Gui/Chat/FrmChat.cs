@@ -15,6 +15,8 @@ namespace PostStar.Gui.Chat
     /// </summary>
     public partial class FrmChat : PostStar.Gui.Common.FrmBaseDialog
     {
+        IMessageSender msgSender;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -31,8 +33,23 @@ namespace PostStar.Gui.Chat
         /// <param name="e"></param>
         private void FrmChat_Load(object sender, EventArgs e)
         {
-            // 입력창에 포커스를 준다.
-            this.tbxChatMessage.Focus();
+            try
+            {
+                // 채팅상대방과 세션을 오픈한다.
+                this.msgSender = new MessageSender("127.0.0.1", CommConst.PORT);
+
+                // 입력창에 포커스를 준다.
+                this.tbxChatMessage.Enabled = true;
+                this.tbxChatMessage.Focus();
+
+                // 전송버튼을 활성화 한다.
+                this.btnFireSend.Enabled = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "오류");
+            }
+
         }
 
         /// 입력내용을 상대방에게 전송한다.
@@ -48,9 +65,8 @@ namespace PostStar.Gui.Chat
                 if (inputMessage == string.Empty)
                     return;
 
-                // 1. 입력된 내용을 상대방에게 전송한다.
-                IMessageSender msgSender = new MessageSender("127.0.0.1", CommConst.PORT);
-                msgSender.Send(inputMessage);
+                // 1. 입력된 내용을 상대방에게 전송한다.                
+                this.msgSender.Send(inputMessage);
 
                 // 2. 전송결과를 Chat History 창에 표시한다.
                 rtbChatHistory.AppendText(String.Format("\r\n나 : {0}", this.tbxChatMessage.Text));
