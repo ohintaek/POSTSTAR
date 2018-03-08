@@ -8,6 +8,7 @@ namespace PostStar.Communicator.TransData.Messages
     /// <summary>
     /// 메시지
     /// </summary>
+    [Serializable]
     class Message
     {
     }

@@ -10,15 +10,6 @@ namespace PostStar.EchoServer
 {
     public class ReceiveHandlerEx : BaseReceiveHandler
     {
-        //public void Broadcast(String message)
-        //{
-        //    foreach (IoSession session in sessions.Keys)
-        //    {
-        //        if (session.Connected)
-        //            session.Write("BROADCAST OK " + message);
-        //    }
-        //}
-
         public override void ExceptionCaught(IoSession session, Exception cause)
         {
             Console.WriteLine("Unexpected exception." + cause);
@@ -30,6 +21,8 @@ namespace PostStar.EchoServer
             Console.WriteLine("Accept ....");
         }
 
+
+
         public override void SessionClosed(IoSession session)
         {
             String user = session.GetAttribute<String>("user");
@@ -39,6 +32,7 @@ namespace PostStar.EchoServer
                 users.Remove(user);
                 Broadcast("The user " + user + " has left the chat session.");
             }
+            Console.WriteLine("Closed session");
         }
 
         public override void MessageReceived(IoSession session, Object message)

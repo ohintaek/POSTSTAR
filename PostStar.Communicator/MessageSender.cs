@@ -2,6 +2,7 @@
 using Mina.Core.Service;
 using Mina.Core.Session;
 using Mina.Filter.Codec;
+using Mina.Filter.Codec.Serialization;
 using Mina.Filter.Codec.TextLine;
 using Mina.Filter.Logging;
 using Mina.Transport.Socket;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 
 namespace PostStar.Communicator
 {
@@ -29,22 +31,42 @@ namespace PostStar.Communicator
         public MessageSender(String ipAddress, int portNo)
         {
             try
-            {
-               // connector.FilterChain.AddLast("logger", new LoggingFilter());
-                connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
-
+            {                
+                connector.FilterChain.AddLast("logger", new LoggingFilter());
+                connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
                 connector.SessionClosed += (o, e) => Append("Connection closed.");
                 connector.MessageReceived += OnMessageReceived;
 
-                SetState(false);
-                
-                IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ipAddress), portNo);
+                //IPEndPoint endPoint = new IPEndPoint(IPAddress.Loopback, portNo);
+                //IConnectFuture connectFuture = connector.Connect(endPoint).Await();
+                //if (connectFuture.Connected == false)
+                //    throw new Exception("상대방으로부터 응답이 없습니다.");
 
-                IConnectFuture connectFuture = connector.Connect(ep).Await();
-                if (connectFuture.Connected == false)
-                    throw new Exception("상대방으로부터 응답이 없습니다.");
+                //session = connectFuture.Session;
 
-                session = connectFuture.Session;
+
+                while (this.session == null)
+                {
+                    try
+                    {
+                        IConnectFuture future = connector.Connect(new IPEndPoint(IPAddress.Loopback, portNo));
+                        future.Await();
+                        session = future.Session;
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                        Thread.Sleep(3000);
+                    }
+                }
+
+                // wait until the summation is done
+              //  session.CloseFuture.Await();
+              //  Console.WriteLine("Press any key to exit");
+
+
+
             }
             catch(Exception ex)
             {
@@ -92,11 +114,7 @@ namespace PostStar.Communicator
             }
             else
             {
-                if (result.Length == 3)
-                {
-                    //MessageBox.Show(result[2]);
-                    Console.WriteLine(result[2]);
-                }
+                Console.WriteLine("hi!");
             }
         }
 

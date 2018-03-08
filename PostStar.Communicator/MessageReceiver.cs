@@ -1,5 +1,6 @@
 ﻿using Mina.Core.Service;
 using Mina.Filter.Codec;
+using Mina.Filter.Codec.Serialization;
 using Mina.Filter.Codec.TextLine;
 using Mina.Filter.Logging;
 using Mina.Transport.Socket;
@@ -23,13 +24,13 @@ namespace PostStar.Communicator
         {
             this.acceptor = new AsyncSocketAcceptor();
 
-            //acceptor.FilterChain.AddLast("logger", new LoggingFilter());
-            this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
+            acceptor.FilterChain.AddLast("logger", new LoggingFilter());            
+            this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
 
             this.acceptor.Handler = baseReceiveHandler;
 
-            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ipAddress), portNo);
-            this.acceptor.Bind(ep);
+            //this.acceptor.Bind(new IPEndPoint(IPAddress.Parse(ipAddress), portNo));
+            this.acceptor.Bind(new IPEndPoint(IPAddress.Loopback, portNo));
 
             Console.WriteLine("Listening on " + acceptor.LocalEndPoint);
 

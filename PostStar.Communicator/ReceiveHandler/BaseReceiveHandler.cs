@@ -17,6 +17,13 @@ namespace PostStar.Communicator.ReceiveHandler
         protected IDictionary<IoSession, Boolean> sessions = new ConcurrentDictionary<IoSession, Boolean>();
         protected IDictionary<String, Boolean> users = new ConcurrentDictionary<String, Boolean>();
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public BaseReceiveHandler()
+        {
+        }
+
         public void Broadcast(String message)
         {
             foreach (IoSession session in sessions.Keys)
@@ -30,6 +37,17 @@ namespace PostStar.Communicator.ReceiveHandler
         {
             Console.WriteLine("Unexpected exception." + cause);
             session.Close(true);
+        }
+
+        public override void SessionIdle(IoSession session, IdleStatus status)
+        {
+            base.SessionIdle(session, status);
+            Console.WriteLine("IDLE " + session.GetIdleCount(status));
+        }
+
+        public override void MessageSent(IoSession session, object message)
+        {
+            base.MessageSent(session, message);
         }
 
         public override void SessionOpened(IoSession session)
