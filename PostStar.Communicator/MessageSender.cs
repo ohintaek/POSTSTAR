@@ -15,13 +15,18 @@ using System.Threading;
 
 namespace PostStar.Communicator
 {
+
     /// <summary>
     /// 메시지를 전송한다.
     /// </summary>
     public class MessageSender : IMessageSender
     {
-        IoConnector connector = new AsyncSocketConnector();
+        const int SEC = 1000;
+        const int MAX_TRY_COUNT = 3;
+
+        IoConnector connector = null;
         IoSession session = null;
+        IPEndPoint endPoint = null;
 
         /// <summary>
         /// Constructor
@@ -31,46 +36,57 @@ namespace PostStar.Communicator
         public MessageSender(String ipAddress, int portNo)
         {
             try
-            {                
-                connector.FilterChain.AddLast("logger", new LoggingFilter());
-                connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
-                connector.SessionClosed += (o, e) => Append("Connection closed.");
-                connector.MessageReceived += OnMessageReceived;
+            {
+                // 1. CONNECTOR 를 생성한다.
+                this.connector = new AsyncSocketConnector();
+                this.connector.FilterChain.AddLast("logger", new LoggingFilter());
+                this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
+                this.connector.SessionClosed += (o, e) => Append("Connection closed.");
+                this.connector.MessageReceived += OnMessageReceived;
 
-                //IPEndPoint endPoint = new IPEndPoint(IPAddress.Loopback, portNo);
-                //IConnectFuture connectFuture = connector.Connect(endPoint).Await();
-                //if (connectFuture.Connected == false)
-                //    throw new Exception("상대방으로부터 응답이 없습니다.");
-
-                //session = connectFuture.Session;
-
-
-                while (this.session == null)
-                {
-                    try
-                    {
-                        IConnectFuture future = connector.Connect(new IPEndPoint(IPAddress.Loopback, portNo));
-                        future.Await();
-                        session = future.Session;
-                        break;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                        Thread.Sleep(3000);
-                    }
-                }
-
-                // wait until the summation is done
-              //  session.CloseFuture.Await();
-              //  Console.WriteLine("Press any key to exit");
-
-
-
+                // 2. 상대방에게 접속을 시도한다.
+                this.endPoint = new IPEndPoint(IPAddress.Parse(ipAddress), portNo);
+                this.Connect();
             }
             catch(Exception ex)
             {
                 throw new Exception(String.Format("{0}:{1}에 연결할 수 없습니다.", ipAddress, portNo), ex);
+            }
+        }
+
+        /// <summary>
+        /// 상대방에 접속처리를 한다.
+        /// </summary>
+        private void Connect()
+        {
+            if ((this.connector == null) || (this.endPoint == null))
+                return;
+
+            int tryCount = 0;
+            IConnectFuture connectFuture;
+            while (this.session == null)
+            {
+                try
+                {
+                    tryCount++;
+
+                    connectFuture = connector.Connect(this.endPoint);
+                    connectFuture.Await();
+
+                    if (connectFuture.Connected)
+                        session = connectFuture.Session;
+                    else
+                        throw new Exception("상대방이 응답이 없습니다.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+
+                    if (tryCount > MAX_TRY_COUNT)
+                        break;  // while()
+
+                    Thread.Sleep(SEC);
+                }
             }
         }
 

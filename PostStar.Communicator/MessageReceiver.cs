@@ -14,7 +14,7 @@ using System.Text;
 namespace PostStar.Communicator
 {
     /// <summary>
-    /// 
+    /// Message Receiver
     /// </summary>
     public class MessageReceiver : IMessageReceiver
     {
@@ -22,19 +22,27 @@ namespace PostStar.Communicator
 
         public MessageReceiver(String ipAddress, int portNo, BaseReceiveHandler baseReceiveHandler)
         {
-            this.acceptor = new AsyncSocketAcceptor();
+            try
+            {
+                // 1. ACCEPTOR 생성
+                this.acceptor = new AsyncSocketAcceptor();
 
-            acceptor.FilterChain.AddLast("logger", new LoggingFilter());            
-            this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
+                // 2. DEFINE FILTER
+                this.acceptor.FilterChain.AddLast("logger", new LoggingFilter());
+                this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
 
-            this.acceptor.Handler = baseReceiveHandler;
+                // 3. SET HANDLER
+                this.acceptor.Handler = baseReceiveHandler;
 
-            //this.acceptor.Bind(new IPEndPoint(IPAddress.Parse(ipAddress), portNo));
-            this.acceptor.Bind(new IPEndPoint(IPAddress.Loopback, portNo));
+                // 4. BIND
+                this.acceptor.Bind(new IPEndPoint(IPAddress.Any, portNo));
 
-            Console.WriteLine("Listening on " + acceptor.LocalEndPoint);
-
-            
+                Console.WriteLine("Listening on " + acceptor.LocalEndPoint);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Message Receiver를 생성하지 못했습니다.", ex);
+            }
         }
     }
 }
