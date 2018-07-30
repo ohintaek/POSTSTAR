@@ -160,6 +160,7 @@
             this.Name = "FrmChat";
             this.Text = "홍길동";
             this.Load += new System.EventHandler(this.FrmChat_Load);
+            this.Shown += new System.EventHandler(this.FrmChat_Shown);
             this.tbpMain.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

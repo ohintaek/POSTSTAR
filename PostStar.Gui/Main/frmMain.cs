@@ -1,4 +1,5 @@
 ﻿using PostStar.Gui.Common;
+using PostStar.Gui.Help;
 using PostStar.Gui.SendMessage;
 using System;
 using System.Collections.Generic;
@@ -251,6 +252,19 @@ namespace PostStar.Gui.Main
         {
             this.closeAvailableFlag = true;
             this.Close();
+        }
+
+        /// <summary>
+        /// About Dialog를 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbout frmAbout = new FrmAbout();
+          //  frmAbout.Parent = this;
+            frmAbout.StartPosition = FormStartPosition.CenterParent;
+            frmAbout.ShowDialog();
         }
     }
 }

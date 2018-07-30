@@ -33,23 +33,6 @@ namespace PostStar.Gui.Chat
         /// <param name="e"></param>
         private void FrmChat_Load(object sender, EventArgs e)
         {
-            try
-            {
-                // 채팅상대방과 세션을 오픈한다.
-                this.msgSender = new MessageSender("127.0.0.1", CommConst.PORT);
-
-                // 입력창에 포커스를 준다.
-                this.tbxChatMessage.Enabled = true;
-                this.tbxChatMessage.Focus();
-
-                // 전송버튼을 활성화 한다.
-                this.btnFireSend.Enabled = true;
-            }
-            catch(Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "오류");
-                this.rtbChatHistory.AppendText(ex.Message);
-            }
 
         }
 
@@ -98,6 +81,34 @@ namespace PostStar.Gui.Chat
             //}
             
         }
-        
+
+        /// <summary>
+        /// 창이 처음열릴때 한번 실행한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmChat_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                // --> 백그라운드 쓰래드로 바꿔야 함...
+
+
+                // 채팅상대방과 세션을 오픈한다.
+                this.msgSender = new MessageSender("127.0.0.1", CommConst.PORT);
+
+                // 입력창에 포커스를 준다.
+                this.tbxChatMessage.Enabled = true;
+                this.tbxChatMessage.Focus();
+
+                // 전송버튼을 활성화 한다.
+                this.btnFireSend.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message, "오류");
+                this.rtbChatHistory.AppendText(ex.Message);
+            }
+        }
     }
 }

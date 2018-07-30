@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PostStar.Gui.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
@@ -68,11 +71,11 @@
     <Compile Include="Common\FrmBaseDialog.Designer.cs">
       <DependentUpon>FrmBaseDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTest.cs">
+    <Compile Include="Help\FrmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTest.Designer.cs">
-      <DependentUpon>FrmTest.cs</DependentUpon>
+    <Compile Include="Help\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\FrmMain.cs">
       <SubType>Form</SubType>
@@ -115,8 +118,8 @@
     <EmbeddedResource Include="Common\FrmBaseDialog.resx">
       <DependentUpon>FrmBaseDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTest.resx">
-      <DependentUpon>FrmTest.cs</DependentUpon>
+    <EmbeddedResource Include="Help\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\UcMe.resx">
       <DependentUpon>UcMe.cs</DependentUpon>
@@ -168,9 +171,15 @@
       <Name>PostStar.Communicator</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\ic_man_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_grade_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheerupIcon.png" />
+    <Content Include="개발참고.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

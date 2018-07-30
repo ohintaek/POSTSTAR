@@ -16,8 +16,8 @@ namespace PostStar.Gui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Main.FrmMain());
-            Application.Run(new FrmTest());
+            Application.Run(new Main.FrmMain());
+            //Application.Run(new FrmTest());
         }
     }
 }
