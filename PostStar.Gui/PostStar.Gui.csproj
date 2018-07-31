@@ -77,6 +77,24 @@
     <Compile Include="Help\FrmAbout.Designer.cs">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help\FrmBugReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\FrmBugReport.Designer.cs">
+      <DependentUpon>FrmBugReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\FrmCheerUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\FrmCheerUp.Designer.cs">
+      <DependentUpon>FrmCheerUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\FrmLicenseNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\FrmLicenseNote.Designer.cs">
+      <DependentUpon>FrmLicenseNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +138,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Help\FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\FrmBugReport.resx">
+      <DependentUpon>FrmBugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\FrmCheerUp.resx">
+      <DependentUpon>FrmCheerUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\FrmLicenseNote.resx">
+      <DependentUpon>FrmLicenseNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\UcMe.resx">
       <DependentUpon>UcMe.cs</DependentUpon>
@@ -179,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CheerupIcon.png" />
+    <None Include="Resources\CheerUpConcept.png" />
     <Content Include="개발참고.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
