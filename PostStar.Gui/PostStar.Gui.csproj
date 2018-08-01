@@ -46,6 +46,7 @@
       <HintPath>..\packages\Mina.2.0.11\lib\net40\Mina.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -130,6 +131,12 @@
     <Compile Include="SendMessage\FrmSendMessage.Designer.cs">
       <DependentUpon>FrmSendMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings\FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Chat\FrmChat.resx">
       <DependentUpon>FrmChat.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SendMessage\FrmSendMessage.resx">
       <DependentUpon>FrmSendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

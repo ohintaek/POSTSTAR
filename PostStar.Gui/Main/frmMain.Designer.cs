@@ -109,6 +109,7 @@
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             this.settingToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.settingToolStripMenuItem.Text = "&Setting";
+            this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // refreshMembersToolStripMenuItem
             // 

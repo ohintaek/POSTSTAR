@@ -1,6 +1,7 @@
 ﻿using PostStar.Gui.Common;
 using PostStar.Gui.Help;
 using PostStar.Gui.SendMessage;
+using PostStar.Gui.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -265,6 +266,18 @@ namespace PostStar.Gui.Main
           //  frmAbout.Parent = this;
             frmAbout.StartPosition = FormStartPosition.CenterParent;
             frmAbout.ShowDialog();
+        }
+
+        /// <summary>
+        /// Settings Dialog를 표시한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void settingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSettings frmSettings = new FrmSettings();
+            frmSettings.StartPosition = FormStartPosition.CenterParent;
+            frmSettings.ShowDialog();
         }
     }
 }

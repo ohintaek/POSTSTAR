@@ -22,5 +22,77 @@ namespace PostStar.Gui.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("영업1팀 홍길동")]
+        public string nickName {
+            get {
+                return ((string)(this["nickName"]));
+            }
+            set {
+                this["nickName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool alertOption_Display {
+            get {
+                return ((bool)(this["alertOption_Display"]));
+            }
+            set {
+                this["alertOption_Display"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool alertOption_UseSound {
+            get {
+                return ((bool)(this["alertOption_UseSound"]));
+            }
+            set {
+                this["alertOption_UseSound"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int trayOption_RecentMessage {
+            get {
+                return ((int)(this["trayOption_RecentMessage"]));
+            }
+            set {
+                this["trayOption_RecentMessage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool retrySendOptoin_Retry {
+            get {
+                return ((bool)(this["retrySendOptoin_Retry"]));
+            }
+            set {
+                this["retrySendOptoin_Retry"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoRunOption {
+            get {
+                return ((bool)(this["autoRunOption"]));
+            }
+            set {
+                this["autoRunOption"] = value;
+            }
+        }
     }
 }
