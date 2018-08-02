@@ -41,8 +41,12 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.ucMe1 = new PostStar.Gui.Main.UcMe();
             this.flpMemberList = new System.Windows.Forms.FlowLayoutPanel();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ucMe1 = new PostStar.Gui.Main.UcMe();
             this.msMainMenu.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
@@ -120,7 +124,11 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.updateToolStripMenuItem,
+            this.webSiteToolStripMenuItem,
+            this.helpToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -150,15 +158,6 @@
             this.tlpMain.Size = new System.Drawing.Size(372, 525);
             this.tlpMain.TabIndex = 8;
             // 
-            // ucMe1
-            // 
-            this.ucMe1.BackColor = System.Drawing.Color.Linen;
-            this.ucMe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucMe1.Location = new System.Drawing.Point(3, 3);
-            this.ucMe1.Name = "ucMe1";
-            this.ucMe1.Size = new System.Drawing.Size(366, 64);
-            this.ucMe1.TabIndex = 6;
-            // 
             // flpMemberList
             // 
             this.flpMemberList.AutoScroll = true;
@@ -168,6 +167,38 @@
             this.flpMemberList.Name = "flpMemberList";
             this.flpMemberList.Size = new System.Drawing.Size(366, 371);
             this.flpMemberList.TabIndex = 8;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.updateToolStripMenuItem.Text = "Update";
+            // 
+            // webSiteToolStripMenuItem
+            // 
+            this.webSiteToolStripMenuItem.Name = "webSiteToolStripMenuItem";
+            this.webSiteToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.webSiteToolStripMenuItem.Text = "HomePage";
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.helpToolStripMenuItem1.Text = "Help";
+            // 
+            // ucMe1
+            // 
+            this.ucMe1.BackColor = System.Drawing.Color.Linen;
+            this.ucMe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucMe1.Location = new System.Drawing.Point(3, 3);
+            this.ucMe1.Name = "ucMe1";
+            this.ucMe1.Size = new System.Drawing.Size(366, 64);
+            this.ucMe1.TabIndex = 6;
             // 
             // FrmMain
             // 
@@ -208,6 +239,10 @@
         private UcMe ucMe1;
         private System.Windows.Forms.ToolStripMenuItem refreshMembersToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flpMemberList;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem webSiteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
     }
 }
 

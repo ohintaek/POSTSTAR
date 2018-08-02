@@ -25,6 +25,24 @@ namespace PostStar.Gui.Settings
         /// <param name="e"></param>
         private void btnApply_Click(object sender, EventArgs e)
         {
+            // 1. 입력내용을 저장한다.
+            Properties.Settings.Default.nickName = txtNickName.Text;
+            Properties.Settings.Default.alertOption_Display = cbAlertOption_Display.Checked;
+            Properties.Settings.Default.alertOption_UseSound = cbAlertOption_UseSound.Checked;
+            Properties.Settings.Default.trayOption_RecentMessage = cbxRecentMessage.SelectedIndex;
+            if (Properties.Settings.Default.retrySendOptoin_Retry == true)
+            {
+                rbSendFailOption_None.Checked = false;
+                rbSendFailOption_Retry.Checked = true;
+            }
+            else
+            {
+                rbSendFailOption_None.Checked = true;
+                rbSendFailOption_Retry.Checked = false;
+            }
+            Properties.Settings.Default.autoRunOption = cbAutoRun.Checked;
+
+            // 2. Dialog 를 닫는다.
             this.Close();
         }
 

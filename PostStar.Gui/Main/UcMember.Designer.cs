@@ -80,7 +80,7 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(62, 18);
             this.lblName.TabIndex = 1;
-            this.lblName.Text = "홍길동";           
+            this.lblName.Text = "홍길동";
             // 
             // pictureBox1
             // 
@@ -100,25 +100,25 @@
             this.tsmShowMemberInfo,
             this.toolStripMenuItem3});
             this.cmsMember.Name = "cmsMember";
-            this.cmsMember.Size = new System.Drawing.Size(124, 76);
+            this.cmsMember.Size = new System.Drawing.Size(176, 104);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(123, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(175, 24);
             this.toolStripMenuItem1.Text = "메시지";
             // 
             // tsmShowMemberInfo
             // 
             this.tsmShowMemberInfo.Name = "tsmShowMemberInfo";
-            this.tsmShowMemberInfo.Size = new System.Drawing.Size(123, 24);
-            this.tsmShowMemberInfo.Text = "프로필";
+            this.tsmShowMemberInfo.Size = new System.Drawing.Size(175, 24);
+            this.tsmShowMemberInfo.Text = "뭐하는 사람?";
             this.tsmShowMemberInfo.Click += new System.EventHandler(this.tsmShowMemberInfo_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(123, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(175, 24);
             this.toolStripMenuItem3.Text = "숨기기";
             // 
             // UcMember

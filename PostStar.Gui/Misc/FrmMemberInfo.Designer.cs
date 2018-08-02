@@ -106,6 +106,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmMemberInfo";
             this.Text = "홍길동 프로필";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
