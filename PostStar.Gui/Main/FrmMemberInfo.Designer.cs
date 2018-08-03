@@ -1,4 +1,4 @@
-﻿namespace PostStar.Gui.Misc
+﻿namespace PostStar.Gui.Main
 {
     partial class FrmMemberInfo
     {

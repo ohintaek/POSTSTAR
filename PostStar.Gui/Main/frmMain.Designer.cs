@@ -40,13 +40,17 @@
             this.refreshMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.flpMemberList = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.ucMe1 = new PostStar.Gui.Main.UcMe();
+            this.flpMemberList = new System.Windows.Forms.FlowLayoutPanel();
+            this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.way1stToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMainMenu.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +81,7 @@
             this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.optionToolStripMenuItem,
+            this.miscToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
@@ -95,7 +100,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -140,34 +145,6 @@
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // tlpMain
-            // 
-            this.tlpMain.AutoSize = true;
-            this.tlpMain.ColumnCount = 1;
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.ucMe1, 0, 0);
-            this.tlpMain.Controls.Add(this.btnSendMsg, 0, 2);
-            this.tlpMain.Controls.Add(this.flpMemberList, 0, 1);
-            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMain.Location = new System.Drawing.Point(0, 28);
-            this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 3;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 377F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tlpMain.Size = new System.Drawing.Size(372, 525);
-            this.tlpMain.TabIndex = 8;
-            // 
-            // flpMemberList
-            // 
-            this.flpMemberList.AutoScroll = true;
-            this.flpMemberList.BackColor = System.Drawing.Color.White;
-            this.flpMemberList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpMemberList.Location = new System.Drawing.Point(3, 73);
-            this.flpMemberList.Name = "flpMemberList";
-            this.flpMemberList.Size = new System.Drawing.Size(366, 371);
-            this.flpMemberList.TabIndex = 8;
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -191,6 +168,24 @@
             this.helpToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
+            // tlpMain
+            // 
+            this.tlpMain.AutoSize = true;
+            this.tlpMain.ColumnCount = 1;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Controls.Add(this.ucMe1, 0, 0);
+            this.tlpMain.Controls.Add(this.btnSendMsg, 0, 2);
+            this.tlpMain.Controls.Add(this.flpMemberList, 0, 1);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 28);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 377F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tlpMain.Size = new System.Drawing.Size(372, 525);
+            this.tlpMain.TabIndex = 8;
+            // 
             // ucMe1
             // 
             this.ucMe1.BackColor = System.Drawing.Color.Linen;
@@ -199,6 +194,44 @@
             this.ucMe1.Name = "ucMe1";
             this.ucMe1.Size = new System.Drawing.Size(366, 64);
             this.ucMe1.TabIndex = 6;
+            // 
+            // flpMemberList
+            // 
+            this.flpMemberList.AutoScroll = true;
+            this.flpMemberList.BackColor = System.Drawing.Color.White;
+            this.flpMemberList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpMemberList.Location = new System.Drawing.Point(3, 73);
+            this.flpMemberList.Name = "flpMemberList";
+            this.flpMemberList.Size = new System.Drawing.Size(366, 371);
+            this.flpMemberList.TabIndex = 8;
+            // 
+            // miscToolStripMenuItem
+            // 
+            this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.way1stToolStripMenuItem,
+            this.marketToolStripMenuItem,
+            this.surveyToolStripMenuItem});
+            this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.miscToolStripMenuItem.Text = "Misc";
+            // 
+            // way1stToolStripMenuItem
+            // 
+            this.way1stToolStripMenuItem.Name = "way1stToolStripMenuItem";
+            this.way1stToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.way1stToolStripMenuItem.Text = "Way1st";
+            // 
+            // marketToolStripMenuItem
+            // 
+            this.marketToolStripMenuItem.Name = "marketToolStripMenuItem";
+            this.marketToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.marketToolStripMenuItem.Text = "Market";
+            // 
+            // surveyToolStripMenuItem
+            // 
+            this.surveyToolStripMenuItem.Name = "surveyToolStripMenuItem";
+            this.surveyToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.surveyToolStripMenuItem.Text = "Survey";
             // 
             // FrmMain
             // 
@@ -243,6 +276,10 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem webSiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem way1stToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem marketToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem surveyToolStripMenuItem;
     }
 }
 

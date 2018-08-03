@@ -117,10 +117,10 @@
     <Compile Include="Main\UcMember.Designer.cs">
       <DependentUpon>UcMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Misc\FrmMemberInfo.cs">
+    <Compile Include="Main\FrmMemberInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Misc\FrmMemberInfo.Designer.cs">
+    <Compile Include="Main\FrmMemberInfo.Designer.cs">
       <DependentUpon>FrmMemberInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -167,7 +167,7 @@
     <EmbeddedResource Include="Main\UcMember.resx">
       <DependentUpon>UcMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Misc\FrmMemberInfo.resx">
+    <EmbeddedResource Include="Main\FrmMemberInfo.resx">
       <DependentUpon>FrmMemberInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,6 +216,9 @@
     <None Include="Resources\CheerUpConcept.png" />
     <Content Include="Resources\ic_grade_black_36dp.png" />
     <Content Include="개발참고.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Misc\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PostStar.Gui.SendMessage;
-using PostStar.Gui.Misc;
 using PostStar.Gui.Chat;
 
 namespace PostStar.Gui.Main

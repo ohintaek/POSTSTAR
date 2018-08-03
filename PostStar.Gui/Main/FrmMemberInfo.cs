@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PostStar.Gui.Misc
+namespace PostStar.Gui.Main
 {
     /// <summary>
     /// 멤버 프로필 다이얼로그
