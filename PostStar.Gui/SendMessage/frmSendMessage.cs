@@ -1,4 +1,5 @@
-﻿using PostStar.Gui.Common;
+﻿using PostStar.Communicator.DataStructure;
+using PostStar.Gui.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,19 @@ namespace PostStar.Gui.SendMessage
     public partial class FrmSendMessage : PostStar.Gui.Common.FrmBaseDialog
     {
         /// <summary>
+        /// 메시지를 수신할 멤버목록
+        /// </summary>
+        private List<Member> targetMemberList;
+
+        /// <summary>
         /// Constructor
         /// </summary>
-        public FrmSendMessage()
+        public FrmSendMessage(Member member)
         {
             InitializeComponent();
+
+            targetMemberList = new List<Member>();
+            targetMemberList.Add(member);
         }
 
         /// <summary>

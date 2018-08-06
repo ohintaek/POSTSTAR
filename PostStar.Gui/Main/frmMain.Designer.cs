@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.btnSendMsg = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +37,10 @@
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.way1stToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -47,24 +50,9 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.ucMe1 = new PostStar.Gui.Main.UcMe();
             this.flpMemberList = new System.Windows.Forms.FlowLayoutPanel();
-            this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.way1stToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.surveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMainMenu.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnSendMsg
-            // 
-            this.btnSendMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSendMsg.Location = new System.Drawing.Point(3, 450);
-            this.btnSendMsg.Name = "btnSendMsg";
-            this.btnSendMsg.Size = new System.Drawing.Size(366, 72);
-            this.btnSendMsg.TabIndex = 3;
-            this.btnSendMsg.Text = "&Send Message";
-            this.btnSendMsg.UseVisualStyleBackColor = true;
-            this.btnSendMsg.Click += new System.EventHandler(this.btnSendMsg_Click);
             // 
             // notifyIcon
             // 
@@ -100,7 +88,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -126,6 +114,34 @@
             this.refreshMembersToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.refreshMembersToolStripMenuItem.Text = "Refresh Members";
             // 
+            // miscToolStripMenuItem
+            // 
+            this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.way1stToolStripMenuItem,
+            this.marketToolStripMenuItem,
+            this.surveyToolStripMenuItem});
+            this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.miscToolStripMenuItem.Text = "Misc";
+            // 
+            // way1stToolStripMenuItem
+            // 
+            this.way1stToolStripMenuItem.Name = "way1stToolStripMenuItem";
+            this.way1stToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.way1stToolStripMenuItem.Text = "Way1st";
+            // 
+            // marketToolStripMenuItem
+            // 
+            this.marketToolStripMenuItem.Name = "marketToolStripMenuItem";
+            this.marketToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.marketToolStripMenuItem.Text = "Market";
+            // 
+            // surveyToolStripMenuItem
+            // 
+            this.surveyToolStripMenuItem.Name = "surveyToolStripMenuItem";
+            this.surveyToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.surveyToolStripMenuItem.Text = "Survey";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -141,31 +157,31 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(156, 6);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // webSiteToolStripMenuItem
             // 
             this.webSiteToolStripMenuItem.Name = "webSiteToolStripMenuItem";
-            this.webSiteToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.webSiteToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.webSiteToolStripMenuItem.Text = "HomePage";
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // tlpMain
@@ -174,15 +190,14 @@
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.Controls.Add(this.ucMe1, 0, 0);
-            this.tlpMain.Controls.Add(this.btnSendMsg, 0, 2);
             this.tlpMain.Controls.Add(this.flpMemberList, 0, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 28);
             this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowCount = 2;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 377F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(372, 525);
             this.tlpMain.TabIndex = 8;
             // 
@@ -202,36 +217,8 @@
             this.flpMemberList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMemberList.Location = new System.Drawing.Point(3, 73);
             this.flpMemberList.Name = "flpMemberList";
-            this.flpMemberList.Size = new System.Drawing.Size(366, 371);
+            this.flpMemberList.Size = new System.Drawing.Size(366, 449);
             this.flpMemberList.TabIndex = 8;
-            // 
-            // miscToolStripMenuItem
-            // 
-            this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.way1stToolStripMenuItem,
-            this.marketToolStripMenuItem,
-            this.surveyToolStripMenuItem});
-            this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
-            this.miscToolStripMenuItem.Text = "Misc";
-            // 
-            // way1stToolStripMenuItem
-            // 
-            this.way1stToolStripMenuItem.Name = "way1stToolStripMenuItem";
-            this.way1stToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.way1stToolStripMenuItem.Text = "Way1st";
-            // 
-            // marketToolStripMenuItem
-            // 
-            this.marketToolStripMenuItem.Name = "marketToolStripMenuItem";
-            this.marketToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.marketToolStripMenuItem.Text = "Market";
-            // 
-            // surveyToolStripMenuItem
-            // 
-            this.surveyToolStripMenuItem.Name = "surveyToolStripMenuItem";
-            this.surveyToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.surveyToolStripMenuItem.Text = "Survey";
             // 
             // FrmMain
             // 
@@ -259,7 +246,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSendMsg;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.MenuStrip msMainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

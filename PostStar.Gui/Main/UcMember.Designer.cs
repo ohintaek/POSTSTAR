@@ -35,7 +35,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmsMember = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSendMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowMemberInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpMember.SuspendLayout();
@@ -96,29 +96,30 @@
             // 
             this.cmsMember.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
+            this.tsmiSendMessage,
             this.tsmShowMemberInfo,
             this.toolStripMenuItem3});
             this.cmsMember.Name = "cmsMember";
-            this.cmsMember.Size = new System.Drawing.Size(176, 104);
+            this.cmsMember.Size = new System.Drawing.Size(177, 104);
             // 
-            // toolStripMenuItem1
+            // tsmiSendMessage
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(175, 24);
-            this.toolStripMenuItem1.Text = "메시지";
+            this.tsmiSendMessage.Name = "tsmiSendMessage";
+            this.tsmiSendMessage.Size = new System.Drawing.Size(176, 24);
+            this.tsmiSendMessage.Text = "&Send Message";
+            this.tsmiSendMessage.Click += new System.EventHandler(this.tsmiSendMessage_Click);
             // 
             // tsmShowMemberInfo
             // 
             this.tsmShowMemberInfo.Name = "tsmShowMemberInfo";
-            this.tsmShowMemberInfo.Size = new System.Drawing.Size(175, 24);
+            this.tsmShowMemberInfo.Size = new System.Drawing.Size(176, 24);
             this.tsmShowMemberInfo.Text = "뭐하는 사람?";
             this.tsmShowMemberInfo.Click += new System.EventHandler(this.tsmShowMemberInfo_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(175, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 24);
             this.toolStripMenuItem3.Text = "숨기기";
             // 
             // UcMember
@@ -149,7 +150,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ContextMenuStrip cmsMember;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSendMessage;
         private System.Windows.Forms.ToolStripMenuItem tsmShowMemberInfo;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }

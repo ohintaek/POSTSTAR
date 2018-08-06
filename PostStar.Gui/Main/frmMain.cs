@@ -1,4 +1,5 @@
-﻿using PostStar.Gui.Common;
+﻿using PostStar.Communicator.DataStructure;
+using PostStar.Gui.Common;
 using PostStar.Gui.Help;
 using PostStar.Gui.SendMessage;
 using PostStar.Gui.Settings;
@@ -60,12 +61,12 @@ namespace PostStar.Gui.Main
         /// 멤버목록을 바인딩한다.
         /// </summary>
         private void initMemberList()
-        {    
-            flpMemberList.Controls.Add(new UcMember("홍길동"));
-            flpMemberList.Controls.Add(new UcMember("전지현"));
-            flpMemberList.Controls.Add(new UcMember("김팀장"));
-            flpMemberList.Controls.Add(new UcMember("김팀원"));
-            flpMemberList.Controls.Add(new UcMember("하니"));
+        {
+            flpMemberList.Controls.Add(new UcMember(new Member("홍길동")));
+            flpMemberList.Controls.Add(new UcMember(new Member("전지현")));
+            flpMemberList.Controls.Add(new UcMember(new Member("김팀장")));
+            flpMemberList.Controls.Add(new UcMember(new Member("김팀원")));
+            flpMemberList.Controls.Add(new UcMember(new Member("하니")));
         }
 
         /// <summary>
@@ -135,17 +136,6 @@ namespace PostStar.Gui.Main
         private void btnMsgHistoryBox_Click(object sender, EventArgs e)
         {
             MessageBox.Show("SHOW MESSAGE HISTORY DIALOG");
-        }
-
-        /// <summary>
-        /// Send Message 다이얼로그를 실행한다.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSendMsg_Click(object sender, EventArgs e)
-        {
-            FrmSendMessage frmSendMessage = new FrmSendMessage();
-            frmSendMessage.Show();
         }
 
         /// <summary>
