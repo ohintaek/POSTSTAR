@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSendMessage));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMessageBody = new System.Windows.Forms.TextBox();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -37,13 +37,13 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtMessageBody
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(491, 378);
-            this.textBox1.TabIndex = 1;
+            this.txtMessageBody.Location = new System.Drawing.Point(8, 3);
+            this.txtMessageBody.Multiline = true;
+            this.txtMessageBody.Name = "txtMessageBody";
+            this.txtMessageBody.Size = new System.Drawing.Size(491, 378);
+            this.txtMessageBody.TabIndex = 1;
             // 
             // btnAddUser
             // 
@@ -100,7 +100,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMessageBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FrmSendMessage";
             this.Text = "메시지 보내기";
@@ -112,7 +112,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMessageBody;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnCancel;

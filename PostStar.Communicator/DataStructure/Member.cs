@@ -24,6 +24,7 @@ namespace PostStar.Communicator.DataStructure
         public Member(String nickName)
         {
             this.nickName = nickName;
+            this.iPAddress = IPAddress.Parse("127.0.0.1");
         }
     }
 }
