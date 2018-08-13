@@ -6,6 +6,7 @@ using Mina.Filter.Codec.Serialization;
 using Mina.Filter.Codec.TextLine;
 using Mina.Filter.Logging;
 using Mina.Transport.Socket;
+using PostStar.Communicator.DataStructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,31 +29,43 @@ namespace PostStar.Communicator
         IoSession session = null;
         IPEndPoint endPoint = null;
 
+        // 메시지 송신자
+        Member sender;
+
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="ipAddress"></param>
-        /// <param name="portNo"></param>
-        public MessageSender(String ipAddress, int portNo)
+        /// <param name="sender"></param>
+        public MessageSender(Member sender)
         {
-            try
-            {
-                // 1. CONNECTOR 를 생성한다.
-                this.connector = new AsyncSocketConnector();
-                this.connector.FilterChain.AddLast("logger", new LoggingFilter());
-                this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
-                this.connector.SessionClosed += (o, e) => Append("Connection closed.");
-                this.connector.MessageReceived += OnMessageReceived;
-
-                // 2. 상대방에게 접속을 시도한다.
-                this.endPoint = new IPEndPoint(IPAddress.Parse(ipAddress), portNo);
-                this.Connect();
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(String.Format("{0}:{1}에 연결할 수 없습니다.", ipAddress, portNo), ex);
-            }
+            this.sender = sender;
         }
+
+        ///// <summary>
+        ///// Constructor
+        ///// </summary>
+        ///// <param name="ipAddress"></param>
+        ///// <param name="portNo"></param>
+        //public MessageSender(IPAddress ipAddress, int portNo)
+        //{
+        //    try
+        //    {
+        //        // 1. CONNECTOR 를 생성한다.
+        //        this.connector = new AsyncSocketConnector();
+        //        this.connector.FilterChain.AddLast("logger", new LoggingFilter());
+        //        this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
+        //        this.connector.SessionClosed += (o, e) => Append("Connection closed.");
+        //        this.connector.MessageReceived += OnMessageReceived;
+
+        //        // 2. 상대방에게 접속을 시도한다.
+        //        this.endPoint = new IPEndPoint(ipAddress, portNo);
+        //        this.Connect();
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        throw new Exception(String.Format("{0}:{1}에 연결할 수 없습니다.", ipAddress, portNo), ex);
+        //    }
+        //}
 
         /// <summary>
         /// 상대방에 접속처리를 한다.
@@ -145,6 +158,10 @@ namespace PostStar.Communicator
             //buttonDisconnect.Enabled = buttonSend.Enabled = buttonQuit.Enabled = textBoxChat.Enabled = textBoxInput.Enabled = loggedIn;
         }
 
+        /// <summary>
+        /// Message 객체를 전송한다.
+        /// </summary>
+        /// <param name="packet"></param>
         public void Send(object packet)
         {
             if (session == null)
@@ -153,10 +170,7 @@ namespace PostStar.Communicator
             if (packet == null)
                 return;
 
-
             session.Write(packet);
-
-
         }
     }
 }

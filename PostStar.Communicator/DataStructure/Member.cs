@@ -11,7 +11,6 @@ namespace PostStar.Communicator.DataStructure
     /// </summary>
     public class Member
     {
-
         public String nickName { get; set; }
         public String name { get; set; }
         public String email { get; set; }

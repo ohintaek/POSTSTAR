@@ -58,7 +58,7 @@
     <Compile Include="MessageSender.cs" />
     <Compile Include="ReceiveHandler\BaseReceiveHandler.cs" />
     <Compile Include="TransData\DataContainer.cs" />
-    <Compile Include="TransData\Messages\ChatMessage.cs" />
+    <Compile Include="TransData\Messages\CardMessage.cs" />
     <Compile Include="TransData\Messages\MemberInfoMessage.cs" />
     <Compile Include="TransData\Messages\Message.cs" />
     <Compile Include="TransData\Messages\PingMessage.cs" />

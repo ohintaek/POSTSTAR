@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostStar.Communicator.DataStructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,7 @@ namespace PostStar.Communicator.TransData.Messages
     /// </summary>
     class MemberInfoMessage : Message
     {
+        Member member;
+
     }
 }

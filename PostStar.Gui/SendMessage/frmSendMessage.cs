@@ -71,7 +71,7 @@ namespace PostStar.Gui.SendMessage
                 IMessageSender msgSender;
                 foreach (Member memer in this.targetMemberList)
                 {
-                    msgSender = new MessageSender(memer.iPAddress.ToString(), CommConst.PORT);
+                    msgSender = new MessageSender(memer.iPAddress, CommConst.PORT);
                     msgSender.Send(inputMessage);
                 }
 

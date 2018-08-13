@@ -10,7 +10,7 @@ namespace PostStar.Communicator.TransData
     /// 전송데이터 컨테이너
     /// </summary>
     [Serializable]
-    class DataContainer
+    public abstract class DataContainer
     {
         Message message;
     }
