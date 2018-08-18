@@ -26,8 +26,8 @@ namespace PostStar.Communicator
         const int MAX_TRY_COUNT = 3;
 
         IoConnector connector = null;
-        IoSession session = null;
         IPEndPoint endPoint = null;
+        IoSession session = null;
 
         // 메시지 송신자
         Member sender;
@@ -41,31 +41,31 @@ namespace PostStar.Communicator
             this.sender = sender;
         }
 
-        ///// <summary>
-        ///// Constructor
-        ///// </summary>
-        ///// <param name="ipAddress"></param>
-        ///// <param name="portNo"></param>
-        //public MessageSender(IPAddress ipAddress, int portNo)
-        //{
-        //    try
-        //    {
-        //        // 1. CONNECTOR 를 생성한다.
-        //        this.connector = new AsyncSocketConnector();
-        //        this.connector.FilterChain.AddLast("logger", new LoggingFilter());
-        //        this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
-        //        this.connector.SessionClosed += (o, e) => Append("Connection closed.");
-        //        this.connector.MessageReceived += OnMessageReceived;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="ipAddress"></param>
+        /// <param name="portNo"></param>
+        private void init(IPAddress ipAddress, int portNo)
+        {
+            try
+            {
+                // 1. CONNECTOR 를 생성한다.
+                this.connector = new AsyncSocketConnector();
+                this.connector.FilterChain.AddLast("logger", new LoggingFilter());
+                this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
+                this.connector.SessionClosed += (o, e) => Append("Connection closed.");
+                this.connector.MessageReceived += OnMessageReceived;
 
-        //        // 2. 상대방에게 접속을 시도한다.
-        //        this.endPoint = new IPEndPoint(ipAddress, portNo);
-        //        this.Connect();
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        throw new Exception(String.Format("{0}:{1}에 연결할 수 없습니다.", ipAddress, portNo), ex);
-        //    }
-        //}
+                // 2. 상대방에게 접속을 시도한다.
+                this.endPoint = new IPEndPoint(ipAddress, portNo);
+                this.Connect();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(String.Format("{0}:{1}에 연결할 수 없습니다.", ipAddress, portNo), ex);
+            }
+        }
 
         /// <summary>
         /// 상대방에 접속처리를 한다.
@@ -162,15 +162,25 @@ namespace PostStar.Communicator
         /// Message 객체를 전송한다.
         /// </summary>
         /// <param name="packet"></param>
-        public void Send(object packet)
+        public void Send(Member receiver, object packet)
         {
-            if (session == null)
-                return;
-
             if (packet == null)
                 return;
 
-            session.Write(packet);
+            try
+            {
+                if ((this.connector == null) || (this.endPoint == null))
+                    this.init(receiver.ipAddress, CommConst.PORT);
+
+                if (this.session == null)
+                    this.Connect();
+
+                session.Write(packet);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("메시지 전송 실패",ex);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostStar.Communicator.DataStructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace PostStar.Communicator
     /// </summary>
     public interface IMessageSender
     {
-        void Send(Object packet);
+        void Send(Member member, Object packet);
     }
 }

@@ -48,7 +48,7 @@
             this.webSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.ucMe1 = new PostStar.Gui.Main.UcMe();
+            this.ucMe = new PostStar.Gui.Main.UcMe();
             this.flpMemberList = new System.Windows.Forms.FlowLayoutPanel();
             this.msMainMenu.SuspendLayout();
             this.tlpMain.SuspendLayout();
@@ -189,7 +189,7 @@
             this.tlpMain.AutoSize = true;
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.ucMe1, 0, 0);
+            this.tlpMain.Controls.Add(this.ucMe, 0, 0);
             this.tlpMain.Controls.Add(this.flpMemberList, 0, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 28);
@@ -201,14 +201,14 @@
             this.tlpMain.Size = new System.Drawing.Size(372, 525);
             this.tlpMain.TabIndex = 8;
             // 
-            // ucMe1
+            // ucMe
             // 
-            this.ucMe1.BackColor = System.Drawing.Color.Linen;
-            this.ucMe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucMe1.Location = new System.Drawing.Point(3, 3);
-            this.ucMe1.Name = "ucMe1";
-            this.ucMe1.Size = new System.Drawing.Size(366, 64);
-            this.ucMe1.TabIndex = 6;
+            this.ucMe.BackColor = System.Drawing.Color.Linen;
+            this.ucMe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucMe.Location = new System.Drawing.Point(3, 3);
+            this.ucMe.Name = "ucMe";
+            this.ucMe.Size = new System.Drawing.Size(366, 64);
+            this.ucMe.TabIndex = 6;
             // 
             // flpMemberList
             // 
@@ -255,7 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tlpMain;
-        private UcMe ucMe1;
+        private UcMe ucMe;
         private System.Windows.Forms.ToolStripMenuItem refreshMembersToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flpMemberList;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;

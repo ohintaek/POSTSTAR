@@ -1,5 +1,6 @@
 ﻿using PostStar.Communicator;
 using PostStar.Communicator.DataStructure;
+using PostStar.Communicator.TransData.Messages;
 using PostStar.Gui.Common;
 using System;
 using System.Collections.Generic;
@@ -68,11 +69,14 @@ namespace PostStar.Gui.SendMessage
                     return;
 
                 // 1. 입력된 내용을 상대방에게 전송한다.  
-                IMessageSender msgSender;
+                IMessageSender msgSender = new MessageSender(GlobalData.me);
+                CardMessage cardMessage;
                 foreach (Member memer in this.targetMemberList)
                 {
-                    msgSender = new MessageSender(memer.iPAddress, CommConst.PORT);
-                    msgSender.Send(inputMessage);
+                    cardMessage = new CardMessage(GlobalData.me, memer);
+                    cardMessage.cardTitle = "Happy Birthday!!!";
+                    cardMessage.cardBody = "안녕하세요. 생일축하 합니다.";
+                    msgSender.Send(memer, cardMessage);
                 }
 
                 // 2. 전송메시지 History에 기록한다.

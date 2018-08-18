@@ -14,7 +14,7 @@ namespace PostStar.Communicator.DataStructure
         public String nickName { get; set; }
         public String name { get; set; }
         public String email { get; set; }
-        public IPAddress iPAddress { get; set; }
+        public IPAddress ipAddress { get; set; }
 
         /// <summary>
         /// Constructor
@@ -23,7 +23,7 @@ namespace PostStar.Communicator.DataStructure
         public Member(String nickName)
         {
             this.nickName = nickName;
-            this.iPAddress = IPAddress.Parse("127.0.0.1");
+            this.ipAddress = IPAddress.Parse("127.0.0.1");
         }
     }
 }

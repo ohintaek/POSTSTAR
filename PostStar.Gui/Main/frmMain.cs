@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,12 +50,40 @@ namespace PostStar.Gui.Main
         /// <param name="e"></param>
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            // 1. 사용자 정보를 구한다.
+            this.initMe();
+            
+            // 2. 멤버목록을 구한다.
             this.initMemberList();
 
             // 이벤트 계층적 호출처리기를 등록한다.
             this.beMouseEnter = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseEnter");
             this.beMouseLeave = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseLeave");
             this.beDoubleClick = EventBroadcastProvider.CreateProvider(this.flpMemberList, "DoubleClick");
+        }
+
+        /// <summary>
+        /// 사용자 정보를 구한다.
+        /// </summary>
+        private void initMe()
+        {
+            // 1. 설정된 nick name을 구한다.(nick name이 없다면 host name으로 대체한다.)
+            String nickName = Properties.Settings.Default.nickName;
+            String hostName = Dns.GetHostName();
+            if (String.IsNullOrEmpty(nickName))
+                nickName = hostName;
+
+            // 2. 사용자 객체를 구한다.
+            Member me = new Member(nickName);
+            me.ipAddress = Dns.GetHostAddresses(hostName)[0/* 첫번째 IP를 사용한다. */];
+            me.email = null;
+            me.name = null;
+
+            // 3. 메인화면에 표시한다.
+            this.ucMe.setMe(me);
+
+            // 9. 전체공용 변수에 저장한다.
+            GlobalData.me = me;
         }
 
         /// <summary>

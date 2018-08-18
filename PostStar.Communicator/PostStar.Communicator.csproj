@@ -62,8 +62,7 @@
     <Compile Include="TransData\Messages\MemberInfoMessage.cs" />
     <Compile Include="TransData\Messages\Message.cs" />
     <Compile Include="TransData\Messages\PingMessage.cs" />
-    <Compile Include="TransData\ReceiveDataContainer.cs" />
-    <Compile Include="TransData\SendDataContainer.cs" />
+    <Compile Include="TransData\TransDataContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

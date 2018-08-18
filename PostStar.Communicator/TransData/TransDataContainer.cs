@@ -8,7 +8,7 @@ namespace PostStar.Communicator.TransData
     /// <summary>
     /// 송신데이터 컨테이너
     /// </summary>
-    class SendDataContainer : DataContainer
+    class TransDataContainer : DataContainer
     {
         String targetIpAddress;
         String targetPortNo;

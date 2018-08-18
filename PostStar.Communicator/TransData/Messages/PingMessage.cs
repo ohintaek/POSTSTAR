@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostStar.Communicator.DataStructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,13 @@ namespace PostStar.Communicator.TransData.Messages
     /// </summary>
     class PingMessage : Message
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="receiver"></param>
+        public PingMessage(Member sender, Member receiver) : base(sender, receiver)
+        {
+        }
     }
 }

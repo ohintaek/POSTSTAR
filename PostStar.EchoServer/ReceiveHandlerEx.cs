@@ -58,61 +58,65 @@ namespace PostStar.EchoServer
         /// <param name="message"></param>
         public override void MessageReceived(IoSession session, Object message)
         {
-            String theMessage = (String)message;
-            String[] result = theMessage.Split(new Char[] { ' ' }, 2);
-            String theCommand = result[0];
+            //
+            Console.WriteLine("수신 메시지 : ");
 
-            String user = session.GetAttribute<String>("user");
 
-            if (String.Equals("QUIT", theCommand, StringComparison.OrdinalIgnoreCase))
-            {
-                session.Write("QUIT OK");
-                session.Close(true);
-            }
-            else if (String.Equals("LOGIN", theCommand, StringComparison.OrdinalIgnoreCase))
-            {
-                if (user != null)
-                {
-                    session.Write("LOGIN ERROR user " + user + " already logged in.");
-                    return;
-                }
+            //String theMessage = (String)message;
+            //String[] result = theMessage.Split(new Char[] { ' ' }, 2);
+            //String theCommand = result[0];
 
-                if (result.Length == 2)
-                {
-                    user = result[1];
-                }
-                else
-                {
-                    session.Write("LOGIN ERROR invalid login command.");
-                    return;
-                }
+            //String user = session.GetAttribute<String>("user");
 
-                // check if the username is already used
-                if (users.ContainsKey(user))
-                {
-                    session.Write("LOGIN ERROR the name " + user + " is already used.");
-                    return;
-                }
+            //if (String.Equals("QUIT", theCommand, StringComparison.OrdinalIgnoreCase))
+            //{
+            //    session.Write("QUIT OK");
+            //    session.Close(true);
+            //}
+            //else if (String.Equals("LOGIN", theCommand, StringComparison.OrdinalIgnoreCase))
+            //{
+            //    if (user != null)
+            //    {
+            //        session.Write("LOGIN ERROR user " + user + " already logged in.");
+            //        return;
+            //    }
 
-                sessions[session] = true;
-                session.SetAttribute("user", user);
+            //    if (result.Length == 2)
+            //    {
+            //        user = result[1];
+            //    }
+            //    else
+            //    {
+            //        session.Write("LOGIN ERROR invalid login command.");
+            //        return;
+            //    }
 
-                // Allow all users
-                users[user] = true;
-                session.Write("LOGIN OK");
-                Broadcast("The user " + user + " has joined the chat session.");
-            }
-            else if (String.Equals("BROADCAST", theCommand, StringComparison.OrdinalIgnoreCase))
-            {
-                if (result.Length == 2)
-                {
-                    Broadcast(user + ": " + result[1]);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Unhandled command: " + theCommand);
-            }
+            //    // check if the username is already used
+            //    if (users.ContainsKey(user))
+            //    {
+            //        session.Write("LOGIN ERROR the name " + user + " is already used.");
+            //        return;
+            //    }
+
+            //    sessions[session] = true;
+            //    session.SetAttribute("user", user);
+
+            //    // Allow all users
+            //    users[user] = true;
+            //    session.Write("LOGIN OK");
+            //    Broadcast("The user " + user + " has joined the chat session.");
+            //}
+            //else if (String.Equals("BROADCAST", theCommand, StringComparison.OrdinalIgnoreCase))
+            //{
+            //    if (result.Length == 2)
+            //    {
+            //        Broadcast(user + ": " + result[1]);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Unhandled command: " + theCommand);
+            //}
         }
     }
 }

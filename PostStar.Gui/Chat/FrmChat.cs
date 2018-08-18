@@ -42,26 +42,26 @@ namespace PostStar.Gui.Chat
         /// <param name="e"></param>
         private void btnFireSend_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // 0. 입력내용이 없다면 Return
-                String inputMessage = this.tbxChatMessage.Text.Trim();
-                if (inputMessage == string.Empty)
-                    return;
+            //try
+            //{
+            //    // 0. 입력내용이 없다면 Return
+            //    String inputMessage = this.tbxChatMessage.Text.Trim();
+            //    if (inputMessage == string.Empty)
+            //        return;
 
-                // 1. 입력된 내용을 상대방에게 전송한다.                
-                this.msgSender.Send(inputMessage);
+            //    // 1. 입력된 내용을 상대방에게 전송한다.                
+            //    this.msgSender.Send(inputMessage);
 
-                // 2. 전송결과를 Chat History 창에 표시한다.
-                this.rtbChatHistory.AppendText(String.Format("\r\n나 : {0}", this.tbxChatMessage.Text));
+            //    // 2. 전송결과를 Chat History 창에 표시한다.
+            //    this.rtbChatHistory.AppendText(String.Format("\r\n나 : {0}", this.tbxChatMessage.Text));
 
-                // 9. 입력된 내용을 삭제한다.
-                this.tbxChatMessage.Text = String.Empty;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    // 9. 입력된 내용을 삭제한다.
+            //    this.tbxChatMessage.Text = String.Empty;
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         /// <summary>
@@ -89,26 +89,26 @@ namespace PostStar.Gui.Chat
         /// <param name="e"></param>
         private void FrmChat_Shown(object sender, EventArgs e)
         {
-            try
-            {
-                // --> 백그라운드 쓰래드로 바꿔야 함...
+            //try
+            //{
+            //    // --> 백그라운드 쓰래드로 바꿔야 함...
 
 
-                // 채팅상대방과 세션을 오픈한다.
-                this.msgSender = new MessageSender("127.0.0.1", CommConst.PORT);
+            //    // 채팅상대방과 세션을 오픈한다.
+            //    this.msgSender = new MessageSender("127.0.0.1", CommConst.PORT);
 
-                // 입력창에 포커스를 준다.
-                this.tbxChatMessage.Enabled = true;
-                this.tbxChatMessage.Focus();
+            //    // 입력창에 포커스를 준다.
+            //    this.tbxChatMessage.Enabled = true;
+            //    this.tbxChatMessage.Focus();
 
-                // 전송버튼을 활성화 한다.
-                this.btnFireSend.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "오류");
-                this.rtbChatHistory.AppendText(ex.Message);
-            }
+            //    // 전송버튼을 활성화 한다.
+            //    this.btnFireSend.Enabled = true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    //MessageBox.Show(ex.Message, "오류");
+            //    this.rtbChatHistory.AppendText(ex.Message);
+            //}
         }
     }
 }
