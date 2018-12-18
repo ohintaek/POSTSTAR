@@ -51,9 +51,12 @@ namespace PostStar.Communicator
             try
             {
                 // 1. CONNECTOR 를 생성한다.
+                ISocketAcceptor x;
                 this.connector = new AsyncSocketConnector();
                 this.connector.FilterChain.AddLast("logger", new LoggingFilter());
-                this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
+                ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
+                objectSerializationCodecFactory.EncoderMaxObjectSize = 104857600;
+                this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(objectSerializationCodecFactory));                     
                 this.connector.SessionClosed += (o, e) => Append("Connection closed.");
                 this.connector.MessageReceived += OnMessageReceived;
 

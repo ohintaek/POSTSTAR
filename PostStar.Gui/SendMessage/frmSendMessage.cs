@@ -78,6 +78,10 @@ namespace PostStar.Gui.SendMessage
                     cardMessage.cardBody = "안녕하세요. 생일축하 합니다.";
                     msgSender.Send(memer, cardMessage);
                 }
+                //foreach (Member memer in this.targetMemberList)
+                //{
+                //    msgSender.Send(memer, "안녕하세요. 생일축하 합니다.");
+                //}
 
                 // 2. 전송메시지 History에 기록한다.
                 //...

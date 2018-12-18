@@ -31,7 +31,7 @@ namespace PostStar.EchoServer
         /// <param name="session"></param>
         public override void SessionOpened(IoSession session)
         {
-            Console.WriteLine("Accept ....");
+            Console.WriteLine("Accept !!!....");
         }
 
 
@@ -60,6 +60,9 @@ namespace PostStar.EchoServer
         {
             //
             Console.WriteLine("수신 메시지 : ");
+            
+            if(message.GetType() == typeof(String))
+                Console.WriteLine(message);
 
 
             //String theMessage = (String)message;
@@ -117,6 +120,19 @@ namespace PostStar.EchoServer
             //{
             //    Console.WriteLine("Unhandled command: " + theCommand);
             //}
+        }
+
+        public override void SessionCreated(IoSession session)
+        {
+            base.SessionCreated(session);
+
+            session.Config.ReadBufferSize = 1024000000;
+
+            //SocketSessionConfig ssc = (SocketSessionConfig)ssn.getConfig();
+            //ssc.setReceiveBufferSize(17/*로그시간*/ +
+            //                            2/*로그발생시스템*/ +
+            //                            1/*메시지코드(로그종류+로그분류)*/ +
+            //                            1004/*로그내용*/);
         }
     }
 }

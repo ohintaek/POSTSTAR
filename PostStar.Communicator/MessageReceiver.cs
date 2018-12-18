@@ -20,7 +20,7 @@ namespace PostStar.Communicator
     {
         IoAcceptor acceptor;
 
-        public MessageReceiver(String ipAddress, int portNo, BaseReceiveHandler baseReceiveHandler)
+        public MessageReceiver(String ipAddress, int portNo, BaseReceiveHandler receiveHandler)
         {
             try
             {
@@ -29,11 +29,13 @@ namespace PostStar.Communicator
 
                 // 2. DEFINE FILTER
                 this.acceptor.FilterChain.AddLast("logger", new LoggingFilter());
-                this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
+                ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
+                objectSerializationCodecFactory.DecoderMaxObjectSize = 104857600;
+                this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(objectSerializationCodecFactory));
 
                 // 3. SET HANDLER
-                this.acceptor.Handler = baseReceiveHandler;
-
+                this.acceptor.Handler = receiveHandler;
+                
                 // 4. BIND
                 this.acceptor.Bind(new IPEndPoint(IPAddress.Any, portNo));
 
