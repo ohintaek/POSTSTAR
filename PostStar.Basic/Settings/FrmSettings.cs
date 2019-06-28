@@ -30,7 +30,7 @@ namespace PostStar.Basic.Settings
             Properties.Settings.Default.alertOption_Display = cbAlertOption_Display.Checked;
             Properties.Settings.Default.alertOption_UseSound = cbAlertOption_UseSound.Checked;
             Properties.Settings.Default.trayOption_RecentMessage = cbxRecentMessage.SelectedIndex;
-            if (Properties.Settings.Default.retrySendOptoin_Retry == true)
+            if (Properties.Settings.Default.retrySendOption_Retry == true)
             {
                 rbSendFailOption_None.Checked = false;
                 rbSendFailOption_Retry.Checked = true;
@@ -43,7 +43,7 @@ namespace PostStar.Basic.Settings
             Properties.Settings.Default.autoRunOption = cbAutoRun.Checked;
 
             // 2. Global 변수에 변경내용을 반영한다.
-            
+            // TODO...
 
             // 9. Dialog 를 닫는다.
             this.Close();
@@ -71,8 +71,8 @@ namespace PostStar.Basic.Settings
             cbAlertOption_Display.Checked = Properties.Settings.Default.alertOption_Display;
             cbAlertOption_UseSound.Checked = Properties.Settings.Default.alertOption_UseSound;
             cbxRecentMessage.SelectedIndex = Properties.Settings.Default.trayOption_RecentMessage;
-            rbSendFailOption_None.Checked = !Properties.Settings.Default.retrySendOptoin_Retry;
-            rbSendFailOption_Retry.Checked = Properties.Settings.Default.retrySendOptoin_Retry;
+            rbSendFailOption_None.Checked = !Properties.Settings.Default.retrySendOption_Retry;
+            rbSendFailOption_Retry.Checked = Properties.Settings.Default.retrySendOption_Retry;
             cbAutoRun.Checked = Properties.Settings.Default.autoRunOption;
         }
     }

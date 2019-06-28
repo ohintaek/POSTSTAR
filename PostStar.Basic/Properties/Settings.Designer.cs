@@ -62,18 +62,6 @@ namespace PostStar.Basic.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool retrySendOptoin_Retry {
-            get {
-                return ((bool)(this["retrySendOptoin_Retry"]));
-            }
-            set {
-                this["retrySendOptoin_Retry"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool autoRunOption {
             get {
                 return ((bool)(this["autoRunOption"]));
@@ -85,13 +73,25 @@ namespace PostStar.Basic.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("탱이")]
         public string nickName {
             get {
                 return ((string)(this["nickName"]));
             }
             set {
                 this["nickName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string retrySendOption_Retry {
+            get {
+                return ((string)(this["retrySendOption_Retry"]));
+            }
+            set {
+                this["retrySendOption_Retry"] = value;
             }
         }
     }
