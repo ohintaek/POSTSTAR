@@ -17,7 +17,7 @@
     <Setting Name="nickName" Type="System.String" Scope="User">
       <Value Profile="(Default)">탱이</Value>
     </Setting>
-    <Setting Name="retrySendOption_Retry" Type="System.String" Scope="User">
+    <Setting Name="retrySendOption_Retry" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>

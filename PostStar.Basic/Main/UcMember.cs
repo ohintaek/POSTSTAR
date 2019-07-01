@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PostStar.Basic.SendMessage;
-using PostStar.Basic.Chat;
 using PostStar.Communicator.DataStructure;
 
 namespace PostStar.Basic.Main
@@ -90,8 +89,8 @@ namespace PostStar.Basic.Main
         /// <param name="e"></param>
         private void UcMember_DoubleClick(object sender, EventArgs e)
         {
-            FrmChat frmChat = new FrmChat();
-            frmChat.Show();
+         //   FrmChat frmChat = new FrmChat();
+         //   frmChat.Show();
 
         }
 

@@ -42,6 +42,8 @@ namespace PostStar.Basic.SendMessage
                 this.Text = String.Format("{0}외 {1}명에게 메시지 보내기", targetMemberList[0].nickName, targetMemberList.Count);
             else
                 this.Text = String.Format("{0}에게 메시지 보내기", targetMemberList[0].nickName);
+
+            btnSend.Enabled = false;
         }
 
         /// <summary>
@@ -65,8 +67,8 @@ namespace PostStar.Basic.SendMessage
             {
                 // 0. 입력내용이 없다면 Return
                 String inputMessage = this.txtMessageBody.Text.Trim();
-                if (inputMessage == string.Empty)
-                    return;
+                //if (inputMessage == string.Empty)
+                //    return;
 
                 // 1. 입력된 내용을 상대방에게 전송한다.  
                 IMessageSender msgSender = new MessageSender(GlobalData.me);
@@ -95,5 +97,12 @@ namespace PostStar.Basic.SendMessage
             }
         }
 
+        private void txtMessageBody_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtMessageBody.TextLength > 0)
+                btnSend.Enabled = true;
+            else
+                btnSend.Enabled = false;
+        }
     }
 }

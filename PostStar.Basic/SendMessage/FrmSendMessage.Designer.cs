@@ -44,6 +44,7 @@
             this.txtMessageBody.Name = "txtMessageBody";
             this.txtMessageBody.Size = new System.Drawing.Size(491, 378);
             this.txtMessageBody.TabIndex = 1;
+            this.txtMessageBody.TextChanged += new System.EventHandler(this.txtMessageBody_TextChanged);
             // 
             // btnAddUser
             // 

@@ -86,9 +86,9 @@ namespace PostStar.Basic.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string retrySendOption_Retry {
+        public bool retrySendOption_Retry {
             get {
-                return ((string)(this["retrySendOption_Retry"]));
+                return ((bool)(this["retrySendOption_Retry"]));
             }
             set {
                 this["retrySendOption_Retry"] = value;

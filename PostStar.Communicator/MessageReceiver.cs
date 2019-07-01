@@ -30,8 +30,9 @@ namespace PostStar.Communicator
                 // 2. DEFINE FILTER
                 this.acceptor.FilterChain.AddLast("logger", new LoggingFilter());
                 ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
-                objectSerializationCodecFactory.DecoderMaxObjectSize = 104857600;
+                //objectSerializationCodecFactory.DecoderMaxObjectSize = 104857600;
                 this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(objectSerializationCodecFactory));
+                //this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
 
                 // 3. SET HANDLER
                 this.acceptor.Handler = receiveHandler;

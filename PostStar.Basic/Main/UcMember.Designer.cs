@@ -100,26 +100,27 @@
             this.tsmShowMemberInfo,
             this.toolStripMenuItem3});
             this.cmsMember.Name = "cmsMember";
-            this.cmsMember.Size = new System.Drawing.Size(177, 104);
+            this.cmsMember.Size = new System.Drawing.Size(211, 104);
             // 
             // tsmiSendMessage
             // 
             this.tsmiSendMessage.Name = "tsmiSendMessage";
-            this.tsmiSendMessage.Size = new System.Drawing.Size(176, 24);
+            this.tsmiSendMessage.ShortcutKeyDisplayString = "";
+            this.tsmiSendMessage.Size = new System.Drawing.Size(210, 24);
             this.tsmiSendMessage.Text = "&Send Message";
             this.tsmiSendMessage.Click += new System.EventHandler(this.tsmiSendMessage_Click);
             // 
             // tsmShowMemberInfo
             // 
             this.tsmShowMemberInfo.Name = "tsmShowMemberInfo";
-            this.tsmShowMemberInfo.Size = new System.Drawing.Size(176, 24);
+            this.tsmShowMemberInfo.Size = new System.Drawing.Size(210, 24);
             this.tsmShowMemberInfo.Text = "뭐하는 사람?";
             this.tsmShowMemberInfo.Click += new System.EventHandler(this.tsmShowMemberInfo_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
             this.toolStripMenuItem3.Text = "숨기기";
             // 
             // UcMember
