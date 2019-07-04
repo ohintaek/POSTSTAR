@@ -28,11 +28,14 @@ namespace PostStar.Communicator
                 this.acceptor = new AsyncSocketAcceptor();
 
                 // 2. DEFINE FILTER
+                // 2.1. Logger filter
                 this.acceptor.FilterChain.AddLast("logger", new LoggingFilter());
+
+                // 2.2. Codec filter
                 ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
                 //objectSerializationCodecFactory.DecoderMaxObjectSize = 104857600;
                 this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(objectSerializationCodecFactory));
-                //this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory()));
+                
 
                 // 3. SET HANDLER
                 this.acceptor.Handler = receiveHandler;

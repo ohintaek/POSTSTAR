@@ -9,6 +9,7 @@ namespace PostStar.Communicator.TransData.Messages
     /// <summary>
     /// 멤버정보 메시지
     /// </summary>
+    [Serializable]
     class MemberInfoMessage : Message
     {
         Member member;

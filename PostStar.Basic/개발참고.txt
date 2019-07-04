@@ -16,3 +16,4 @@ E:\Dropbox\8. 클립아트\material-design-icons-1.0.0\material-design-icons-1.0
    - CardMessage 객체를 송수신기능 구현
      . ObjectSerializationCodecFactory 를 사용한 Object 전송처리
 	 . MINA에 대한 연구
+

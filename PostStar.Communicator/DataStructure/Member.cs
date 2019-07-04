@@ -9,6 +9,7 @@ namespace PostStar.Communicator.DataStructure
     /// <summary>
     /// 사용자 정보
     /// </summary>
+    [Serializable]
     public class Member
     {
         public String nickName { get; set; }
