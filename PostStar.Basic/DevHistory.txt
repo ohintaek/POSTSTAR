@@ -11,9 +11,11 @@ E:\Dropbox\8. 클립아트\material-design-icons-1.0.0\material-design-icons-1.0
 [2018.08.13]
  @ 메시지 전송기능 설계
 
-[2018.08.18 - ing]
+[2019.07.04]
  @ 메시지 전송기능 설계
-   - CardMessage 객체를 송수신기능 구현
+   + CardMessage 객체를 송수신기능 구현
      . ObjectSerializationCodecFactory 를 사용한 Object 전송처리
 	 . MINA에 대한 연구
 
+[2019.07.00]
+ @ 메시지 수신 및 POPUP기능 구현

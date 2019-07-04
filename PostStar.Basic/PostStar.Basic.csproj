@@ -228,7 +228,7 @@
     <None Include="Resources\CheerUpConcept.png" />
     <Content Include="POST-STAR.ico" />
     <Content Include="Resources\ic_grade_black_36dp.png" />
-    <Content Include="개발참고.txt" />
+    <Content Include="DevHistory.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Misc\" />
