@@ -39,10 +39,11 @@
             // 
             // txtMessageBody
             // 
-            this.txtMessageBody.Location = new System.Drawing.Point(8, 3);
+            this.txtMessageBody.Location = new System.Drawing.Point(7, 5);
+            this.txtMessageBody.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMessageBody.Multiline = true;
             this.txtMessageBody.Name = "txtMessageBody";
-            this.txtMessageBody.Size = new System.Drawing.Size(491, 378);
+            this.txtMessageBody.Size = new System.Drawing.Size(430, 300);
             this.txtMessageBody.TabIndex = 1;
             this.txtMessageBody.TextChanged += new System.EventHandler(this.txtMessageBody_TextChanged);
             // 
@@ -50,10 +51,10 @@
             // 
             this.btnAddUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddUser.BackgroundImage")));
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddUser.Location = new System.Drawing.Point(8, 390);
+            this.btnAddUser.Location = new System.Drawing.Point(7, 312);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(75, 37);
+            this.btnAddUser.Size = new System.Drawing.Size(66, 30);
             this.btnAddUser.TabIndex = 2;
             this.btnAddUser.UseVisualStyleBackColor = true;
             // 
@@ -64,19 +65,21 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnCancel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSend, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(303, 387);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(265, 310);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 43);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(175, 34);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // btnCancel
             // 
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.Location = new System.Drawing.Point(103, 3);
+            this.btnCancel.Location = new System.Drawing.Point(90, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 37);
+            this.btnCancel.Size = new System.Drawing.Size(82, 30);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -85,9 +88,10 @@
             // btnSend
             // 
             this.btnSend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSend.Location = new System.Drawing.Point(3, 3);
+            this.btnSend.Location = new System.Drawing.Point(3, 2);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(94, 37);
+            this.btnSend.Size = new System.Drawing.Size(81, 30);
             this.btnSend.TabIndex = 8;
             this.btnSend.Text = "&Send";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -95,15 +99,16 @@
             // 
             // FrmSendMessage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 435);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(444, 348);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.txtMessageBody);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSendMessage";
+            this.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Text = "메시지 보내기";
             this.Load += new System.EventHandler(this.FrmSendMessage_Load);
             this.tableLayoutPanel2.ResumeLayout(false);

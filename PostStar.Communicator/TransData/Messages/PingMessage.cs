@@ -10,7 +10,7 @@ namespace PostStar.Communicator.TransData.Messages
     /// 라인체크 메시지
     /// </summary>
     [Serializable]
-    class PingMessage : Message
+    public class PingMessage : Message
     {
         /// <summary>
         /// Constructor

@@ -10,7 +10,6 @@ namespace PostStar.EchoServer
     /// </summary>
     public class ReceiveHandlerEx : BaseReceiveHandler
     {
-
         public override void SessionCreated(IoSession session)
         {
             base.SessionCreated(session);
@@ -24,7 +23,7 @@ namespace PostStar.EchoServer
         /// <param name="session"></param>
         public override void SessionOpened(IoSession session)
         {
-            Console.WriteLine("Accept !!!....");
+           // Console.WriteLine("Accept !!!....");
         }
 
 
@@ -62,10 +61,22 @@ namespace PostStar.EchoServer
         /// <param name="message"></param>
         public override void MessageReceived(IoSession session, Object message)
         {
+            Message baseMessage = (Message)message;
+            Console.WriteLine(String.Format("{0} : ", baseMessage.getSender().nickName)); 
+
             Type msgType = message.GetType();
             if (msgType == typeof(String))
                 Console.WriteLine(message);
-            else if(msgType == typeof(CardMessage))
+            else if (msgType == typeof(StarMessage))
+            {
+                StarMessage starMessage = (StarMessage)message;
+                Console.WriteLine(String.Format("{0}", starMessage.text));
+
+                StarMessage reStarMessage = new StarMessage(baseMessage.getSender(), baseMessage.getReceiver());
+                reStarMessage.text = "잘 받았어요.";
+                session.Write(reStarMessage);
+            }
+            else if (msgType == typeof(CardMessage))
             {
                 CardMessage cardMessage = (CardMessage) message;
                 Console.WriteLine(String.Format("CARD TITLE : {0}", cardMessage.cardTitle));
@@ -75,7 +86,11 @@ namespace PostStar.EchoServer
             {
                 throw new Exception("잘못된 메시지 형식입니다.");
             }
+
+
             
+
+
         }
 
     }

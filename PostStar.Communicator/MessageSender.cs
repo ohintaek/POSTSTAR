@@ -7,6 +7,7 @@ using Mina.Filter.Codec.TextLine;
 using Mina.Filter.Logging;
 using Mina.Transport.Socket;
 using PostStar.Communicator.DataStructure;
+using PostStar.Communicator.TransData.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -120,33 +121,9 @@ namespace PostStar.Communicator
 
         private void OnMessageReceived(object sender, IoSessionMessageEventArgs e)
         {
-            String theMessage = (String)e.Message;
-            String[] result = theMessage.Split(new Char[] { ' ' }, 3);
-            String status = result[1];
-            String theCommand = result[0];
-
-            if ("OK".Equals(status))
-            {
-                if (String.Equals("BROADCAST", theCommand, StringComparison.OrdinalIgnoreCase))
-                {
-                    if (result.Length == 3)
-                        Append(result[2]);
-                }
-                else if (String.Equals("LOGIN", theCommand, StringComparison.OrdinalIgnoreCase))
-                {
-                    SetState(true);
-                    Append("You have joined the chat session.");
-                }
-                else if (String.Equals("QUIT", theCommand, StringComparison.OrdinalIgnoreCase))
-                {
-                    SetState(false);
-                    Append("You have left the chat session.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("hi!");
-            }
+            StarMessage starMessage = (StarMessage)e.Message;
+            Console.WriteLine(String.Format("{0} : ", starMessage.getSender().nickName));
+            Console.WriteLine(String.Format("{0}", starMessage.text));
         }
 
         private void SetState(Boolean loggedIn)

@@ -12,8 +12,8 @@ namespace PostStar.Communicator.TransData.Messages
     [Serializable]
     public abstract class Message
     {
-        Member sender;
-        Member receiver;
+        private Member sender;
+        private Member receiver;
 
         /// <summary>
         /// Consructor
@@ -24,6 +24,24 @@ namespace PostStar.Communicator.TransData.Messages
         {
             this.sender = sender;
             this.receiver = receiver;
+        }
+
+        /// <summary>
+        /// Sender를 구한다.
+        /// </summary>
+        /// <returns></returns>
+        public Member getSender()
+        {
+            return this.sender;
+        }
+
+        /// <summary>
+        /// Receiver를 구한다.
+        /// </summary>
+        /// <returns></returns>
+        public Member getReceiver()
+        {
+            return this.receiver;
         }
     }
 }

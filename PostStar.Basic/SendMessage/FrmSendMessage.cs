@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters;
 
 namespace PostStar.Basic.SendMessage
 {
@@ -67,22 +68,27 @@ namespace PostStar.Basic.SendMessage
             {
                 // 0. 입력내용이 없다면 Return
                 String inputMessage = this.txtMessageBody.Text.Trim();
-                //if (inputMessage == string.Empty)
-                //    return;
+                if (inputMessage == string.Empty)
+                    return;
 
                 // 1. 입력된 내용을 상대방에게 전송한다.  
                 IMessageSender msgSender = new MessageSender(GlobalData.me);
-                CardMessage cardMessage;
+                StarMessage starMessage;
                 foreach (Member memer in this.targetMemberList)
                 {
-                    cardMessage = new CardMessage(GlobalData.me, memer);
-                    cardMessage.cardTitle = "Happy Birthday!!!";
-                    cardMessage.cardBody = "안녕하세요. 생일축하 합니다.";
-                    msgSender.Send(memer, cardMessage);
+                    starMessage = new StarMessage(GlobalData.me, memer);
+                    starMessage.text = inputMessage;                    
+                    msgSender.Send(memer, starMessage);
                 }
+
+                
+                //CardMessage cardMessage;
                 //foreach (Member memer in this.targetMemberList)
                 //{
-                //    msgSender.Send(memer, "안녕하세요. 생일축하 합니다.");
+                //    cardMessage = new CardMessage(GlobalData.me, memer);
+                //    cardMessage.cardTitle = "Happy Birthday!!!";
+                //    cardMessage.cardBody = "안녕하세요. 생일축하 합니다.";
+                //    msgSender.Send(memer, cardMessage);
                 //}
 
                 // 2. 전송메시지 History에 기록한다.
