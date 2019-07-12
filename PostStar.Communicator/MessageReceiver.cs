@@ -33,10 +33,9 @@ namespace PostStar.Communicator
 
                 // 2.2. Codec filter
                 ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
-                //objectSerializationCodecFactory.DecoderMaxObjectSize = 104857600;
+                objectSerializationCodecFactory.DecoderMaxObjectSize = CommConst.MAX_TRANSDATA_SIZE;;
                 this.acceptor.FilterChain.AddLast("codec", new ProtocolCodecFilter(objectSerializationCodecFactory));
                 
-
                 // 3. SET HANDLER
                 this.acceptor.Handler = receiveHandler;
                 

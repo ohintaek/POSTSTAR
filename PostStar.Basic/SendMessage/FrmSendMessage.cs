@@ -14,6 +14,9 @@ using System.Runtime.Serialization.Formatters;
 
 namespace PostStar.Basic.SendMessage
 {
+    /// <summary>
+    /// 메시지 전송화면
+    /// </summary>
     public partial class FrmSendMessage : PostStar.Basic.Common.FrmBaseDialog
     {
         /// <summary>
@@ -73,25 +76,14 @@ namespace PostStar.Basic.SendMessage
 
                 // 1. 입력된 내용을 상대방에게 전송한다.  
                 IMessageSender msgSender = new MessageSender(GlobalData.me);
-                StarMessage starMessage;
                 foreach (Member memer in this.targetMemberList)
                 {
-                    starMessage = new StarMessage(GlobalData.me, memer);
+                    StarMessage starMessage = new StarMessage(GlobalData.me);
                     starMessage.text = inputMessage;                    
                     msgSender.Send(memer, starMessage);
                 }
 
-                
-                //CardMessage cardMessage;
-                //foreach (Member memer in this.targetMemberList)
-                //{
-                //    cardMessage = new CardMessage(GlobalData.me, memer);
-                //    cardMessage.cardTitle = "Happy Birthday!!!";
-                //    cardMessage.cardBody = "안녕하세요. 생일축하 합니다.";
-                //    msgSender.Send(memer, cardMessage);
-                //}
-
-                // 2. 전송메시지 History에 기록한다.
+                // 2. 전송 내용을 이력에 기록한다.
                 //...
 
                 // 9. 창을 닫는다.

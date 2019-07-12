@@ -17,7 +17,6 @@ using System.Threading;
 
 namespace PostStar.Communicator
 {
-
     /// <summary>
     /// 메시지를 전송한다.
     /// </summary>
@@ -55,7 +54,7 @@ namespace PostStar.Communicator
                 this.connector = new AsyncSocketConnector();
                 this.connector.FilterChain.AddLast("logger", new LoggingFilter());
                 ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
-                //objectSerializationCodecFactory.EncoderMaxObjectSize = 104857600;
+                objectSerializationCodecFactory.EncoderMaxObjectSize = CommConst.MAX_TRANSDATA_SIZE;
                 this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(objectSerializationCodecFactory));                     
                 this.connector.SessionClosed += (o, e) => Append("Connection closed.");
                 this.connector.MessageReceived += OnMessageReceived;
@@ -154,7 +153,10 @@ namespace PostStar.Communicator
                 if (this.session == null)
                     this.Connect();
 
-                session.Write(packet);
+                this.session.Write(packet);
+
+               // this.session.Close(true);
+               // this.session = null;
             }
             catch(Exception ex)
             {

@@ -16,8 +16,7 @@ namespace PostStar.Communicator.TransData.Messages
         /// Constructor
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="receiver"></param>
-        public PingMessage(Member sender, Member receiver) : base(sender, receiver)
+        public PingMessage(Member sender) : base(sender)
         {
         }
     }

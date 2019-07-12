@@ -11,5 +11,6 @@ namespace PostStar.Communicator
     public class CommConst
     {
         public const int PORT = 9123;
+        public const int MAX_TRANSDATA_SIZE = 104857600; // 100MB
     }
 }

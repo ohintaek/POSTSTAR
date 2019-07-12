@@ -18,4 +18,7 @@ E:\Dropbox\8. 클립아트\material-design-icons-1.0.0\material-design-icons-1.0
 	 . MINA에 대한 연구
 
 [2019.07.00]
- @ 메시지 수신 및 POPUP기능 구현
+ - RECEIVE HANDLER POSTSTAR.BASIC 에 추가
+ - 메시지 수신 및 POPUP기능 구현
+
+

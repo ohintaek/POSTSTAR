@@ -153,8 +153,8 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(304, 79);
             this.textBox2.TabIndex = 9;
-            this.textBox2.Text = "Copyright(C) 2018 SINE, All rights reserved.\r\n\r\n이 프로그램은 저작권법과 국제협약의 보호를 받습니다. 이 프" +
-    "로그램의 전부 또는 일부를 무단으로 사용, 복제, 배포하는 행위는 민사, 형사법에 의해 엄격히 규제되고 있으며, 기소사유가 됩니다.";
+            this.textBox2.Text = "Copyright(C) OIT, All rights reserved.\r\n\r\n이 프로그램은 저작권법과 국제협약의 보호를 받습니다. 이 프로그램의 전" +
+    "부 또는 일부를 무단으로 사용, 복제, 배포하는 행위는 민사, 형사법에 의해 엄격히 규제 합니다.";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FrmAbout

@@ -13,17 +13,14 @@ namespace PostStar.Communicator.TransData.Messages
     public abstract class Message
     {
         private Member sender;
-        private Member receiver;
 
         /// <summary>
         /// Consructor
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="receiver"></param>
-        public Message(Member sender, Member receiver)
+        public Message(Member sender)
         {
             this.sender = sender;
-            this.receiver = receiver;
         }
 
         /// <summary>
@@ -35,13 +32,5 @@ namespace PostStar.Communicator.TransData.Messages
             return this.sender;
         }
 
-        /// <summary>
-        /// Receiver를 구한다.
-        /// </summary>
-        /// <returns></returns>
-        public Member getReceiver()
-        {
-            return this.receiver;
-        }
     }
 }

@@ -19,8 +19,7 @@ namespace PostStar.Communicator.TransData.Messages
         /// Constructor
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="receiver"></param>
-        public CardMessage(Member sender, Member receiver) : base(sender, receiver)
+        public CardMessage(Member sender) : base(sender)
         {
         }
 
