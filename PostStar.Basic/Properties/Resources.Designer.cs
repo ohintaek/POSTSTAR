@@ -93,6 +93,16 @@ namespace PostStar.Basic.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_note_add_black_18dp {
+            get {
+                object obj = ResourceManager.GetObject("ic_note_add_black_18dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_portrait_black_48dp {
             get {
                 object obj = ResourceManager.GetObject("ic_portrait_black_48dp", resourceCulture);

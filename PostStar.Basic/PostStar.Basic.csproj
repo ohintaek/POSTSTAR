@@ -224,6 +224,7 @@
     <None Include="Resources\ic_man_48dp.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ic_note_add_black_18dp.png" />
     <None Include="Resources\CheerupIcon.png" />
     <None Include="Resources\CheerUpConcept.png" />
     <Content Include="POST-STAR.ico" />

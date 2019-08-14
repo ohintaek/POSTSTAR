@@ -56,7 +56,7 @@ namespace PostStar.Communicator
                 ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
                 objectSerializationCodecFactory.EncoderMaxObjectSize = CommConst.MAX_TRANSDATA_SIZE;
                 this.connector.FilterChain.AddLast("codec", new ProtocolCodecFilter(objectSerializationCodecFactory));                     
-                this.connector.SessionClosed += (o, e) => Append("Connection closed.");
+                this.connector.SessionClosed += (o, e) => OnSessionClosed();
                 this.connector.MessageReceived += OnMessageReceived;
 
                 // 2. 상대방에게 접속을 시도한다.
@@ -105,35 +105,24 @@ namespace PostStar.Communicator
             }
         }
 
-        public void Append(String line)
+        /// <summary>
+        /// 세션이 종료처리를 한다.
+        /// </summary>
+        private void OnSessionClosed()
         {
-            Console.WriteLine(line);
-            //if (textBoxChat.InvokeRequired)
-            //{
-            //    textBoxChat.Invoke(new Action<String>(Append), line);
-            //    return;
-            //}
-
-            //textBoxChat.AppendText(line);
-            //textBoxChat.AppendText(Environment.NewLine);
+            Console.WriteLine("Session closed...");
         }
 
+        /// <summary>
+        /// 응답메시지를 수신한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnMessageReceived(object sender, IoSessionMessageEventArgs e)
         {
             StarMessage starMessage = (StarMessage)e.Message;
             Console.WriteLine(String.Format("{0} : ", starMessage.getSender().nickName));
             Console.WriteLine(String.Format("{0}", starMessage.text));
-        }
-
-        private void SetState(Boolean loggedIn)
-        {
-            //if (this.InvokeRequired)
-            //{
-            //    this.Invoke(new Action<Boolean>(SetState), loggedIn);
-            //    return;
-            //}
-            //buttonConnect.Enabled = textBoxUser.Enabled = textBoxServer.Enabled = !loggedIn;
-            //buttonDisconnect.Enabled = buttonSend.Enabled = buttonQuit.Enabled = textBoxChat.Enabled = textBoxInput.Enabled = loggedIn;
         }
 
         /// <summary>
@@ -155,8 +144,9 @@ namespace PostStar.Communicator
 
                 this.session.Write(packet);
 
-               // this.session.Close(true);
-               // this.session = null;
+                // 전송 후 즉시 세션을 닫을 것인지 판단해야 한다.(2019.08.14)
+                // this.session.Close(true);
+                // this.session = null;
             }
             catch(Exception ex)
             {

@@ -1,16 +1,11 @@
-﻿using PostStar.Communicator;
+﻿using PostStar.Basic.Common;
+using PostStar.Communicator;
 using PostStar.Communicator.DataStructure;
 using PostStar.Communicator.TransData.Messages;
-using PostStar.Basic.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.IO;
 using System.Windows.Forms;
-using System.Runtime.Serialization.Formatters;
 
 namespace PostStar.Basic.SendMessage
 {
@@ -101,6 +96,95 @@ namespace PostStar.Basic.SendMessage
                 btnSend.Enabled = true;
             else
                 btnSend.Enabled = false;
+        }
+
+        /// <summary>
+        /// 첨부파일을 추가한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddAttach_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDlg = new OpenFileDialog();
+            openFileDlg.Multiselect = true;
+            openFileDlg.ShowDialog();
+            foreach (string addFileName in openFileDlg.FileNames)
+            {
+                addAttachFile(addFileName);
+            }
+        }
+
+        /// <summary>
+        /// 첨부파일을 추가한다.(Drag & Drop)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lvAttachFile_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            for (int i = 0; i < s.Length; i++)
+            {
+                addAttachFile(s[i]);
+            }
+        }
+        
+        /// <summary>
+        /// 리스트박스에 파일을 추가한다.
+        /// </summary>
+        /// <param name="addFileName"></param>
+        private void addAttachFile(String addFileName)
+        {
+            FileInfo fi = new FileInfo(addFileName);
+            String itemName = String.Format("{0} ({1:#,##9} b)", addFileName, fi.Length);
+
+            // 기존에 추가한 파일인지 확인한다.(TODO : existItem = true 되는 경우가 없음... 오류 픽스 필요...)
+            bool existItem = false;
+            foreach(var item in lvAttachFile.Items)
+            {
+                if (itemName == item.ToString())
+                {
+                    existItem = true;
+                    break;
+                }
+            }
+
+            if (existItem)
+                return;
+
+            lvAttachFile.Items.Add(itemName);
+        }
+
+        /// <summary>
+        /// 첨부파일 리스트에 첨부파일 드래그 효과를 설정한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lvAttachFile_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        /// <summary>
+        /// 첨부파일을 제거한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lvAttachFile_KeyDown(object sender, KeyEventArgs e)
+        {            
+            if (e.KeyCode != Keys.Delete)
+                return;
+
+            if (lvAttachFile.Items.Count == 0)
+                return;
+
+            if (lvAttachFile.SelectedItems.Count == 0)
+                return;
+
+            for (int i = 0; i < lvAttachFile.SelectedItems.Count; i++)
+                lvAttachFile.Items.Remove(lvAttachFile.SelectedItems[i]);
         }
     }
 }

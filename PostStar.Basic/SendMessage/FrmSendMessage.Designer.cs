@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSendMessage));
             this.txtMessageBody = new System.Windows.Forms.TextBox();
-            this.btnAddUser = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
+            this.lblReceiveTarget = new System.Windows.Forms.Label();
+            this.lvAttachFile = new System.Windows.Forms.ListView();
+            this.btnAddAttach = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,20 +46,9 @@
             this.txtMessageBody.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMessageBody.Multiline = true;
             this.txtMessageBody.Name = "txtMessageBody";
-            this.txtMessageBody.Size = new System.Drawing.Size(430, 300);
+            this.txtMessageBody.Size = new System.Drawing.Size(430, 233);
             this.txtMessageBody.TabIndex = 1;
             this.txtMessageBody.TextChanged += new System.EventHandler(this.txtMessageBody_TextChanged);
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddUser.BackgroundImage")));
-            this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddUser.Location = new System.Drawing.Point(7, 312);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(66, 30);
-            this.btnAddUser.TabIndex = 2;
-            this.btnAddUser.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -97,11 +89,57 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
+            // lblReceiveTarget
+            // 
+            this.lblReceiveTarget.AutoSize = true;
+            this.lblReceiveTarget.Location = new System.Drawing.Point(85, 315);
+            this.lblReceiveTarget.Name = "lblReceiveTarget";
+            this.lblReceiveTarget.Size = new System.Drawing.Size(89, 12);
+            this.lblReceiveTarget.TabIndex = 9;
+            this.lblReceiveTarget.Text = "홍길동 외 00 명";
+            // 
+            // lvAttachFile
+            // 
+            this.lvAttachFile.AllowDrop = true;
+            this.lvAttachFile.Location = new System.Drawing.Point(7, 243);
+            this.lvAttachFile.Name = "lvAttachFile";
+            this.lvAttachFile.Size = new System.Drawing.Size(368, 62);
+            this.lvAttachFile.TabIndex = 10;
+            this.lvAttachFile.UseCompatibleStateImageBehavior = false;
+            this.lvAttachFile.View = System.Windows.Forms.View.List;
+            this.lvAttachFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvAttachFile_DragDrop);
+            this.lvAttachFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.lvAttachFile_DragEnter);
+            this.lvAttachFile.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvAttachFile_KeyDown);
+            // 
+            // btnAddAttach
+            // 
+            this.btnAddAttach.Image = global::PostStar.Basic.Properties.Resources.ic_note_add_black_18dp;
+            this.btnAddAttach.Location = new System.Drawing.Point(382, 243);
+            this.btnAddAttach.Name = "btnAddAttach";
+            this.btnAddAttach.Size = new System.Drawing.Size(55, 62);
+            this.btnAddAttach.TabIndex = 11;
+            this.btnAddAttach.UseVisualStyleBackColor = true;
+            this.btnAddAttach.Click += new System.EventHandler(this.btnAddAttach_Click);
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddUser.BackgroundImage")));
+            this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddUser.Location = new System.Drawing.Point(7, 312);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(66, 30);
+            this.btnAddUser.TabIndex = 2;
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            // 
             // FrmSendMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 348);
+            this.Controls.Add(this.btnAddAttach);
+            this.Controls.Add(this.lvAttachFile);
+            this.Controls.Add(this.lblReceiveTarget);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.txtMessageBody);
@@ -123,5 +161,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Label lblReceiveTarget;
+        private System.Windows.Forms.ListView lvAttachFile;
+        private System.Windows.Forms.Button btnAddAttach;
     }
 }
