@@ -20,7 +20,14 @@ E:\Dropbox\8. 클립아트\material-design-icons-1.0.0\material-design-icons-1.0
 [2019.07.00]
  @ 첨부파일 전송기능 구현
    + 첨부파일 첨부기능 구현
-   - 전송시 첨부파일까지 전송처리
+   - 전송시 첨부파일까지 전송처리 ()
+		FileInputStream fis = new FileInputStream(path); 
+		FileChannel fc = fis.getChannel(); 
+		ByteBuffer fb = ByteBuffer.allocate( 1024 * 15 ); 
+		fc.read(fb); 
+		fb.flip(); 
+		IoBuffer fiob = IoBuffer.wrap(fb); 
+		session.write(fiob); 
  
 
 

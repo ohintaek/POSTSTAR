@@ -123,6 +123,8 @@ namespace PostStar.Communicator
             StarMessage starMessage = (StarMessage)e.Message;
             Console.WriteLine(String.Format("{0} : ", starMessage.getSender().nickName));
             Console.WriteLine(String.Format("{0}", starMessage.text));
+
+       
         }
 
         /// <summary>
