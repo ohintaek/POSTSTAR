@@ -7,10 +7,10 @@ using PostStar.Communicator.DataStructure;
 namespace PostStar.Communicator.TransData.Messages
 {
     /// <summary>
-    /// 카드 메시지
+    /// POST-STAR Defalut 메시지
     /// </summary>
     [Serializable]
-    public class StarMessage : Message
+    public class PostStarMessage : Message
     {
         public String text;
         //public List fileList;
@@ -19,7 +19,7 @@ namespace PostStar.Communicator.TransData.Messages
         /// Constructor
         /// </summary>
         /// <param name="sender"></param>
-        public StarMessage(Member sender) : base(sender)
+        public PostStarMessage(Member sender) : base(sender)
         {
         }
     }

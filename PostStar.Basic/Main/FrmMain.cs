@@ -1,17 +1,12 @@
-﻿using PostStar.Communicator.DataStructure;
-using PostStar.Basic.Common;
+﻿using PostStar.Basic.Common;
 using PostStar.Basic.Help;
-using PostStar.Basic.SendMessage;
+using PostStar.Basic.Messaging;
 using PostStar.Basic.Settings;
+using PostStar.Communicator;
+using PostStar.Communicator.DataStructure;
+using PostStar.Communicator.ReceiveHandler;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PostStar.Basic.Main
@@ -60,6 +55,8 @@ namespace PostStar.Basic.Main
             this.beMouseEnter = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseEnter");
             this.beMouseLeave = EventBroadcastProvider.CreateProvider(this.flpMemberList, "MouseLeave");
             this.beDoubleClick = EventBroadcastProvider.CreateProvider(this.flpMemberList, "DoubleClick");
+
+            this.initMessageReceiver();
         }
 
         /// <summary>
@@ -93,6 +90,15 @@ namespace PostStar.Basic.Main
         {
             flpMemberList.Controls.Add(new UcMember(new Member("홍길동")));
             flpMemberList.Controls.Add(new UcMember(new Member("테스터")));
+        }
+
+        /// <summary>
+        /// 메시시 수신처리기를 초기화한다.
+        /// </summary>
+        private void initMessageReceiver()
+        {
+            BasicMessageReceiver receiveHandler = new BasicMessageReceiver();
+            IMessageReceiver msgReceiver = new MessageReceiver("127.0.0.1", CommConst.PORT, receiveHandler);
         }
 
         /// <summary>
@@ -295,5 +301,6 @@ namespace PostStar.Basic.Main
             frmSettings.StartPosition = FormStartPosition.CenterParent;
             frmSettings.ShowDialog();
         }
+
     }
 }

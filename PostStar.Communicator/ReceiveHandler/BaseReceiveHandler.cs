@@ -1,5 +1,6 @@
 ﻿using Mina.Core.Service;
 using Mina.Core.Session;
+using PostStar.Communicator.TransData.Messages;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -24,35 +25,16 @@ namespace PostStar.Communicator.ReceiveHandler
         {
         }
 
-        public void Broadcast(String message)
+        public override void SessionCreated(IoSession session)
         {
-            foreach (IoSession session in sessions.Keys)
-            {
-                if (session.Connected)
-                    session.Write("BROADCAST OK " + message);
-            }
-        }
+            base.SessionCreated(session);
 
-        public override void ExceptionCaught(IoSession session, Exception cause)
-        {
-            Console.WriteLine("Unexpected exception." + cause);
-            session.Close(true);
-        }
-
-        public override void SessionIdle(IoSession session, IdleStatus status)
-        {
-            base.SessionIdle(session, status);
-            Console.WriteLine("IDLE " + session.GetIdleCount(status));
-        }
-
-        public override void MessageSent(IoSession session, object message)
-        {
-            base.MessageSent(session, message);
+            session.Config.ReadBufferSize = 1024 * 1024 * 1/*1MB*/;
         }
 
         public override void SessionOpened(IoSession session)
         {
-            Console.WriteLine("Accept ....");
+            base.SessionOpened(session);
         }
 
         public override void SessionClosed(IoSession session)
@@ -60,69 +42,80 @@ namespace PostStar.Communicator.ReceiveHandler
             String user = session.GetAttribute<String>("user");
             sessions.Remove(session);
             if (user != null)
-            {
                 users.Remove(user);
-                Broadcast("The user " + user + " has left the chat session.");
-            }
         }
 
         public override void MessageReceived(IoSession session, Object message)
         {
-            String theMessage = (String)message;
-            String[] result = theMessage.Split(new Char[] { ' ' }, 2);
-            String theCommand = result[0];
-
-            String user = session.GetAttribute<String>("user");
-
-            if (String.Equals("QUIT", theCommand, StringComparison.OrdinalIgnoreCase))
+            try
             {
-                session.Write("QUIT OK");
-                session.Close(true);
-            }
-            else if (String.Equals("LOGIN", theCommand, StringComparison.OrdinalIgnoreCase))
-            {
-                if (user != null)
+                Message baseMessage = (Message)message;
+                Console.WriteLine(String.Format("{0} : ", baseMessage.getSender().nickName));
+
+                Type msgType = message.GetType();
+                if (msgType == typeof(String))
                 {
-                    session.Write("LOGIN ERROR user " + user + " already logged in.");
-                    return;
+                    ReceiveStrigMessage(session, (String)message);
                 }
-
-                if (result.Length == 2)
+                else if (msgType == typeof(PostStarMessage))
                 {
-                    user = result[1];
+                    ReceivePoststarMessage(session, (PostStarMessage)message);
+                }
+                else if (msgType == typeof(CardMessage))
+                {
+                    ReceiveCardMessage(session, (CardMessage)message);
                 }
                 else
                 {
-                    session.Write("LOGIN ERROR invalid login command.");
-                    return;
-                }
-
-                // check if the username is already used
-                if (users.ContainsKey(user))
-                {
-                    session.Write("LOGIN ERROR the name " + user + " is already used.");
-                    return;
-                }
-
-                sessions[session] = true;
-                session.SetAttribute("user", user);
-
-                // Allow all users
-                users[user] = true;
-                session.Write("LOGIN OK");
-                Broadcast("The user " + user + " has joined the chat session.");
-            }
-            else if (String.Equals("BROADCAST", theCommand, StringComparison.OrdinalIgnoreCase))
-            {
-                if (result.Length == 2)
-                {
-                    Broadcast(user + ": " + result[1]);
+                    throw new Exception("알 수 없는 메시지 형식입니다.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Unhandled command: " + theCommand);
+                throw ex;
+            }
+            finally
+            {
+                session.Close(false);
             }
         }
+
+        protected void ReceiveStrigMessage(IoSession session, String msg)
+        {
+            Console.WriteLine(msg);
+        }
+
+        protected virtual void ReceivePoststarMessage(IoSession session, PostStarMessage starMessage)
+        {
+            Console.WriteLine(String.Format("{0}", starMessage.text));
+
+            PostStarMessage reStarMessage = new PostStarMessage(starMessage.getSender());
+            reStarMessage.text = "잘 받았어요.";
+            session.Write(reStarMessage);
+        }
+
+        protected virtual void ReceiveCardMessage(IoSession session, CardMessage cardMessage)
+        {
+            Console.WriteLine(String.Format("CARD TITLE : {0}", cardMessage.cardTitle));
+            Console.WriteLine(String.Format("CARD BODY : {0}", cardMessage.cardBody));
+        }
+
+        public override void ExceptionCaught(IoSession session, Exception cause)
+        {
+            session.Close(true);
+            throw cause;
+        }
+
+        public override void SessionIdle(IoSession session, IdleStatus status)
+        {
+            base.SessionIdle(session, status);
+        }
+
+        public override void MessageSent(IoSession session, object message)
+        {
+            base.MessageSent(session, message);
+        }
+
+
     }
 }

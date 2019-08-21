@@ -14,7 +14,7 @@ namespace PostStar.EchoServer
         {
             base.SessionCreated(session);
 
-            session.Config.ReadBufferSize = 1024000000;
+            session.Config.ReadBufferSize = 1024*1024*1/*1MB*/;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace PostStar.EchoServer
             if (user != null)
             {
                 users.Remove(user);
-                Broadcast("The user " + user + " has left the chat session.");
+               // Broadcast("The user " + user + " has left the chat session.");
             }
             Console.WriteLine("Closed session");
         }
@@ -70,12 +70,12 @@ namespace PostStar.EchoServer
                 Type msgType = message.GetType();
                 if (msgType == typeof(String))
                     Console.WriteLine(message);
-                else if (msgType == typeof(StarMessage))
+                else if (msgType == typeof(PostStarMessage))
                 {
-                    StarMessage starMessage = (StarMessage)message;
+                    PostStarMessage starMessage = (PostStarMessage)message;
                     Console.WriteLine(String.Format("{0}", starMessage.text));
 
-                    StarMessage reStarMessage = new StarMessage(baseMessage.getSender());
+                    PostStarMessage reStarMessage = new PostStarMessage(baseMessage.getSender());
                     reStarMessage.text = "잘 받았어요.";
                     session.Write(reStarMessage);
                 }

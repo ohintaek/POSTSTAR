@@ -18,6 +18,8 @@ E:\Dropbox\8. 클립아트\material-design-icons-1.0.0\material-design-icons-1.0
 	 . MINA에 대한 연구
 
 [2019.07.00]
+ @ 메시지 수신기능 구현
+   - 
  @ 첨부파일 전송기능 구현
    + 첨부파일 첨부기능 구현
    - 전송시 첨부파일까지 전송처리 ()

@@ -73,7 +73,7 @@ namespace PostStar.Basic.SendMessage
                 IMessageSender msgSender = new MessageSender(GlobalData.me);
                 foreach (Member memer in this.targetMemberList)
                 {
-                    StarMessage starMessage = new StarMessage(GlobalData.me);
+                    PostStarMessage starMessage = new PostStarMessage(GlobalData.me);
                     starMessage.text = inputMessage;                    
                     msgSender.Send(memer, starMessage);
                 }

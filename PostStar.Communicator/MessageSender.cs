@@ -120,7 +120,7 @@ namespace PostStar.Communicator
         /// <param name="e"></param>
         private void OnMessageReceived(object sender, IoSessionMessageEventArgs e)
         {
-            StarMessage starMessage = (StarMessage)e.Message;
+            PostStarMessage starMessage = (PostStarMessage)e.Message;
             Console.WriteLine(String.Format("{0} : ", starMessage.getSender().nickName));
             Console.WriteLine(String.Format("{0}", starMessage.text));
 
