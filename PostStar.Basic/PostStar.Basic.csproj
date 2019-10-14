@@ -79,11 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\EventBroadcastProvider.cs" />
-    <Compile Include="Common\FrmBaseDialog.cs">
+    <Compile Include="Common\FrmPopupBaseDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\FrmBaseDialog.Designer.cs">
-      <DependentUpon>FrmBaseDialog.cs</DependentUpon>
+    <Compile Include="Common\FrmPopupBaseDialog.Designer.cs">
+      <DependentUpon>FrmPopupBaseDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\GlobalData.cs" />
     <Compile Include="Help\FrmAbout.cs">
@@ -163,8 +163,8 @@
     <Compile Include="Settings\FrmSettings.Designer.cs">
       <DependentUpon>FrmSettings.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Common\FrmBaseDialog.resx">
-      <DependentUpon>FrmBaseDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Common\FrmPopupBaseDialog.resx">
+      <DependentUpon>FrmPopupBaseDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help\FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
@@ -237,6 +237,7 @@
     <None Include="Resources\ic_note_add_black_18dp.png" />
     <None Include="Resources\CheerupIcon.png" />
     <None Include="Resources\CheerUpConcept.png" />
+    <Content Include="ic_stars_black_24dp.ico" />
     <Content Include="POST-STAR.ico" />
     <Content Include="Resources\ic_grade_black_36dp.png" />
     <Content Include="DevHistory.txt" />

@@ -12,7 +12,7 @@ namespace PostStar.Basic.Main
     /// <summary>
     /// 멤버 프로필 다이얼로그
     /// </summary>
-    public partial class FrmMemberInfo : PostStar.Basic.Common.FrmBaseDialog
+    public partial class FrmMemberInfo : PostStar.Basic.Common.FrmPopupBaseDialog
     {
         /// <summary>
         /// Constructor

@@ -13,7 +13,7 @@ namespace PostStar.Basic.Messaging
     /// <summary>
     /// 수신된 메시지를 보여주는 화면
     /// </summary>
-    public partial class FrmReceiveMessage : PostStar.Basic.Common.FrmBaseDialog
+    public partial class FrmReceiveMessage : PostStar.Basic.Common.FrmPopupBaseDialog
     {
         private PostStarMessage poststarmsg;
 

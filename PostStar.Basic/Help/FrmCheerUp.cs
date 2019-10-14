@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace PostStar.Basic.Help
 {
-    public partial class FrmCheerUp : Form
+    public partial class FrmCheerUp : PostStar.Basic.Common.FrmPopupBaseDialog
     {
         public FrmCheerUp()
         {

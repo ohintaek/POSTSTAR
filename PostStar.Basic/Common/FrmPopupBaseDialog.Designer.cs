@@ -1,6 +1,6 @@
 ﻿namespace PostStar.Basic.Common
 {
-    partial class FrmBaseDialog
+    partial class FrmPopupBaseDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPopupBaseDialog));
             this.SuspendLayout();
             // 
-            // FrmBaseDialog
+            // FrmPopupBaseDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
-            this.Name = "FrmBaseDialog";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmPopupBaseDialog";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "FrmBaseDialog";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmBaseDialog_KeyDown);

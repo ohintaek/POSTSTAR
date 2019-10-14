@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace PostStar.Basic.Help
 {
-    public partial class FrmLicenseNote : Form
+    public partial class FrmLicenseNote : PostStar.Basic.Common.FrmPopupBaseDialog
     {
         public FrmLicenseNote()
         {

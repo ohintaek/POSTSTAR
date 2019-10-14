@@ -12,7 +12,7 @@ namespace PostStar.Basic.SendMessage
     /// <summary>
     /// 메시지 전송화면
     /// </summary>
-    public partial class FrmSendMessage : PostStar.Basic.Common.FrmBaseDialog
+    public partial class FrmSendMessage : PostStar.Basic.Common.FrmPopupBaseDialog
     {
         /// <summary>
         /// 메시지를 수신할 멤버목록

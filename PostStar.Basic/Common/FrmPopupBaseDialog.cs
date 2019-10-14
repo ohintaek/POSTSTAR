@@ -12,12 +12,12 @@ namespace PostStar.Basic.Common
     /// <summary>
     /// Base Dialog Form
     /// </summary>
-    public partial class FrmBaseDialog : Form
+    public partial class FrmPopupBaseDialog : Form
     {
         /// <summary>
         /// Contrsructor
         /// </summary>
-        public FrmBaseDialog()
+        public FrmPopupBaseDialog()
         {
             InitializeComponent();
             this.KeyPreview = true;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PostStar.Basic.Help
 {
-    public partial class FrmAbout : Form
+    public partial class FrmAbout : PostStar.Basic.Common.FrmPopupBaseDialog
     {
         public FrmAbout()
         {
