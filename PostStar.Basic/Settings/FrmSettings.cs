@@ -44,6 +44,7 @@ namespace PostStar.Basic.Settings
 
             // 2. Global 변수에 변경내용을 반영한다.
             // TODO...
+            // ...
 
             // 9. Dialog 를 닫는다.
             this.Close();
