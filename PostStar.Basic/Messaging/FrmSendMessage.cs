@@ -190,6 +190,7 @@ namespace PostStar.Basic.Messaging
 
             for (int i = 0; i < lvAttachFile.SelectedItems.Count; i++)
                 lvAttachFile.Items.Remove(lvAttachFile.SelectedItems[i]);
+
         }
 
     }
