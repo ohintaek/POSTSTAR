@@ -38,9 +38,9 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::PostStar.Basic.Properties.Resources.CheerUpConcept;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(356, 290);
+            this.pictureBox1.Size = new System.Drawing.Size(346, 280);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 141);
+            this.label1.Location = new System.Drawing.Point(8, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 15);
             this.label1.TabIndex = 2;
