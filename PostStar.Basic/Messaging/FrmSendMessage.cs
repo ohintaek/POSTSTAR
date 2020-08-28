@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace PostStar.Basic.SendMessage
+namespace PostStar.Basic.Messaging
 {
     /// <summary>
     /// 메시지 전송화면
@@ -90,6 +90,11 @@ namespace PostStar.Basic.SendMessage
             }
         }
 
+        /// <summary>
+        /// 입력한 내용이 잇으면 전송버튼을 활성화 한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtMessageBody_TextChanged(object sender, EventArgs e)
         {
             if (this.txtMessageBody.TextLength > 0)
@@ -185,6 +190,8 @@ namespace PostStar.Basic.SendMessage
 
             for (int i = 0; i < lvAttachFile.SelectedItems.Count; i++)
                 lvAttachFile.Items.Remove(lvAttachFile.SelectedItems[i]);
+
         }
+
     }
 }

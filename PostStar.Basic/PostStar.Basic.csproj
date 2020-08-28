@@ -138,6 +138,12 @@
       <DependentUpon>FrmMemberInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Messaging\BasicMessageReceiver.cs" />
+    <Compile Include="Messaging\FrmMemberSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messaging\FrmMemberSelector.Designer.cs">
+      <DependentUpon>FrmMemberSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Messaging\FrmReceiveMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\FrmMemberInfo.resx">
       <DependentUpon>FrmMemberInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messaging\FrmMemberSelector.resx">
+      <DependentUpon>FrmMemberSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messaging\FrmReceiveMessage.resx">
       <DependentUpon>FrmReceiveMessage.cs</DependentUpon>

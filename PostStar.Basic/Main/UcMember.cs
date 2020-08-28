@@ -6,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using PostStar.Basic.SendMessage;
+using PostStar.Basic.Messaging;
 using PostStar.Communicator.DataStructure;
 
 namespace PostStar.Basic.Main
