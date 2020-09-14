@@ -38,5 +38,6 @@ E:\Dropbox\8. 클립아트\material-design-icons-1.0.0\material-design-icons-1.0
    - 네트워크내 WINDOWS PC에 주기적(1분)으로 자신의 NICK NAME을 보낸다.(UDP)
    - UPD Server로 NICK NAME이 수신하여 수신목록에 저장한다.
    - 수신 NICK NAME 목록과 MEMBER 목록을 확인하여 신규 NICK NAME에 대해서는 사용자정보를 요청한다.(TCP)
+   - TBD...
 
 
