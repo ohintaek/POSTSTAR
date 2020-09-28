@@ -41,6 +41,7 @@
             this.way1stToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.surveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semiRPAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -50,7 +51,6 @@
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.ucMe = new PostStar.Basic.Main.UcMe();
             this.flpMemberList = new System.Windows.Forms.FlowLayoutPanel();
-            this.semiRPAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMainMenu.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,8 @@
             this.helpToolStripMenuItem});
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(373, 28);
+            this.msMainMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.msMainMenu.Size = new System.Drawing.Size(326, 24);
             this.msMainMenu.TabIndex = 6;
             this.msMainMenu.Text = "msMainMenu";
             // 
@@ -82,13 +83,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -98,20 +99,20 @@
             this.settingToolStripMenuItem,
             this.refreshMembersToolStripMenuItem});
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.optionToolStripMenuItem.Text = "&Option";
             // 
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.settingToolStripMenuItem.Text = "&Setting";
             this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // refreshMembersToolStripMenuItem
             // 
             this.refreshMembersToolStripMenuItem.Name = "refreshMembersToolStripMenuItem";
-            this.refreshMembersToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.refreshMembersToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.refreshMembersToolStripMenuItem.Text = "Refresh Members";
             // 
             // miscToolStripMenuItem
@@ -122,26 +123,32 @@
             this.surveyToolStripMenuItem,
             this.semiRPAToolStripMenuItem});
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.miscToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.miscToolStripMenuItem.Text = "Misc";
             // 
             // way1stToolStripMenuItem
             // 
             this.way1stToolStripMenuItem.Name = "way1stToolStripMenuItem";
-            this.way1stToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.way1stToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.way1stToolStripMenuItem.Text = "Way1st";
             // 
             // marketToolStripMenuItem
             // 
             this.marketToolStripMenuItem.Name = "marketToolStripMenuItem";
-            this.marketToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.marketToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.marketToolStripMenuItem.Text = "Market";
             // 
             // surveyToolStripMenuItem
             // 
             this.surveyToolStripMenuItem.Name = "surveyToolStripMenuItem";
-            this.surveyToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.surveyToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.surveyToolStripMenuItem.Text = "Survey";
+            // 
+            // semiRPAToolStripMenuItem
+            // 
+            this.semiRPAToolStripMenuItem.Name = "semiRPAToolStripMenuItem";
+            this.semiRPAToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.semiRPAToolStripMenuItem.Text = "Semi RPA";
             // 
             // helpToolStripMenuItem
             // 
@@ -152,37 +159,37 @@
             this.webSiteToolStripMenuItem,
             this.helpToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(156, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(130, 6);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // webSiteToolStripMenuItem
             // 
             this.webSiteToolStripMenuItem.Name = "webSiteToolStripMenuItem";
-            this.webSiteToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.webSiteToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.webSiteToolStripMenuItem.Text = "HomePage";
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // tlpMain
@@ -193,14 +200,14 @@
             this.tlpMain.Controls.Add(this.ucMe, 0, 0);
             this.tlpMain.Controls.Add(this.flpMemberList, 0, 1);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMain.Location = new System.Drawing.Point(0, 28);
+            this.tlpMain.Location = new System.Drawing.Point(0, 24);
             this.tlpMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 2;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMain.Size = new System.Drawing.Size(373, 524);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tlpMain.Size = new System.Drawing.Size(326, 418);
             this.tlpMain.TabIndex = 8;
             // 
             // ucMe
@@ -210,7 +217,7 @@
             this.ucMe.Location = new System.Drawing.Point(3, 2);
             this.ucMe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucMe.Name = "ucMe";
-            this.ucMe.Size = new System.Drawing.Size(367, 66);
+            this.ucMe.Size = new System.Drawing.Size(320, 52);
             this.ucMe.TabIndex = 6;
             // 
             // flpMemberList
@@ -218,23 +225,18 @@
             this.flpMemberList.AutoScroll = true;
             this.flpMemberList.BackColor = System.Drawing.Color.White;
             this.flpMemberList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpMemberList.Location = new System.Drawing.Point(3, 72);
+            this.flpMemberList.Location = new System.Drawing.Point(3, 58);
             this.flpMemberList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpMemberList.Name = "flpMemberList";
-            this.flpMemberList.Size = new System.Drawing.Size(367, 450);
+            this.flpMemberList.Size = new System.Drawing.Size(320, 360);
             this.flpMemberList.TabIndex = 8;
-            // 
-            // semiRPAToolStripMenuItem
-            // 
-            this.semiRPAToolStripMenuItem.Name = "semiRPAToolStripMenuItem";
-            this.semiRPAToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.semiRPAToolStripMenuItem.Text = "Semi RPA";
+            this.flpMemberList.DoubleClick += new System.EventHandler(this.flpMemberList_DoubleClick);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 552);
+            this.ClientSize = new System.Drawing.Size(326, 442);
             this.Controls.Add(this.tlpMain);
             this.Controls.Add(this.msMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

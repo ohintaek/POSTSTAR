@@ -4,9 +4,12 @@ using PostStar.Basic.Messaging;
 using PostStar.Basic.Settings;
 using PostStar.Communicator;
 using PostStar.Communicator.DataStructure;
-using PostStar.Communicator.ReceiveHandler;
 using System;
+using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
+using System.Text;
 using System.Windows.Forms;
 
 namespace PostStar.Basic.Main
@@ -302,5 +305,44 @@ namespace PostStar.Basic.Main
             frmSettings.ShowDialog();
         }
 
+        /// <summary>
+        /// 임시코드
+        /// LAN에 연결되어 있는 PC의 IP목록을 구한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void flpMemberList_DoubleClick(object sender, EventArgs e)
+        {
+            string myIp3rdOctet = string.Empty;
+            string localHostName = Dns.GetHostName();
+            IPAddress[] paddresses = Dns.GetHostAddresses(localHostName);
+            string myIp = paddresses.Where(ip => ip.AddressFamily == AddressFamily.InterNetwork).FirstOrDefault().ToString();
+            string[] myIpArray = myIp.Split(new[] { '.' });
+            myIp3rdOctet = string.Format("{0}.{1}.{2}.", myIpArray[0], myIpArray[1], myIpArray[2]);
+
+            var results = new string[0x100];
+            System.Threading.Tasks.Parallel.For(1, /*0x100*/0x20, lastOctet =>
+            {
+                var pingSender = new Ping();
+                string ls = myIp3rdOctet + lastOctet;
+                PingReply reply = pingSender.Send(ls, 100);
+                if (reply != null)
+                {
+                    if (reply.Status == IPStatus.Success)
+                        results[lastOctet] = reply.Address.ToString();
+                }
+            });
+
+            var sb = new StringBuilder();
+            foreach(string ipAddr in results)
+            {
+                if (ipAddr == null)
+                    continue;
+
+                sb.AppendFormat("{0}\r\n", ipAddr);
+            }
+
+            MessageBox.Show(sb.ToString(), "LAN 상의 PC목록");
+        }
     }
 }
