@@ -70,14 +70,14 @@
             this.rtbMessageBodyOutput.AllowDefaultSmartText = true;
             this.rtbMessageBodyOutput.AllowHyphenation = true;
             this.rtbMessageBodyOutput.AllowPictures = true;
-            this.rtbMessageBodyOutput.AllowSpellCheck = true;
+            this.rtbMessageBodyOutput.AllowSpellCheck = false;
             this.rtbMessageBodyOutput.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.rtbMessageBodyOutput.FilePath = "";
             this.rtbMessageBodyOutput.Location = new System.Drawing.Point(422, 0);
             this.rtbMessageBodyOutput.Name = "rtbMessageBodyOutput";
-            this.rtbMessageBodyOutput.Rtf = "{\\rtf1\\ansi\\deff0\\nouicompat{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\*\\generator " +
-    "Riched20 10.0.17763}\\viewkind4\\uc1 \r\n\\pard\\fs20\\lang1042 richTextBoxEx1\\par\r\n}\r\n" +
-    "";
+            this.rtbMessageBodyOutput.Rtf = "{\\rtf1\\ansi\\ansicpg949\\deff0\\nouicompat\\deflang1033\\deflangfe1042{\\fonttbl{\\f0\\fn" +
+    "il\\fcharset0 Arial;}}\r\n{\\*\\generator Riched20 10.0.17763}\\viewkind4\\uc1 \r\n\\pard\\" +
+    "fs20\\lang1042\\par\r\n}\r\n";
             this.rtbMessageBodyOutput.SetColorWithFont = true;
             this.rtbMessageBodyOutput.ShowToolStrip = true;
             this.rtbMessageBodyOutput.Size = new System.Drawing.Size(366, 400);

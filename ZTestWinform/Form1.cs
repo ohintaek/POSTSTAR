@@ -21,6 +21,7 @@ namespace ZTestWinform
         private void button1_Click(object sender, EventArgs e)
         {
             rtbMessageBodyOutput.Rtf = rtbMessageBody.Rtf;
+            rtbMessageBodyOutput.Enabled = false;
 
             if (File.Exists("c:\\a.rtf"))
                 File.Delete("c:\\a.rtf");
@@ -29,7 +30,6 @@ namespace ZTestWinform
             {
                 StreamWriter sw = new StreamWriter(fs);
                 sw.Write(rtbMessageBodyOutput.Rtf);
-                sw.Flush();
                 sw.Close();
                 fs.Close();
             }
