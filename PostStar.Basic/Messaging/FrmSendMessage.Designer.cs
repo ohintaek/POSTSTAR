@@ -37,6 +37,7 @@
             this.lvAttachFile = new System.Windows.Forms.ListView();
             this.btnAddAttach = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.rtbMessageBody = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.txtMessageBody.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMessageBody.Multiline = true;
             this.txtMessageBody.Name = "txtMessageBody";
-            this.txtMessageBody.Size = new System.Drawing.Size(430, 233);
+            this.txtMessageBody.Size = new System.Drawing.Size(122, 233);
             this.txtMessageBody.TabIndex = 1;
             this.txtMessageBody.TextChanged += new System.EventHandler(this.txtMessageBody_TextChanged);
             // 
@@ -133,11 +134,20 @@
             this.btnAddUser.TabIndex = 2;
             this.btnAddUser.UseVisualStyleBackColor = true;
             // 
+            // rtbMessageBody
+            // 
+            this.rtbMessageBody.Location = new System.Drawing.Point(135, 6);
+            this.rtbMessageBody.Name = "rtbMessageBody";
+            this.rtbMessageBody.Size = new System.Drawing.Size(302, 232);
+            this.rtbMessageBody.TabIndex = 12;
+            this.rtbMessageBody.Text = "";
+            // 
             // FrmSendMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 348);
+            this.Controls.Add(this.rtbMessageBody);
             this.Controls.Add(this.btnAddAttach);
             this.Controls.Add(this.lvAttachFile);
             this.Controls.Add(this.lblReceiveTarget);
@@ -165,5 +175,6 @@
         private System.Windows.Forms.Label lblReceiveTarget;
         private System.Windows.Forms.ListView lvAttachFile;
         private System.Windows.Forms.Button btnAddAttach;
+        private System.Windows.Forms.RichTextBox rtbMessageBody;
     }
 }

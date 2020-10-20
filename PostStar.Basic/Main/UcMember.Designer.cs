@@ -38,6 +38,7 @@
             this.tsmiSendMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowMemberInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tlpMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatusIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,26 +48,28 @@
             // tlpMember
             // 
             this.tlpMember.ColumnCount = 3;
-            this.tlpMember.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpMember.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tlpMember.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
             this.tlpMember.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
             this.tlpMember.Controls.Add(this.pbxStatusIcon, 0, 0);
             this.tlpMember.Controls.Add(this.lblName, 1, 0);
             this.tlpMember.Controls.Add(this.pictureBox1, 2, 0);
             this.tlpMember.Location = new System.Drawing.Point(0, 0);
+            this.tlpMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpMember.Name = "tlpMember";
             this.tlpMember.RowCount = 1;
             this.tlpMember.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMember.Size = new System.Drawing.Size(340, 30);
+            this.tlpMember.Size = new System.Drawing.Size(298, 24);
             this.tlpMember.TabIndex = 0;
             // 
             // pbxStatusIcon
             // 
             this.pbxStatusIcon.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbxStatusIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbxStatusIcon.Image")));
-            this.pbxStatusIcon.Location = new System.Drawing.Point(3, 3);
+            this.pbxStatusIcon.Location = new System.Drawing.Point(3, 2);
+            this.pbxStatusIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxStatusIcon.Name = "pbxStatusIcon";
-            this.pbxStatusIcon.Size = new System.Drawing.Size(24, 24);
+            this.pbxStatusIcon.Size = new System.Drawing.Size(20, 20);
             this.pbxStatusIcon.TabIndex = 0;
             this.pbxStatusIcon.TabStop = false;
             // 
@@ -75,10 +78,10 @@
             this.lblName.AutoSize = true;
             this.lblName.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblName.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblName.Location = new System.Drawing.Point(36, 6);
-            this.lblName.Margin = new System.Windows.Forms.Padding(6);
+            this.lblName.Location = new System.Drawing.Point(31, 5);
+            this.lblName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(62, 18);
+            this.lblName.Size = new System.Drawing.Size(52, 14);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "홍길동";
             // 
@@ -86,9 +89,10 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(312, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(273, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(22, 20);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -98,39 +102,46 @@
             this.cmsMember.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiSendMessage,
             this.tsmShowMemberInfo,
+            this.toolStripSeparator1,
             this.toolStripMenuItem3});
             this.cmsMember.Name = "cmsMember";
-            this.cmsMember.Size = new System.Drawing.Size(211, 104);
+            this.cmsMember.Size = new System.Drawing.Size(181, 98);
             // 
             // tsmiSendMessage
             // 
             this.tsmiSendMessage.Name = "tsmiSendMessage";
             this.tsmiSendMessage.ShortcutKeyDisplayString = "";
-            this.tsmiSendMessage.Size = new System.Drawing.Size(210, 24);
+            this.tsmiSendMessage.Size = new System.Drawing.Size(180, 22);
             this.tsmiSendMessage.Text = "&Send Message";
             this.tsmiSendMessage.Click += new System.EventHandler(this.tsmiSendMessage_Click);
             // 
             // tsmShowMemberInfo
             // 
             this.tsmShowMemberInfo.Name = "tsmShowMemberInfo";
-            this.tsmShowMemberInfo.Size = new System.Drawing.Size(210, 24);
+            this.tsmShowMemberInfo.Size = new System.Drawing.Size(180, 22);
             this.tsmShowMemberInfo.Text = "뭐하는 사람?";
             this.tsmShowMemberInfo.Click += new System.EventHandler(this.tsmShowMemberInfo_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(210, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "숨기기";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // UcMember
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tlpMember);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UcMember";
-            this.Size = new System.Drawing.Size(340, 77);
+            this.Size = new System.Drawing.Size(298, 62);
             this.Load += new System.EventHandler(this.UcMember_Load);
             this.DoubleClick += new System.EventHandler(this.UcMember_DoubleClick);
             this.MouseEnter += new System.EventHandler(this.UcMember_MouseEnter);
@@ -154,5 +165,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSendMessage;
         private System.Windows.Forms.ToolStripMenuItem tsmShowMemberInfo;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

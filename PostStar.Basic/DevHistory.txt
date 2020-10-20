@@ -39,5 +39,13 @@ E:\Dropbox\8. 클립아트\material-design-icons-1.0.0\material-design-icons-1.0
    - UPD Server로 NICK NAME이 수신하여 수신목록에 저장한다.
    - 수신 NICK NAME 목록과 MEMBER 목록을 확인하여 신규 NICK NAME에 대해서는 사용자정보를 요청한다.(TCP)
    - TBD.........F
-
+[2020.10.20]
+ @ 카드보내기
+   - TEXT 카드(첨부파일 포함)
+   - VOICE 카드
+   - IMAGE 카드
+ @ 카드받기
+   - TEXT 카드
+   - VOICE 카드
+   - IMAGE 카드
 
