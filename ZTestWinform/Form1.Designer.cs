@@ -31,6 +31,7 @@
             this.rtbMessageBody = new RichTextBoxEx.RichTextBoxEx();
             this.button1 = new System.Windows.Forms.Button();
             this.rtbMessageBodyOutput = new RichTextBoxEx.RichTextBoxEx();
+            this.lvAttachFile = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // rtbMessageBody
@@ -45,13 +46,15 @@
             this.rtbMessageBody.FilePath = "";
             this.rtbMessageBody.Location = new System.Drawing.Point(1, 0);
             this.rtbMessageBody.Name = "rtbMessageBody";
-            this.rtbMessageBody.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\r\n{\\" +
-    "*\\generator Riched20 10.0.17763}\\viewkind4\\uc1 \r\n\\pard\\fs20\\lang1042 richTextBox" +
-    "Ex1\\par\r\n}\r\n";
+            this.rtbMessageBody.Rtf = "{\\rtf1\\ansi\\ansicpg949\\deff0\\nouicompat\\deflang1033\\deflangfe1042{\\fonttbl{\\f0\\fn" +
+    "il\\fcharset0 Arial;}}\r\n{\\*\\generator Riched20 10.0.17763}\\viewkind4\\uc1 \r\n\\pard\\" +
+    "fs20\\lang1042\\par\r\n}\r\n";
             this.rtbMessageBody.SetColorWithFont = true;
             this.rtbMessageBody.ShowToolStrip = true;
             this.rtbMessageBody.Size = new System.Drawing.Size(415, 400);
             this.rtbMessageBody.TabIndex = 0;
+            this.rtbMessageBody.DragDrop += new System.Windows.Forms.DragEventHandler(this.rtbMessageBody_DragDrop);
+            this.rtbMessageBody.DragEnter += new System.Windows.Forms.DragEventHandler(this.rtbMessageBody_DragEnter);
             // 
             // button1
             // 
@@ -83,11 +86,20 @@
             this.rtbMessageBodyOutput.Size = new System.Drawing.Size(366, 400);
             this.rtbMessageBodyOutput.TabIndex = 2;
             // 
+            // lvAttachFile
+            // 
+            this.lvAttachFile.Location = new System.Drawing.Point(1, 398);
+            this.lvAttachFile.Name = "lvAttachFile";
+            this.lvAttachFile.Size = new System.Drawing.Size(415, 54);
+            this.lvAttachFile.TabIndex = 3;
+            this.lvAttachFile.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lvAttachFile);
             this.Controls.Add(this.rtbMessageBodyOutput);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rtbMessageBody);
@@ -102,6 +114,7 @@
         private RichTextBoxEx.RichTextBoxEx rtbMessageBody;
         private System.Windows.Forms.Button button1;
         private RichTextBoxEx.RichTextBoxEx rtbMessageBodyOutput;
+        private System.Windows.Forms.ListView lvAttachFile;
     }
 }
 
