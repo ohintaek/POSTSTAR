@@ -65,7 +65,8 @@ namespace PostStar.Basic.Messaging
             try
             {
                 // 0. 입력내용이 없다면 Return
-                String inputMessage = this.txtMessageBody.Text.Trim();
+                //String inputMessage = this.txtMessageBody.Text.Trim();
+                String inputMessage = this.rtbMessageBody.Rtf.Trim();
                 if (inputMessage == string.Empty)
                     return;
 
@@ -90,18 +91,6 @@ namespace PostStar.Basic.Messaging
             }
         }
 
-        /// <summary>
-        /// 입력한 내용이 잇으면 전송버튼을 활성화 한다.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtMessageBody_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtMessageBody.TextLength > 0)
-                btnSend.Enabled = true;
-            else
-                btnSend.Enabled = false;
-        }
 
         /// <summary>
         /// 첨부파일을 추가한다.
@@ -193,5 +182,17 @@ namespace PostStar.Basic.Messaging
 
         }
 
+        /// <summary>
+        /// 입력한 내용이 있으면 전송버튼을 활성화 한다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rtbMessageBody_TextChanged(object sender, EventArgs e)
+        {
+            if (this.rtbMessageBody.TextLength > 0)
+                btnSend.Enabled = true;
+            else
+                btnSend.Enabled = false;
+        }
     }
 }

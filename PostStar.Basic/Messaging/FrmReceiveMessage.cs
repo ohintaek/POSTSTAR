@@ -36,7 +36,7 @@ namespace PostStar.Basic.Messaging
         private void FrmReceiveMessage_Load(object sender, EventArgs e)
         {
             this.Text = this.poststarmsg.getSender().nickName;
-            this.txtMessageBody.Text = this.poststarmsg.text;
+            this.rtbMessageBody.Rtf = this.poststarmsg.text;
         }
 
         /// <summary>

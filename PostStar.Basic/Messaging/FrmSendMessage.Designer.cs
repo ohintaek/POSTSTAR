@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSendMessage));
-            this.txtMessageBody = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
@@ -40,16 +39,6 @@
             this.rtbMessageBody = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtMessageBody
-            // 
-            this.txtMessageBody.Location = new System.Drawing.Point(7, 5);
-            this.txtMessageBody.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMessageBody.Multiline = true;
-            this.txtMessageBody.Name = "txtMessageBody";
-            this.txtMessageBody.Size = new System.Drawing.Size(122, 233);
-            this.txtMessageBody.TabIndex = 1;
-            this.txtMessageBody.TextChanged += new System.EventHandler(this.txtMessageBody_TextChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -136,11 +125,12 @@
             // 
             // rtbMessageBody
             // 
-            this.rtbMessageBody.Location = new System.Drawing.Point(135, 6);
+            this.rtbMessageBody.Location = new System.Drawing.Point(7, 6);
             this.rtbMessageBody.Name = "rtbMessageBody";
-            this.rtbMessageBody.Size = new System.Drawing.Size(302, 232);
+            this.rtbMessageBody.Size = new System.Drawing.Size(430, 232);
             this.rtbMessageBody.TabIndex = 12;
             this.rtbMessageBody.Text = "";
+            this.rtbMessageBody.TextChanged += new System.EventHandler(this.rtbMessageBody_TextChanged);
             // 
             // FrmSendMessage
             // 
@@ -153,7 +143,6 @@
             this.Controls.Add(this.lblReceiveTarget);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.txtMessageBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "FrmSendMessage";
@@ -167,7 +156,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtMessageBody;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnCancel;

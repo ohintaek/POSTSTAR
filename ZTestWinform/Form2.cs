@@ -15,6 +15,8 @@ namespace ZTestWinform
         public Form2()
         {
             InitializeComponent();
+
+            this.richTextBox2.AllowDrop = true;
         }
 
         private void Form2_DragEnter(object sender, DragEventArgs e)
@@ -46,14 +48,14 @@ namespace ZTestWinform
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (System.IO.File.Exists("c:\\b.rtf"))
-                System.IO.File.Delete("c:\\b.rtf");
+            if (System.IO.File.Exists("c:\\ZTemp\\b.rtf"))
+                System.IO.File.Delete("c:\\ZTemp\\b.rtf");
 
-            richTextBox1.SaveFile("c:\\b.rtf", RichTextBoxStreamType.RichText);
-
-              richTextBox2.Rtf = richTextBox1.Rtf;
+            richTextBox1.SaveFile("c:\\ZTemp\\b.rtf", RichTextBoxStreamType.RichText);
             
-            richTextBox2.LoadFile("c:\\b.rtf", RichTextBoxStreamType.RichText);
+            //  richTextBox2.Rtf = richTextBox1.Rtf;
+
+            richTextBox2.LoadFile("c:\\ZTemp\\b.rtf", RichTextBoxStreamType.RichText);
 
 
         }
