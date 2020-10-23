@@ -17,6 +17,8 @@ namespace ZTestWinform
             InitializeComponent();
 
             this.richTextBox2.AllowDrop = true;
+
+
         }
 
         private void Form2_DragEnter(object sender, DragEventArgs e)

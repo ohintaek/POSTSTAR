@@ -28,6 +28,8 @@ namespace PostStar.Basic.Messaging
 
             targetMemberList = new List<Member>();
             targetMemberList.Add(member);
+
+            rtbMessageBody.AllowDrop = true;
         }
 
         /// <summary>
@@ -43,16 +45,6 @@ namespace PostStar.Basic.Messaging
                 this.Text = String.Format("{0}에게 메시지 보내기", targetMemberList[0].nickName);
 
             btnSend.Enabled = false;
-        }
-
-        /// <summary>
-        /// 전송창을 닫는다.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         /// <summary>
@@ -109,20 +101,6 @@ namespace PostStar.Basic.Messaging
         }
 
         /// <summary>
-        /// 첨부파일을 추가한다.(Drag & Drop)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void lvAttachFile_DragDrop(object sender, DragEventArgs e)
-        {
-            string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            for (int i = 0; i < s.Length; i++)
-            {
-                addAttachFile(s[i]);
-            }
-        }
-        
-        /// <summary>
         /// 리스트박스에 파일을 추가한다.
         /// </summary>
         /// <param name="addFileName"></param>
@@ -162,6 +140,20 @@ namespace PostStar.Basic.Messaging
         }
 
         /// <summary>
+        /// 첨부파일을 추가한다.(Drag & Drop)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lvAttachFile_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            for (int i = 0; i < s.Length; i++)
+            {
+                addAttachFile(s[i]);
+            }
+        }
+
+        /// <summary>
         /// 첨부파일을 제거한다.
         /// </summary>
         /// <param name="sender"></param>
@@ -194,5 +186,7 @@ namespace PostStar.Basic.Messaging
             else
                 btnSend.Enabled = false;
         }
+
+
     }
 }

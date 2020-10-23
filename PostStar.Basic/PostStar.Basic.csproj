@@ -119,6 +119,12 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Main\UcAttachFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\UcAttachFile.Designer.cs">
+      <DependentUpon>UcAttachFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\UcMe.cs">
       <SubType>UserControl</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -186,6 +192,9 @@
     <EmbeddedResource Include="Help\FrmLicenseNote.resx">
       <DependentUpon>FrmLicenseNote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\UcAttachFile.resx">
+      <DependentUpon>UcAttachFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\UcMe.resx">
       <DependentUpon>UcMe.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -249,6 +258,7 @@
     <None Include="Resources\CheerupIcon.png" />
     <None Include="Resources\CheerUpConcept.png" />
     <Content Include="ic_stars_black_24dp.ico" />
+    <Content Include="LicenseNote.txt" />
     <Content Include="POST-STAR.ico" />
     <Content Include="Resources\ic_grade_black_36dp.png" />
     <Content Include="DevHistory.txt" />
