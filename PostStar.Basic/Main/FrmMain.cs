@@ -115,7 +115,7 @@ namespace PostStar.Basic.Main
             switch (e.KeyCode)
             {
                 case Keys.Escape:
-#if DEBUG   // DEBUG 일때는 실제로 프로그램을 종료한다.
+#if DEBUG   // DEBUG 일때는 실제로 프로그램을 종료한다..
                     if (e.Shift)
                         this.closeAvailableFlag = true;
 #endif
